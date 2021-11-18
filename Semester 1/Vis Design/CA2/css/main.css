@@ -16,7 +16,7 @@
     --gradient-5: #56ab2f;
 
     --footer-height: 4rem;
-    --footer-color: #bbbbbb;
+    --footer-color: #292929;
 }
 
 body {
@@ -29,7 +29,8 @@ body {
 }
 
 #mainContent {
-    background-color: black;
+    background-color: rgb(255, 255, 255);
+    min-height: calc(100vh - var(--footer-height));
 }
 
 /*
@@ -66,7 +67,7 @@ nav ul li {
     user-select: none;
 
     /* make the font bold */
-    font-weight: 500;
+    font-weight: 400;
 }
 
 /* When the user hovers over this LI */
@@ -84,6 +85,52 @@ nav ul li:active {
 .nav-current {
     /* make the font bolder */
     font-weight: 800;
+}
+
+/*
+    Footer
+*/
+
+footer {
+    bottom: 0;
+    height: var(--footer-height);
+    background-color: var(--footer-color);
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    /* Removes the dots beside the LI */
+    display: inline;
+
+    /* Makes the UL horizontal insted of Vertical */
+    float: left;
+
+    /* Add spacing between LI's */
+    padding: 0 var(--nav-bar-item-padding) 0 var(--nav-bar-item-padding);
+    
+    /* Change font color */
+    color: var(--nav-bar-font-color);
+
+    /* Ease all animations and rule changes */
+    transition: all 0.25s ease;
+
+    /* Remove the ability to select text */
+    user-select: none;
+
+    /* make the font bold */
+    font-weight: 400;
+}
+
+#footElements {
+}
+
+.foot-current {
+    /* make the font bolder */
+    font-weight: 600;
 }
 
 /*

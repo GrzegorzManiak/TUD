@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    display: flex;
+    background-color: #93827f;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+nav {
+    background-color: #92b4a7;
+    display: flex;
+    width: 100vw;
+    height: 4rem;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 0 1rem 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 0 0.5rem 0 0.5rem;
+    display: flex;
+    height: 4rem;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+/*
+    You asked for a :hover and a :active but you didint describe
+    what they are meant to change to?
+*/
+
+nav ul li:hover {
+    background-color: #bdc4a7;
+}
+
+nav ul li:hover > a {
+    color: #fff;
+}
+
+nav ul li:active {
+    background-color: #bdc4a7;
+}
+
+nav ul li:active > a {
+    color: #fff;
+}
+
+.active {
+    background-color: #bdc4a7;
+    color: #fff;
+}
+
+/*
+    The footer is basicly a copy and paste from the nav bar,
+    the brief states to use selectors so i cant recycle code
+*/
+
+footer {
+    margin: 1rem 0 0 0;
+    background-color: #92b4a7;
+    display: flex;
+    width: 100vw;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/*
+    Main container and content
+*/
+
+#container {
+    background-color: #2f2f2f;
+    width: 90%;
+    height: auto;
+    max-width: 70rem;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+h1 {
+    color: #fff;
+}
+
+h2 {
+    color: #fff;
+}
+
+h4 {
+    color: #fff;
+}
+
+#title {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+}
+
+section p {
+    color: #fff;
+}
+
+li {
+    color: #fff;
+}
+
+/*
+    card
+*/
+
+.card {
+    display: flex;
+    margin: 1rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card a {
+    padding: 0.7rem 0 0.7rem 0;
+    border-radius: 0 0 0.2rem 0.2rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f3f9d2;
+}
+
+.card-body {
+    display: flex;
+    background-color: #f3f9d2;
+    border-radius: 0.2rem 0.2rem 0 0;
+    padding: 1rem;
+    min-width: 13rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.1rem;
+}
+
+.card-body img {
+    width: 6rem;
+    height: auto;
+}
