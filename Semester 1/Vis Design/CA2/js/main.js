@@ -79,8 +79,6 @@ async function startScroll() {
         let closerToPage = Math.round(scroll / height),
             moveTo = closerToPage * height
 
-        console.log(height, scroll, closerToPage, moveTo);
-
         if (scroll != moveTo) {
             await sleep(1);
             notScrolledFor++;
@@ -101,16 +99,126 @@ async function startScroll() {
     }
 }
 
-let currentlySelected = 0;
-//Carousel
-function carousel() {
-    let carousel = document.getElementById('carousel'),
-        images = [...carousel.getElementsByTagName('img')];
+const imgs = {
+    '0': { img: './imgs/aboutus/1.jpg', elem: undefined },
+    '1': { img: './imgs/aboutus/2.jpg', elem: undefined },
+    '2': { img: './imgs/aboutus/3.jpg', elem: undefined },
+    '3': { img: './imgs/aboutus/4.jpg', elem: undefined },
+    '4': { img: './imgs/aboutus/5.jpg', elem: undefined },
+}
 
-    images.forEach((img, i) => {
-        if (i == currentlySelected) img.className = 'csl';
-        else if (i - 1 == currentlySelected) img.className = 'carouselLeft';
-        else if (i - 2 == currentlySelected) img.className = 'carouselRight';
-        else img.className = 'carouselMiddle';
+//Carousel
+function addCarouselItems() {
+    let carousel = document.getElementById('carousel');
+
+    Object.keys(imgs).forEach((key, i) => {
+        let img = document.createElement('img');
+        img.src = imgs[key].img;
+
+        if (i == 0) {
+            img.className = 'scaleOutToLeft';
+            img.id = 'carouselLeft'
+        } else if (i == 1) {
+            img.className = 'carouselSelected';
+            img.id = 'carouselCenter';
+        } else if (i == 2) {
+            img.className = 'scaleOutToRight';
+            img.id = 'carouselRight'
+        } else stack = [img, ...stack]
+
+        imgs[key].elem = img;
+        carousel.appendChild(img);
+    });
+
+    addCarouselInteractions();
+}
+
+//Gets the element currently at the center of the carousel
+function currentlySelected() {
+    return document.getElementById('carouselCenter');
+}
+
+let stack = [];
+
+function addCarouselInteractions() {
+    Object.keys(imgs).forEach((key) => {
+        let elem = imgs[key].elem;
+
+        elem.addEventListener('click', () => {
+            let from = '';
+            let cs = currentlySelected();
+
+            //If the image from the left is clicked
+            if (elem.id == 'carouselLeft') {
+                elem.className = 'scaleInFromLeft';
+                elem.id = 'carouselCenter';
+                from = 'left';
+            }
+
+            //If the image from the right is clicked
+            if (elem.id == 'carouselRight') {
+                elem.className = 'scaleInFromRight';
+                elem.id = 'carouselCenter';
+                from = 'right';
+            }
+
+            let left = document.getElementById('carouselLeft'),
+                right = document.getElementById('carouselRight');
+
+            //Move the center image in the correct direction
+            switch (from) {
+                case 'left': //move the img to the right
+                    if (right) {
+                        right.id = '';
+                        right.className = 'moveCenterFromRight';
+                        stack = [...stack, right];
+                    }
+
+                    cs.id = 'carouselRight';
+                    cs.className = 'scaleOutToRight';
+
+                    //Now we need to check if theres an img to replace the one we just moved
+                    left = document.getElementById('carouselLeft');
+                    if (!left) {
+                        stack[0].className = 'moveLeftFromCenter';
+                        stack[0].id = 'carouselLeft';
+                        stack.shift();
+                    }
+                    break;
+
+                case 'right': // move the img to the left
+                    if (left) {
+                        left.id = '';
+                        left.className = 'moveCenterFromLeft';
+                        stack = [left, ...stack];
+                    }
+
+                    cs.id = 'carouselLeft';
+                    cs.className = 'scaleOutToLeft';
+
+                    right = document.getElementById('carouselRight');
+                    if (!right) {
+                        stack[stack.length - 1].className = 'moveRightFromCenter';
+                        stack[stack.length - 1].id = 'carouselRight';
+                        stack.pop();
+                    }
+                    break;
+            }
+        });
     });
 }
+/*
+function minMax(val, min, max) {
+    if (val < min) return max;
+    if (val > max) return min;
+    return val;
+}
+
+function getPositionInArray(arr, val) {
+    let returnable = 0;
+    arr.forEach((elm, i) => {
+        if (elm == val) returnable = i;
+    });
+    return returnable;
+}
+*/

@@ -203,56 +203,150 @@
 }
 
 .carouselSelected {
-    transform: scale(1.15);
+    transform: scale(1);
     z-index: 100;
 }
 
-.csl {
+.scaleInFromLeft {
     z-index: 110;
     transform: scale(1);
-    animation: scaleBig 2s forwards;
+    animation: scaleInFromLeft 2s forwards;
 }
 
-.carouselLeft {
-    transform: translateX(-7rem);
-    animation: moveLeft 2s forwards;
+.scaleInFromRight {
+    z-index: 110;
+    transform: scale(1);
+    animation: scaleInFromRight 2s forwards;
 }
 
-.carouselRight {
-    transform: translateX(7rem);
-    animation: moveRight 2s forwards;
+.scaleOutToLeft {
+    z-index: 90;
+    transform: scale(1.15);
+    animation: scaleOutToLeft 2s forwards;
 }
 
-.carouselMiddle {
-    transform: translateX(0);
+.scaleOutToRight {
+    z-index: 90;
+    transform: scale(1.15);
+    animation: scaleOutToRight 2s forwards;
+}
+
+.moveCenterFromLeft {
+    z-index: 70;
+    animation: moveCenterFromLeft 2s forwards;
+}
+
+.moveCenterFromRight {
+    z-index: 70;
+    animation: moveCenterFromRight 2s forwards;
+}
+
+.moveLeftFromCenter {
+    z-index: 70;
+    animation: moveLeftFromCenter 2s forwards;
+}
+
+.moveRightFromCenter {
+    z-index: 70;
+    animation: moveRightFromCenter 2s forwards;
+}
+
+@keyframes scaleInFromRight {
+    0% {
+        transform: scale(1) translateX(7rem);
+    }
+    100% {
+        z-index: 100;
+        transform: scale(1.15) translateX(0);
+    }
+}
+
+@keyframes scaleInFromLeft {
+    0% {
+        transform: scale(1) translateX(-7rem);
+    }
+    100% {
+        z-index: 100;
+        transform: scale(1.15) translateX(0);
+    }
+}
+
+@keyframes scaleOutToRight {
+    0% {
+        transform: scale(1.15) translateX(0);
+    }
+    100% {
+        z-index: 90;
+        transform: scale(1) translateX(7rem);
+    }
+}
+
+@keyframes scaleOutToLeft {
+    0% {
+        transform: scale(1.15) translateX(0);
+    }
+    100% {
+        z-index: 90;
+        transform: scale(1) translateX(-7rem);
+    }
 }
 
 @keyframes moveRight {
     0% {
-        transform: translateX(0);
+        transform: scale(1) translateX(-7rem);
+    }
+    50% {
+        transform: scale(0.5) translateX(0);
     }
     100% {
-        z-index: 90;
-        transform: translateX(7rem);
+        transform: scale(1) translateX(7rem);
     }
 }
 
 @keyframes moveLeft {
     0% {
-        transform: translateX(0);
+        transform: scale(1) translateX(7rem);
+    }
+    50% {
+        transform: scale(0.5) translateX(0);
     }
     100% {
-        z-index: 90;
-        transform: translateX(-7rem);
+        transform: scale(1) translateX(-7rem);
     }
 }
 
-@keyframes scaleBig {
+@keyframes moveCenterFromRight {
     0% {
-        transform: translateX(-7);
+        transform: scale(1) translateX(7rem);
     }
     100% {
-        z-index: 100;
-        transform: scale(1.15);
+        transform: scale(1) translateX(0rem);
+    }
+}
+
+@keyframes moveCenterFromLeft {
+    0% {
+        transform: scale(1) translateX(-7rem);
+    }
+    100% {
+        transform: scale(1) translateX(0rem);
+    }
+}
+
+@keyframes moveRightFromCenter {
+    0% {
+        transform: scale(1) translateX(0rem);
+    }
+    100% {
+        transform: scale(1) translateX(7rem);
+    }
+}
+
+@keyframes moveLeftFromCenter {
+    0% {
+        transform: scale(1) translateX(0rem);
+    }
+    100% {
+        transform: scale(1) translateX(-7rem);
     }
 }

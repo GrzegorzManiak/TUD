@@ -259,4 +259,5 @@ footer ul li {
     visibility: hidden;
     /* Sets the position to absolute so it dosent interact with any other element */
     position: absolute;
+    left: 10000rem
 }
