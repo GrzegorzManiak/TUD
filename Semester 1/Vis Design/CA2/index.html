@@ -1,37 +1,98 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home | Group 17</title>
-        <meta name="description" content="">
 
-        <!--General CSS Used by all pages-->
-        <link rel="stylesheet" href="./css/main.css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Group 17</title>
+    <meta name="description" content="">
 
-        <!--CSS Only relative to this page-->
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <nav class='full-width gradient flex-vertical-horizontal'>
-            <ul id='navElements'>
-            </ul>
-        </nav>
+    <!--General CSS Used by all pages-->
+    <link rel="stylesheet" href="./css/main.css">
 
-        <div id='mainContent' class='flex-column'>
-            
+    <!--CSS Only relative to this page-->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <nav class='full-width flex-vertical-horizontal'>
+        <div>
+            <p>
+                Group 17
+            </p>
         </div>
+        <ul id='navElements'>
+        </ul>
+    </nav>
 
-        <footer class='full-width flex-vertical-horizontal'>
-            <ul id='footElements'>
-            </ul>
-        </footer>
-        
-        <script src="./js/main.js"></script>
-        <script>
-            currentPage('home');
-            addElements('navElements', 'nav-current');
-        </script>
-    </body>
+    <div id='pageIndicator' class='flex-row'>
+        <div onclick="window.location='#splashContent'" class='pageIndicatorElement pageIndicatorElementActive'></div>
+        <div onclick="window.location='#content2'" class='pageIndicatorElement'></div>
+        <div onclick="window.location='#content3'" class='pageIndicatorElement'></div>
+    </div>
+
+    <section id='splashContent'>
+        <div id='splashContentInner'>
+            <div class='splashTextContent'>
+                <p>
+                    <b>
+                        Welcome to the <a>Group 17</a> website!
+                    </b> Voluptate in ipsum deserunt duis sit pariatur esse. Voluptate amet magna excepteur do laboris adipisicing eu sunt sint consectetur dolor est eiusmod. Adipisicing eu enim non in nostrud laboris tempor commodo
+                    ullamco eiusmod aliqua quis do.
+                </p>
+            </div>
+            <div class='splashImgContent'>
+                <div class='square1'></div>
+                <div class='square2'></div>
+                <div class='square3'></div>
+                <div class='square4'></div>
+                <div class='square5'></div>
+                <div class='square6'></div>
+            </div>
+        </div>
+    </section>
+
+    <div id='mainContent' class='flex-column flex-vertical-horizontal'>
+        <section class='full-height' id='content2'>
+            <div class='full-height flex-column flex-flex-vertical-horizontal' id='aboutUs'>
+                <h1>
+                    ABOUT US
+                </h1>
+                <div class='aboutusSelector'>
+                    <map name="aboutus">
+                        <area shape="rect" coords="0, 0, 250, 500" alt="left" href="#left">
+                        <area shape="rect" coords="0, 0, 500, 500" alt="right" href="#right">
+                    </map>
+                    <div id='carousel' class=''>
+                        <img src='./imgs/aboutus/1.jpg' class=''>
+                        <img src='./imgs/aboutus/2.jpg' class=''>
+                        <img src='./imgs/aboutus/3.jpg' class=''>
+                        <img src='./imgs/aboutus/4.jpg' class=''>
+                        <img src='./imgs/aboutus/5.jpg' class=''>
+                    </div>
+                    <p>
+                        Voluptate in ipsum deserunt duis sit pariatur esse. Voluptate amet magna excepteur do laboris adipisicing eu sunt sint consectetur dolor est eiusmod. Adipisicing eu enim non in nostrud laboris tempor commodo ullamco eiusmod aliqua quis do.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class='full-height' id='content3'>
+        </section>
+    </div>
+
+    <footer class='full-width flex-vertical-horizontal'>
+        <ul id='footElements'>
+        </ul>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script>
+        currentPage('home');
+        addElements('navElements', 'nav-current');
+        startScroll();
+        carousel();
+    </script>
+</body>
+
 </html>

@@ -1,48 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap');
-
 :root {
+    --max-width: 70rem;
+    --body-color: #f4f1ef;
     --nav-bar-height: 4rem;
-    --nav-bar-color: #292929;
-    --nav-bar-font-color: #ffffff;
+    --nav-bar-color: #f4f1ef;
+    --nav-bar-font-color: #22223B;
     --nav-bar-item-padding: 0.5rem;
-
+    --nav-bar-max-width: 75rem;
     --gradient-angle: 45deg;
-    --gradient-time: 25s;
-
+    --gradient-time: 30s;
     --gradient-1: #ffafbd;
     --gradient-2: #2193b0;
     --gradient-3: #cc2b5e;
     --gradient-4: #de6262;
     --gradient-5: #56ab2f;
-
     --footer-height: 4rem;
     --footer-color: #292929;
+    --scroll-bar-color: #22223B;
+    --scroll-bar-width: 0.5rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Removes the horizontal scroll bar */
+    overflow-x: hidden;
+    margin: 0;
 }
 
 body {
+    /* Sets the font to the best font in the world */
     font-family: 'Montserrat', sans-serif;
+    /* Sets the display mode to flex */
     display: flex;
-    margin: 0%;
-    overflow-x: hidden;
+    /* Removes the margin arround the body */
+    margin: 0;
     flex-direction: column;
     justify-content: center;
+    background-color: var(--body-color);
+    align-items: center;
 }
 
 #mainContent {
-    background-color: rgb(255, 255, 255);
     min-height: calc(100vh - var(--footer-height));
+    width: 100vw;
 }
+
+#mainContent section {
+    width: 100vw;
+    max-width: var(--max-width);
+}
+
+#mainContent section div {
+    padding: 1rem;
+}
+
 
 /*
     Navigation Bar
 */
 
 nav {
+    /* Sets the position to absolute */
+    position: fixed;
+    /* Makes the navbar stick to the top of the page */
+    top: 0;
+    /* Sets the max width of the nav */
+    max-width: var(--nav-bar-max-width);
+    /* Sets the height of the nav */
     height: var(--nav-bar-height);
+    /* Sets the background color */
     background-color: var(--nav-bar-color);
+    /* makes the nav bar appear on top of everything */
+    z-index: 1000;
+}
+
+nav div {
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+}
+
+nav div p {
+    color: var(--nav-bar-font-color);
+    font-size: 1.3rem;
+    font-weight: 900;
 }
 
 nav ul {
+    position: absolute;
     margin: 0;
     padding: 0;
 }
@@ -50,33 +95,31 @@ nav ul {
 nav ul li {
     /* Removes the dots beside the LI */
     display: inline;
-
     /* Makes the UL horizontal insted of Vertical */
     float: left;
-
     /* Add spacing between LI's */
     padding: 0 var(--nav-bar-item-padding) 0 var(--nav-bar-item-padding);
-    
     /* Change font color */
     color: var(--nav-bar-font-color);
-
     /* Ease all animations and rule changes */
     transition: all 0.25s ease;
-
     /* Remove the ability to select text */
     user-select: none;
-
     /* make the font bold */
     font-weight: 400;
 }
 
+
 /* When the user hovers over this LI */
+
 nav ul li:hover {
     /* Transform the size of this LI by 1.06 */
     transform: scale(1.05);
 }
 
+
 /* When the user clicks this LI */
+
 nav ul li:active {
     /* Transform the size of this LI by 0.94 */
     transform: scale(0.95);
@@ -84,8 +127,11 @@ nav ul li:active {
 
 .nav-current {
     /* make the font bolder */
-    font-weight: 800;
+    font-weight: 900;
+    /* Im using a border insted of text-decoration as it gives me more controll over the underline*/
+    border-bottom: 0.1rem solid var(--nav-bar-font-color);
 }
+
 
 /*
     Footer
@@ -105,27 +151,18 @@ footer ul {
 footer ul li {
     /* Removes the dots beside the LI */
     display: inline;
-
     /* Makes the UL horizontal insted of Vertical */
     float: left;
-
     /* Add spacing between LI's */
     padding: 0 var(--nav-bar-item-padding) 0 var(--nav-bar-item-padding);
-    
     /* Change font color */
     color: var(--nav-bar-font-color);
-
     /* Ease all animations and rule changes */
     transition: all 0.25s ease;
-
     /* Remove the ability to select text */
     user-select: none;
-
     /* make the font bold */
     font-weight: 400;
-}
-
-#footElements {
 }
 
 .foot-current {
@@ -133,9 +170,11 @@ footer ul li {
     font-weight: 600;
 }
 
+
 /*
     Gradient
 */
+
 .gradient {
     /* 
         Creates a gradient that changes horizontaly, 
@@ -145,15 +184,7 @@ footer ul li {
 
         thats why we are putting it at an angle to create more color variation
     */
-    background: linear-gradient(
-        var(--gradient-angle),
-        var(--gradient-1),
-        var(--gradient-2),
-        var(--gradient-3),
-        var(--gradient-4),
-        var(--gradient-5)
-    );
-
+    background: linear-gradient( var(--gradient-angle), var(--gradient-1), var(--gradient-2), var(--gradient-3), var(--gradient-4), var(--gradient-5));
     /*
         This effect works by making the background of the element massive
         and moveing the background arround, while only looking at a small part of the 
@@ -178,6 +209,20 @@ footer ul li {
     }
 }
 
+
+/*
+    scroll bar
+*/
+
+::-webkit-scrollbar {
+    width: var(--scroll-bar-width);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-color);
+}
+
+
 /*
     General rules used quite often, stops bloat within classes and id's,
     a poor man's `Tailwind css`
@@ -200,9 +245,18 @@ footer ul li {
 }
 
 .full-width {
+    /* Sets the width of the element to the width of the browser window */
     width: 100vw;
 }
 
 .full-height {
+    /* Sets the height of the element to the height of the browser window */
     height: 100vh;
+}
+
+.invisible {
+    /* Makes the element invisable */
+    visibility: hidden;
+    /* Sets the position to absolute so it dosent interact with any other element */
+    position: absolute;
 }

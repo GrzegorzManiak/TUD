@@ -45,9 +45,72 @@ function addElements(navID, selected) {
             if (currentPageName != key) document.location = pages[key];
         });
 
-        if (currentPageName == key) li.className = selected;
+        if (currentPageName == key) p.className = selected;
 
         li.appendChild(p);
         element.appendChild(li)
+    });
+}
+
+function selectPageIndicator(num) {
+    let elements = [...document.getElementsByClassName('pageIndicatorElement')],
+        i = 0;
+
+    elements.forEach((elm) => {
+        if (i == num && i < elements.length) elm.className = 'pageIndicatorElement pageIndicatorElementActive';
+        else elm.className = 'pageIndicatorElement';
+        i++;
+    });
+}
+
+async function startScroll() {
+    let prevPos = -1,
+        currentPage = 0,
+        notScrolledFor = 0;
+
+    //window.scrollTo(0, 0);
+
+    while (true) {
+        // Get the current scroll position  
+        let scroll = document.documentElement.scrollTop,
+            height = document.documentElement.clientHeight;
+
+        await sleep(5);
+        let closerToPage = Math.round(scroll / height),
+            moveTo = closerToPage * height
+
+        console.log(height, scroll, closerToPage, moveTo);
+
+        if (scroll != moveTo) {
+            await sleep(1);
+            notScrolledFor++;
+
+            if (notScrolledFor > 100) {
+                window.scrollTo(0, moveTo);
+                notScrolledFor = 0;
+            }
+        }
+
+        if (scroll == prevPos) continue;
+        else notScrolledFor = 0;
+
+        currentPage = Math.round(scroll / height);
+        selectPageIndicator(currentPage);
+
+        prevPos = scroll;
+    }
+}
+
+let currentlySelected = 0;
+//Carousel
+function carousel() {
+    let carousel = document.getElementById('carousel'),
+        images = [...carousel.getElementsByTagName('img')];
+
+    images.forEach((img, i) => {
+        if (i == currentlySelected) img.className = 'csl';
+        else if (i - 1 == currentlySelected) img.className = 'carouselLeft';
+        else if (i - 2 == currentlySelected) img.className = 'carouselRight';
+        else img.className = 'carouselMiddle';
     });
 }

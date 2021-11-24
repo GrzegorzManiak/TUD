@@ -1,0 +1,258 @@
+:root {
+    --font-color: #22223B;
+    --font-color-light: #4659DC;
+    --page-indicator: #cdcbca;
+    --page-indicator-active: #22223B;
+}
+
+#splashContent {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+#splashContentInner {
+    display: flex;
+    max-width: var(--max-width);
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.splashTextContent {
+    padding: 1rem;
+    max-width: 50%;
+}
+
+.splashTextContent p {
+    margin: 0;
+    padding: 0;
+}
+
+.splashTextContent p b {
+    font-weight: 900;
+    color: var(--font-color);
+    font-size: 2.5rem;
+}
+
+.splashTextContent p b a {
+    color: var(--font-color-light);
+}
+
+
+/*
+    Landing squares
+*/
+
+.splashImgContent {
+    /*
+        Declaring the display as grid allows me
+        to allow the squares to overlap
+
+        i use transform: translateX(x, y)
+        Because it alows me to move the squares
+        vertically and horizontally within the grid.
+
+        As margin-top/bottom dosent work within a grid.
+    */
+    display: grid;
+    transform: scale(1.3);
+    width: 17rem;
+}
+
+.splashImgContent div {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.square1 {
+    border-radius: 1rem;
+    width: 12rem;
+    height: 12rem;
+    background-color: #22223B;
+    transform: rotate(2.5deg);
+    z-index: 15;
+}
+
+.square2 {
+    border-radius: 1.2rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: #323264;
+    transform: rotate(6.5deg);
+    transform: translate(-3rem, -3rem);
+    z-index: 14;
+}
+
+.square3 {
+    border-radius: 2em;
+    width: 3rem;
+    height: 3rem;
+    background-color: #B4B6DE;
+    transform: rotate(6.5deg);
+    transform: translate(1rem, -1.5rem);
+    z-index: 14;
+}
+
+.square4 {
+    border-radius: 1em;
+    width: 4rem;
+    height: 4rem;
+    background-color: #464697;
+    transform: rotate(-32deg);
+    transform: translate(-2rem, 2rem);
+    z-index: 14;
+}
+
+.square5 {
+    border-radius: 1em;
+    width: 6rem;
+    height: 6rem;
+    background-color: #4B4B7A;
+    transform: rotate(-10deg);
+    transform: translate(9rem, 9rem);
+    z-index: 14;
+}
+
+.square6 {
+    border-radius: 1.5em;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #7073BF;
+    transform: rotate(5deg);
+    transform: translate(7rem, 10rem);
+    z-index: 14;
+}
+
+#pageIndicator {
+    position: fixed;
+    bottom: 1rem;
+}
+
+.pageIndicatorElement {
+    background-color: var(--page-indicator);
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0.2rem;
+    border-radius: 1rem;
+    transition: all 0.25s ease;
+}
+
+.pageIndicatorElement:hover {
+    transform: scale(1.25);
+}
+
+.pageIndicatorElement:active {
+    transform: scale(0.95);
+}
+
+.pageIndicatorElementActive {
+    background-color: var(--page-indicator-active);
+}
+
+
+/*
+    About us section
+*/
+
+#aboutUs {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutUs h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+    width: 75%;
+    text-align: center;
+}
+
+.aboutusSelector {
+    width: 50%
+}
+
+.aboutusSelector img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+
+/*
+    carousel
+*/
+
+#carousel {
+    display: grid;
+}
+
+#carousel img {
+    grid-row: 1;
+    grid-column: 1;
+    transition: all 2s ease;
+}
+
+.carouselSelected {
+    transform: scale(1.15);
+    z-index: 100;
+}
+
+.csl {
+    z-index: 110;
+    transform: scale(1);
+    animation: scaleBig 2s forwards;
+}
+
+.carouselLeft {
+    transform: translateX(-7rem);
+    animation: moveLeft 2s forwards;
+}
+
+.carouselRight {
+    transform: translateX(7rem);
+    animation: moveRight 2s forwards;
+}
+
+.carouselMiddle {
+    transform: translateX(0);
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        z-index: 90;
+        transform: translateX(7rem);
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        z-index: 90;
+        transform: translateX(-7rem);
+    }
+}
+
+@keyframes scaleBig {
+    0% {
+        transform: translateX(-7);
+    }
+    100% {
+        z-index: 100;
+        transform: scale(1.15);
+    }
+}
