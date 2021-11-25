@@ -133,11 +133,6 @@ function addCarouselItems() {
     addCarouselInteractions();
 }
 
-//Gets the element currently at the center of the carousel
-function currentlySelected() {
-    return document.getElementById('carouselCenter');
-}
-
 let stack = [];
 
 function addCarouselInteractions() {
@@ -146,7 +141,7 @@ function addCarouselInteractions() {
 
         elem.addEventListener('click', () => {
             let from = '';
-            let cs = currentlySelected();
+            let cs = document.getElementById('carouselCenter');
 
             //If the image from the left is clicked
             if (elem.id == 'carouselLeft') {
@@ -207,18 +202,3 @@ function addCarouselInteractions() {
         });
     });
 }
-/*
-function minMax(val, min, max) {
-    if (val < min) return max;
-    if (val > max) return min;
-    return val;
-}
-
-function getPositionInArray(arr, val) {
-    let returnable = 0;
-    arr.forEach((elm, i) => {
-        if (elm == val) returnable = i;
-    });
-    return returnable;
-}
-*/
