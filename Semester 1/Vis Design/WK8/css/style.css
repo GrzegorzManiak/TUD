@@ -1,0 +1,146 @@
+:root {
+    --color-1: #BDBBB9;
+    --color-2: #464141;
+    --color-3: #777777;
+    --color-4: #FFFFFF;
+    --color-5: #364F6B;
+    --color-6: #C0BFBE;
+    --color-7: #F5F5F5;
+}
+
+body {
+    overflow-x: hidden;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-6);
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+nav {
+    margin-bottom: 1rem;
+    width: 100vw;
+    height: 3rem;
+    background-color: var(--color-1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+nav a {
+    font-family: sans-serif;
+    text-decoration: none;
+    color: var(--color-2);
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    height: 3rem;
+    display: flex;
+    float: left;
+    list-style-type: none;
+    margin: 0 1rem 0 0;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+nav li.active {
+    padding: 0 1rem 0 1rem;
+    background-color: var(--color-5);
+    width: auto;
+}
+
+nav li.active a {
+    color: var(--color-7);
+}
+
+nav li:hover {
+    padding: 0 1rem 0 1rem;
+    transform: scale(1.05);
+    background-color: var(--color-5);
+}
+
+nav li:hover>a {
+    color: var(--color-7);
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.centeredHeading {
+    text-align: center;
+}
+
+#container {
+    background-color: var(--color-7);
+    border-radius: 1rem;
+    max-width: 90%;
+}
+
+#container h1 {
+    font-size: 1.3rem;
+}
+
+section {
+    display: flex;
+    padding: 1.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+section div {
+    background-color: var(--color-1);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.3rem;
+}
+
+section div div a img {
+    width: 15rem;
+    height: auto;
+}
+
+section div div h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.card {
+    box-shadow: 0.5rem 0.5rem 0.4rem 0rem var(--color-2);
+}
+
+blockquote {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.centeredImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {}
+
+form input {}
+
+footer {
+    display: flex;
+    background-color: var(--color-2);
+    width: 100vw;
+    justify-content: center;
+}
+
+footer h4 {
+    color: var(--color-7);
+}

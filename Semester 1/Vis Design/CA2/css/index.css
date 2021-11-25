@@ -129,6 +129,7 @@
 }
 
 #pageIndicator {
+    z-index: 5000;
     position: fixed;
     bottom: 1rem;
 }
@@ -147,7 +148,7 @@
 }
 
 .pageIndicatorElement:active {
-    transform: scale(0.95);
+    transform: scale(0.8);
 }
 
 .pageIndicatorElementActive {
