@@ -107,14 +107,14 @@ const imgs = {
     '1': { 
         img: './imgs/aboutus/2.jpg', 
         elem: undefined,
-        name:'',
+        name:'Grzegorz',
         bio: '' 
     },
     '2': { 
         img: './imgs/aboutus/3.jpg', 
         elem: undefined,
-        name:'',
-        bio: '' 
+        name:'Moyin',
+        bio: 'My name is Moyin Olusona. I am 17 years old and am in my first year of college. I went to St. Louis High school. My favourite subjects were English and Geography. I like to read and watch tv and movies.' 
     },
     '3': { 
         img: './imgs/aboutus/4.jpg', 
@@ -135,7 +135,8 @@ function addCarouselItems() {
     let carousel = document.getElementById('carousel');
 
     Object.keys(imgs).forEach((key, i) => {
-        let img = document.createElement('img');
+        let img = document.createElement('div');
+        let innerimg = document.createElement('img');
         img.src = imgs[key].img;
 
         if (i == 0) {
@@ -147,7 +148,10 @@ function addCarouselItems() {
         } else if (i == 2) {
             img.className = 'scaleOutToRight';
             img.id = 'carouselRight';
-        } else stack = [img, ...stack]
+        } else {
+            stack = [img, ...stack];
+            img.className = 'invisible';
+        }
 
         imgs[key].elem = img;
         carousel.appendChild(img);
@@ -175,7 +179,7 @@ function addCarouselInteractions() {
                 elem.className = 'scaleInFromLeft';
 
                 //set 'from' to left since the user clicked on the left most img
-                from = 'left';
+                from = 'Left';
             }
 
             //If the image from the right is clicked
@@ -184,7 +188,7 @@ function addCarouselInteractions() {
                 elem.className = 'scaleInFromRight';
 
                 //set 'from' to right since the user clicked on the right most img
-                from = 'right';
+                from = 'Right';
             }
 
             //The image that just got clicked is now in the middle
@@ -195,40 +199,42 @@ function addCarouselInteractions() {
 
             //Move the center image in the correct direction
             switch (from) {
-                case 'left': //move the img to the right
+                case 'Left': //move the img to the right
+                    //If theres an image to the right, move it behind the center
                     if (right) {
                         right.id = '';
-                        right.className = 'moveCenterFromRight';
-                        stack = [...stack, right];
+                        right.className = 'moveCenterFromRight'; //animate the move
+                        stack = [...stack, right]; //add the img to the stack
                     }
 
-                    cs.id = 'carouselRight';
-                    cs.className = 'scaleOutToRight';
-                    left = document.getElementById('carouselLeft');
-
-                    if (!left) {
-                        stack[0].className = 'moveLeftFromCenter';
-                        stack[0].id = 'carouselLeft';
-                        stack.shift();
+                    if (!document.getElementById('carouselLeft')) {
+                        stack[0].className = 'moveLeftFromCenter'; //animate the move
+                        stack[0].id = 'carouselLeft'; //lable the imgs position
+                        stack.shift(); //remove the img from the stack
                     }
+
+                    cs.id = 'carouselRight'; //lable the imgs position
+                    cs.className = 'scaleOutToRight'; //animate the move
+
                     break;
 
-                case 'right': // move the img to the left
+                case 'Right': // move the img to the left
+                    //If theres an image to the left, move it behind the center
                     if (left) {
                         left.id = '';
-                        left.className = 'moveCenterFromLeft';
-                        stack = [left, ...stack];
+                        left.className = 'moveCenterFromLeft'; //animate the move
+                        stack = [left, ...stack]; //add the img to the stack
                     }
 
-                    cs.id = 'carouselLeft';
-                    cs.className = 'scaleOutToLeft';
-                    right = document.getElementById('carouselRight');
-
-                    if (!right) {
-                        stack[stack.length - 1].className = 'moveRightFromCenter';
-                        stack[stack.length - 1].id = 'carouselRight';
-                        stack.pop();
+                    if (!document.getElementById('carouselRight')) {
+                        stack[stack.length - 1].className = 'moveRightFromCenter'; //animate the move
+                        stack[stack.length - 1].id = 'carouselRight'; //lable the imgs position
+                        stack.pop();  //remove the img from the stack
                     }
+
+                    cs.id = 'carouselLeft'; //lable the imgs position
+                    cs.className = 'scaleOutToLeft'; //animate the move
+
                     break;
             }
         });
