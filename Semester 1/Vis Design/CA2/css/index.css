@@ -266,58 +266,12 @@
     animation: start 2s forwards ease;
 }
 
+/* LEFT */
+
 .scaleInFromLeft {
     z-index: 110;
     transform: scale(1);
     animation: scaleInFromLeft 2s forwards;
-}
-
-.scaleInFromRight {
-    z-index: 110;
-    transform: scale(1);
-    animation: scaleInFromRight 2s forwards;
-}
-
-.scaleOutToLeft {
-    z-index: 90;
-    transform: scale(1.15);
-    animation: scaleOutToLeft 2s forwards;
-}
-
-.scaleOutToRight {
-    z-index: 90;
-    transform: scale(1.15);
-    animation: scaleOutToRight 2s forwards;
-}
-
-.moveCenterFromLeft {
-    z-index: 70;
-    animation: moveCenterFromLeft 2s forwards;
-}
-
-.moveCenterFromRight {
-    z-index: 70;
-    animation: moveCenterFromRight 2s forwards;
-}
-
-.moveLeftFromCenter {
-    z-index: 70;
-    animation: moveLeftFromCenter 2s forwards;
-}
-
-.moveRightFromCenter {
-    z-index: 70;
-    animation: moveRightFromCenter 2s forwards;
-}
-
-@keyframes scaleInFromRight {
-    0% {
-        transform: scale(1) translateX(7rem) rotateY(160deg)
-    }
-    100% {
-        z-index: 100;
-        transform: scale(1.15) translateX(0) rotateY(0deg)
-    }
 }
 
 @keyframes scaleInFromLeft {
@@ -330,14 +284,10 @@
     }
 }
 
-@keyframes scaleOutToRight {
-    0% {
-        transform: scale(1.15) translateX(0) rotateY(0deg);
-    }
-    100% {
-        z-index: 90;
-        transform: scale(1) translateX(7rem) rotateY(160deg);
-    }
+.scaleOutToLeft {
+    z-index: 90;
+    transform: scale(1.15);
+    animation: scaleOutToLeft 2s forwards;
 }
 
 @keyframes scaleOutToLeft {
@@ -350,15 +300,9 @@
     }
 }
 
-@keyframes moveCenterFromRight {
-    0% {
-        opacity: 1.0;
-        transform: scale(1) translateX(7rem);
-    }
-    100% {
-        opacity: 0.0;
-        transform: scale(1) translateX(0rem) rotateY(160deg);
-    }
+.moveCenterFromLeft {
+    z-index: 70;
+    animation: moveCenterFromLeft 2s forwards;
 }
 
 @keyframes moveCenterFromLeft {
@@ -372,15 +316,9 @@
     }
 }
 
-@keyframes moveRightFromCenter {
-    0% {
-        opacity: 0.0;
-        transform: scale(0.5) translateX(0rem) rotateY(100deg);
-    }
-    100% {
-        opacity: 1.0;
-        transform: scale(1) translateX(7rem) rotateY(160deg);
-    }
+.moveLeftFromCenter {
+    z-index: 70;
+    animation: moveLeftFromCenter 2s forwards;
 }
 
 @keyframes moveLeftFromCenter {
@@ -391,6 +329,74 @@
     100% {
         opacity: 1.0;
         transform: scale(1) translateX(-7rem) rotateY(-160deg);
+    }
+}
+
+/* RIGHT */
+
+.scaleInFromRight {
+    z-index: 110;
+    transform: scale(1);
+    animation: scaleInFromRight 2s forwards;
+}
+
+@keyframes scaleInFromRight {
+    0% {
+        transform: scale(1) translateX(7rem) rotateY(160deg)
+    }
+    100% {
+        z-index: 100;
+        transform: scale(1.15) translateX(0) rotateY(0deg)
+    }
+}
+
+.scaleOutToRight {
+    z-index: 90;
+    transform: scale(1.15);
+    animation: scaleOutToRight 2s forwards;
+}
+
+@keyframes scaleOutToRight {
+    0% {
+        transform: scale(1.15) translateX(0) rotateY(0deg);
+    }
+    100% {
+        z-index: 90;
+        transform: scale(1) translateX(7rem) rotateY(160deg);
+    }
+}
+
+
+.moveCenterFromRight {
+    z-index: 70;
+    animation: moveRightFromCenter 2s forwards;
+    animation-direction: reverse;
+}
+
+@keyframes moveCenterFromRight {
+    0% {
+        opacity: 1.0;
+        transform: scale(1) translateX(7rem);
+    }
+    100% {
+        opacity: 0.0;
+        transform: scale(1) translateX(0rem) rotateY(160deg);
+    }
+}
+
+.moveRightFromCenter {
+    z-index: 70;
+    animation: moveRightFromCenter 2s forwards;
+}
+
+@keyframes moveRightFromCenter {
+    0% {
+        opacity: 0.0;
+        transform: scale(0.5) translateX(0rem) rotateY(100deg);
+    }
+    100% {
+        opacity: 1.0;
+        transform: scale(1) translateX(7rem) rotateY(160deg);
     }
 }
 

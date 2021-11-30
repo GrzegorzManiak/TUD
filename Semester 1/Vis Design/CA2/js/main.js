@@ -68,8 +68,6 @@ async function startScroll() {
         currentPage = 0,
         notScrolledFor = 0;
 
-    //window.scrollTo(0, 0);
-
     while (true) {
         // Get the current scroll position  
         let scroll = document.documentElement.scrollTop,
@@ -100,11 +98,36 @@ async function startScroll() {
 }
 
 const imgs = {
-    '0': { img: './imgs/aboutus/1.jpg', elem: undefined },
-    '1': { img: './imgs/aboutus/2.jpg', elem: undefined },
-    '2': { img: './imgs/aboutus/3.jpg', elem: undefined },
-    '3': { img: './imgs/aboutus/4.jpg', elem: undefined },
-    '4': { img: './imgs/aboutus/5.jpg', elem: undefined },
+    '0': { 
+        img: './imgs/aboutus/1.jpg', //The path to the image
+        elem: undefined, //Onece the image is loaded, this will be set to the image element
+        name:'', //The name of the group memeber
+        bio: '' //Their bio
+    },
+    '1': { 
+        img: './imgs/aboutus/2.jpg', 
+        elem: undefined,
+        name:'',
+        bio: '' 
+    },
+    '2': { 
+        img: './imgs/aboutus/3.jpg', 
+        elem: undefined,
+        name:'',
+        bio: '' 
+    },
+    '3': { 
+        img: './imgs/aboutus/4.jpg', 
+        elem: undefined,
+        name:'',
+        bio: '' 
+    },
+    '4': { 
+        img: './imgs/aboutus/5.jpg', 
+        elem: undefined,
+        name:'',
+        bio: '' 
+    },
 }
 
 //Carousel
@@ -117,13 +140,13 @@ function addCarouselItems() {
 
         if (i == 0) {
             img.className = 'scaleOutToLeft';
-            img.id = 'carouselLeft'
+            img.id = 'carouselLeft';
         } else if (i == 1) {
             img.className = 'carouselSelected';
             img.id = 'carouselCenter';
         } else if (i == 2) {
             img.className = 'scaleOutToRight';
-            img.id = 'carouselRight'
+            img.id = 'carouselRight';
         } else stack = [img, ...stack]
 
         imgs[key].elem = img;
@@ -140,25 +163,35 @@ function addCarouselInteractions() {
         let elem = imgs[key].elem;
 
         elem.addEventListener('click', () => {
+            //Which side did the uer click on?
             let from = '';
+
+            //This is the element currently in the middle of the carousel
             let cs = document.getElementById('carouselCenter');
 
             //If the image from the left is clicked
             if (elem.id == 'carouselLeft') {
+                //Aimate the image to scale in from the left hand side to the middle
                 elem.className = 'scaleInFromLeft';
-                elem.id = 'carouselCenter';
+
+                //set 'from' to left since the user clicked on the left most img
                 from = 'left';
             }
 
             //If the image from the right is clicked
             if (elem.id == 'carouselRight') {
+                //Aimate the image to scale in from the right hand side to the middle
                 elem.className = 'scaleInFromRight';
-                elem.id = 'carouselCenter';
+
+                //set 'from' to right since the user clicked on the right most img
                 from = 'right';
             }
 
-            let left = document.getElementById('carouselLeft'),
-                right = document.getElementById('carouselRight');
+            //The image that just got clicked is now in the middle
+            elem.id = 'carouselCenter';
+
+            let left = document.getElementById('carouselLeft'), // Gets the left most image
+                right = document.getElementById('carouselRight'); // Gets the right most image
 
             //Move the center image in the correct direction
             switch (from) {
@@ -171,9 +204,8 @@ function addCarouselInteractions() {
 
                     cs.id = 'carouselRight';
                     cs.className = 'scaleOutToRight';
-
-                    //Now we need to check if theres an img to replace the one we just moved
                     left = document.getElementById('carouselLeft');
+
                     if (!left) {
                         stack[0].className = 'moveLeftFromCenter';
                         stack[0].id = 'carouselLeft';
@@ -190,8 +222,8 @@ function addCarouselInteractions() {
 
                     cs.id = 'carouselLeft';
                     cs.className = 'scaleOutToLeft';
-
                     right = document.getElementById('carouselRight');
+
                     if (!right) {
                         stack[stack.length - 1].className = 'moveRightFromCenter';
                         stack[stack.length - 1].id = 'carouselRight';
