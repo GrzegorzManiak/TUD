@@ -1,0 +1,283 @@
+:root {
+    --col1:#B8CDF8;
+    --col2:#3D405B;
+    --col3:#E07A5F;
+    --col4:#FFFFFF;
+    --col5:#EEEEEE;
+    --col6:#81B29A;
+    --col7:#F2CC8F;
+}
+
+body {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--col1);
+    font-family: 'Bradley Hand', cursive;
+    font-weight: normal;
+    font-size: medium;
+    margin: 0;
+    align-items: center;
+}
+
+nav {
+    margin-bottom: 1rem;
+    width: 100vw;
+    height: 3rem;
+    background-color: var(--col3);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+nav a {
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 1em;
+    color: var(--col2);
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    height: 3rem;
+    display: flex;
+    float: left;
+    list-style-type: none;
+    margin: 0 1rem 0 0;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+nav li.active {
+    padding: 0 1rem 0 1rem;
+    background-color: var(--col2);
+    width: auto;
+}
+
+nav a.active {
+    color: var(--col4);
+}
+
+nav li:hover {
+    padding: 0 1rem 0 1rem;
+    transform: scale(1.05);
+    background-color: var(--col2);
+}
+
+nav li:hover>a {
+    color: var(--col4);
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+}
+
+#topContent {
+    width: 90vw;
+    height: auto;
+    background-color: var(--col5);
+}
+
+#topContent h1 {
+    color: var(--col2);
+    padding: 0;
+    margin: 0 0 1rem 0;
+    font-size: xx-large;
+}
+
+#topContent p {
+    color: var(--col2);
+    padding: 0;
+    margin: 0;
+    font-size: normal;
+}
+#col1 {
+    padding: 0;
+}
+#col1 > li {
+    width: 90%;
+    height: auto;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    border-radius: 1rem;
+    background-color: var(--col6);
+    list-style-type: none;
+}
+
+#col1 > li h2 {
+    color: var(--col2);
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0 0 1rem 0;
+    padding: 0;
+}
+
+#col1 > li > div > p {
+    color: var(--col2);
+    font-weight: normal;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.innerCard {
+    margin: 1rem 0 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.innerCard > div {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--col7);
+    width: 80%;
+}
+
+.innerCard > div > p {
+    color: var(--col2);
+    font-weight: bold;
+    font-size: normal;
+    margin: 0;
+    padding: 0;
+}
+
+#submenu {
+    min-width: 15rem;
+    margin: 1rem 0 0 0;
+}
+
+#submenu > div {
+    padding: 1rem;
+    width: auto;
+    height: auto;
+    border-radius: 1rem;
+    background-color: var(--col6);
+}
+
+#submenu p {
+    color: var(--col2);
+    font-weight: normal;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+#submenu h2 {
+    color: var(--col2);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+#submenu ol {
+    margin: 0;
+    padding: 1em;
+}
+
+#submenu li {
+    color: var(--col2);
+    font-weight: bold;
+    font-size: larger;
+    margin: 0;
+    padding: 0;
+}
+
+#submenu a {
+    color: var(--col2);
+    text-decoration: none;
+}
+
+#col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+
+#col > section {
+    padding: 1rem;
+
+}
+
+#col > section {
+    width: 45%;
+    min-width: 20rem;
+}
+
+.smallcontainer {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 30%;
+    height: 12rem;
+    background-color: var(--col6);
+    min-width: 15rem;
+}
+
+.smallcontainer > h2 {
+    color: var(--col2);
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.smallcontainer > p {
+    color: var(--col2);
+    font-weight: normal;
+    font-size: 1em;
+}
+
+#smallcontainer1 {
+    margin: 0.25rem;
+}
+
+#smallcontainer2 {
+    margin: 0.25rem;
+}
+
+#smallcontainer2 dd, #smallcontainer2 dt {
+    color: var(--col2);
+    font-weight: normal;
+    font-size: 1em;
+}
+
+#smallcontainer3 {
+    margin: 0.25rem;
+}
+
+#smallcontainer3 img {
+    width: 2rem;
+    height: auto;
+}
+
+#smallcontainer3 ul {
+    list-style-type: none;
+}
+
+#smallcontainer3 a {
+    color: var(--col2);
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+#smallcontainercontainer {
+    display: flex;
+    width: 90vw;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
