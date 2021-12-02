@@ -3,7 +3,9 @@ const pages = {
     'ui/ux': './uxui.html'
 }
 
-let currentPageName;
+let currentPageName,
+    scroll,
+    height;
 
 // Really basic sleep function.
 function sleep(ms) {
@@ -23,7 +25,7 @@ function currentPage(page) {
 function addElements(navID, selected) {
     // Get the navbar element
     let element = document.getElementById(navID);
-
+    
     // For each item in the Pages object
     Object.keys(pages).forEach((key) => {
         // create a bew LI element and a new P element
@@ -53,10 +55,8 @@ function addElements(navID, selected) {
 }
 
 function selectPageIndicator(num) {
-    let elements = [...document.getElementsByClassName('pageIndicatorElement')],
-        i = 0;
-
-    elements.forEach((elm) => {
+    let elements = [...document.getElementsByClassName('pageIndicatorElement')];
+    elements.forEach((elm, i) => {
         if (i == num && i < elements.length) elm.className = 'pageIndicatorElement pageIndicatorElementActive';
         else elm.className = 'pageIndicatorElement';
         i++;
@@ -66,12 +66,13 @@ function selectPageIndicator(num) {
 async function startScroll() {
     let prevPos = -1,
         currentPage = 0,
+        loaded = false,
         notScrolledFor = 0;
 
     while (true) {
         // Get the current scroll position  
-        let scroll = document.documentElement.scrollTop,
-            height = document.documentElement.clientHeight;
+        scroll = document.documentElement.scrollTop; // Scroll top dosent work on mobile?
+        height = document.documentElement.clientHeight;
 
         await sleep(5);
         let closerToPage = Math.round(scroll / height),
@@ -93,22 +94,32 @@ async function startScroll() {
         currentPage = Math.round(scroll / height);
         selectPageIndicator(currentPage);
 
+        if(currentPage == 1 && !loaded) {
+            await sleep(100);
+            addCarouselItems();
+            loaded = true;
+        }
+
         prevPos = scroll;
     }
 }
 
 const imgs = {
     '0': { 
-        img: './imgs/aboutus/1.jpg', //The path to the image
-        elem: undefined, //Onece the image is loaded, this will be set to the image element
-        name:'', //The name of the group memeber
-        bio: '' //Their bio
+        //The path to the image
+        img: './imgs/aboutus/1.jpg',
+        //Onece the image is loaded, this will be set to the image element
+        elem: undefined,
+        //The name of the group memeber
+        name:'Thomas',
+        //Their bio
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, laboris nisi ut aliquip ex ea commodo consequat.'
     },
     '1': { 
         img: './imgs/aboutus/2.jpg', 
         elem: undefined,
         name:'Grzegorz',
-        bio: '' 
+        bio: 'Hey, my name is Grzegorz Maniak, I\'m studying computing at TU Tallaght campus, I have a great interest in web and software development, I also enjoy the outdoors, I love to travel, camp and hike.' 
     },
     '2': { 
         img: './imgs/aboutus/3.jpg', 
@@ -119,42 +130,43 @@ const imgs = {
     '3': { 
         img: './imgs/aboutus/4.jpg', 
         elem: undefined,
-        name:'',
-        bio: '' 
-    },
-    '4': { 
-        img: './imgs/aboutus/5.jpg', 
-        elem: undefined,
-        name:'',
-        bio: '' 
+        name:'Jan',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, laboris nisi ut aliquip ex ea commodo consequat.' 
     },
 }
 
 //Carousel
 function addCarouselItems() {
     let carousel = document.getElementById('carousel');
+    carousel.className = 'carouselVisable';
 
     Object.keys(imgs).forEach((key, i) => {
-        let img = document.createElement('div');
-        let innerimg = document.createElement('img');
-        img.src = imgs[key].img;
+        //create the parent element for this img, heading and bio
+        let div = document.createElement('div');
+
+        //add text to the div
+        div.innerHTML = `<h2 class='carouselText'>${imgs[key].name}</h2><img class='carouselImg' src="${imgs[key].img}" alt="${imgs[key].name}"><p class='carouselText'>${imgs[key].bio}</p>`;
+        
+        //give the div a name
+        div.name = key;
 
         if (i == 0) {
-            img.className = 'scaleOutToLeft';
-            img.id = 'carouselLeft';
+            div.className = 'scaleOutToLeft';
+            div.id = 'carouselLeft';
         } else if (i == 1) {
-            img.className = 'carouselSelected';
-            img.id = 'carouselCenter';
+            div.className = 'carouselSelected';
+            div.id = 'carouselCenter';
+            div.getElementsByTagName('img')[0].useMap = '#aboutus';
         } else if (i == 2) {
-            img.className = 'scaleOutToRight';
-            img.id = 'carouselRight';
+            div.className = 'scaleOutToRight';
+            div.id = 'carouselRight';
         } else {
-            stack = [img, ...stack];
-            img.className = 'invisible';
+            stack = [div, ...stack];
+            div.className = 'invisible';
         }
 
-        imgs[key].elem = img;
-        carousel.appendChild(img);
+        imgs[key].elem = div;
+        carousel.appendChild(div);
     });
 
     addCarouselInteractions();
@@ -164,79 +176,111 @@ let stack = [];
 
 function addCarouselInteractions() {
     Object.keys(imgs).forEach((key) => {
-        let elem = imgs[key].elem;
-
-        elem.addEventListener('click', () => {
-            //Which side did the uer click on?
-            let from = '';
-
-            //This is the element currently in the middle of the carousel
-            let cs = document.getElementById('carouselCenter');
-
-            //If the image from the left is clicked
-            if (elem.id == 'carouselLeft') {
-                //Aimate the image to scale in from the left hand side to the middle
-                elem.className = 'scaleInFromLeft';
-
-                //set 'from' to left since the user clicked on the left most img
-                from = 'Left';
-            }
-
-            //If the image from the right is clicked
-            if (elem.id == 'carouselRight') {
-                //Aimate the image to scale in from the right hand side to the middle
-                elem.className = 'scaleInFromRight';
-
-                //set 'from' to right since the user clicked on the right most img
-                from = 'Right';
-            }
-
-            //The image that just got clicked is now in the middle
-            elem.id = 'carouselCenter';
-
-            let left = document.getElementById('carouselLeft'), // Gets the left most image
-                right = document.getElementById('carouselRight'); // Gets the right most image
-
-            //Move the center image in the correct direction
-            switch (from) {
-                case 'Left': //move the img to the right
-                    //If theres an image to the right, move it behind the center
-                    if (right) {
-                        right.id = '';
-                        right.className = 'moveCenterFromRight'; //animate the move
-                        stack = [...stack, right]; //add the img to the stack
-                    }
-
-                    if (!document.getElementById('carouselLeft')) {
-                        stack[0].className = 'moveLeftFromCenter'; //animate the move
-                        stack[0].id = 'carouselLeft'; //lable the imgs position
-                        stack.shift(); //remove the img from the stack
-                    }
-
-                    cs.id = 'carouselRight'; //lable the imgs position
-                    cs.className = 'scaleOutToRight'; //animate the move
-
-                    break;
-
-                case 'Right': // move the img to the left
-                    //If theres an image to the left, move it behind the center
-                    if (left) {
-                        left.id = '';
-                        left.className = 'moveCenterFromLeft'; //animate the move
-                        stack = [left, ...stack]; //add the img to the stack
-                    }
-
-                    if (!document.getElementById('carouselRight')) {
-                        stack[stack.length - 1].className = 'moveRightFromCenter'; //animate the move
-                        stack[stack.length - 1].id = 'carouselRight'; //lable the imgs position
-                        stack.pop();  //remove the img from the stack
-                    }
-
-                    cs.id = 'carouselLeft'; //lable the imgs position
-                    cs.className = 'scaleOutToLeft'; //animate the move
-
-                    break;
-            }
+        imgs[key].elem.addEventListener('click', (elm) => {
+            carouselScroll(imgs[key].elem);
         });
     });
 }
+
+function carouselScroll(elem) {
+    //Which side did the uer click on?
+    let from = '';
+
+    //This is the element currently in the middle of the carousel
+    let cs = document.getElementById('carouselCenter');
+    cs.getElementsByTagName('img')[0].useMap = '';
+
+    //If the image from the left is clicked
+    if (elem.id == 'carouselLeft') {
+        //Aimate the image to scale in from the left hand side to the middle
+        elem.className = 'scaleInFromLeft';
+
+        //set 'from' to left since the user clicked on the left most img
+        from = 'Left';
+    }
+
+    //If the image from the right is clicked
+    if (elem.id == 'carouselRight') {
+        //Aimate the image to scale in from the right hand side to the middle
+        elem.className = 'scaleInFromRight';
+
+        //set 'from' to right since the user clicked on the right most img
+        from = 'Right';
+    }
+
+    //The image that just got clicked is now in the middle
+    elem.id = 'carouselCenter';
+    elem.getElementsByTagName('img')[0].useMap = '#aboutus';
+
+    let left = document.getElementById('carouselLeft'), // Gets the left most image
+        right = document.getElementById('carouselRight'); // Gets the right most image
+
+    //Move the center image in the correct direction
+    switch (from) {
+        case 'Left': //move the img to the right
+            //If theres an image to the right, move it behind the center
+            if (right) {
+                right.id = '';
+                right.className = 'moveCenterFromRight'; //animate the move
+                stack = [...stack, right]; //add the img to the stack
+            }
+
+            if (!document.getElementById('carouselLeft')) {
+                stack[0].className = 'moveLeftFromCenter'; //animate the move
+                stack[0].id = 'carouselLeft'; //lable the imgs position
+                stack.shift(); //remove the img from the stack
+            }
+
+            cs.id = 'carouselRight'; //lable the imgs position
+            cs.className = 'scaleOutToRight'; //animate the move
+
+            break;
+
+        case 'Right': // move the img to the left
+            //If theres an image to the left, move it behind the center
+            if (left) {
+                left.id = '';
+                left.className = 'moveCenterFromLeft'; //animate the move
+                stack = [left, ...stack]; //add the img to the stack
+            }
+
+            if (!document.getElementById('carouselRight')) {
+                stack[stack.length - 1].className = 'moveRightFromCenter'; //animate the move
+                stack[stack.length - 1].id = 'carouselRight'; //lable the imgs position
+                stack.pop();  //remove the img from the stack
+            }
+
+            cs.id = 'carouselLeft'; //lable the imgs position
+            cs.className = 'scaleOutToLeft'; //animate the move
+
+            break;
+    }
+}
+
+function carousel(side) {
+    switch (side) {
+        case 'left':
+            carouselScroll(document.getElementById('carouselLeft'));
+            break;
+
+        case 'right':
+            carouselScroll(document.getElementById('carouselRight'));
+            break;
+    }
+}
+
+let hamburgerBtn = document.getElementById('hamburgerMenuBtn');
+hamburgerBtn.addEventListener('click', () => {
+    let hamburgerContent = document.getElementById('hamburgerContent');
+    switch(hamburgerBtn.checked) {
+        case true:
+            hamburgerContent.className = 'hamburgerContentVisible';
+            document.documentElement.className = 'htmlStopScroll';
+            break;
+
+        case false:
+            hamburgerContent.className = 'hamburgerContentInvisible';
+            document.documentElement.className = '';
+            break;
+    }
+});

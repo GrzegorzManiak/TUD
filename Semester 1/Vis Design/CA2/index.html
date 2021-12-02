@@ -17,18 +17,35 @@
 
 <body>
     <nav class='full-width flex-vertical-horizontal'>
-        <div>
+        <div class='logo'>
             <p>
                 Group 17
             </p>
         </div>
         <ul id='navElements'>
         </ul>
+        <div id='hamburgerMenu'>
+            <div id='hamburgerBtn'>
+                <input type="checkbox" id='hamburgerMenuBtn'>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id='hamburgerContent' class='hamburgerContentInvisible'>
+                <div class='logo'>
+                    <p class='logoHamburger'>
+                        Group 17
+                    </p>
+                </div>
+                <ul id='hamburgerElements'>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <div id='pageIndicator' class='flex-row'>
         <div onclick="window.location='#splashContent'" class='pageIndicatorElement pageIndicatorElementActive'></div>
-        <div onclick="window.location='#content2'" class='pageIndicatorElement'></div>
+        <div onclick="window.location='#aboutUs'" class='pageIndicatorElement'></div>
         <div onclick="window.location='#content3'" class='pageIndicatorElement'></div>
     </div>
 
@@ -54,25 +71,21 @@
     </section>
 
     <div id='mainContent' class='flex-column flex-vertical-horizontal'>
-        <section class='full-height' id='content2'>
-            <div class='full-height flex-column flex-flex-vertical-horizontal' id='aboutUs'>
+        <section class='full-height' id='aboutUs'>
+            <div class='full-height flex-flex-vertical-horizontal'>
                 <h1>
                     ABOUT US
                 </h1>
                 <div class='aboutusSelector'>
                     <map name="aboutus">
-                        <area shape="rect" coords="0, 0, 250, 500" alt="left" href="#left">
-                        <area shape="rect" coords="0, 0, 500, 500" alt="right" href="#right">
+                        <area onclick="carousel('left')" shape="rect" coords="0, 0, 100%, 100%" alt="left" href="#left">
+                        <area onclick="carousel('right')" shape="rect" coords="0, 0, 200%, 200%" alt="right" href="#right">
                     </map>
-                    <div id='carousel' class=''>
-
-                    </div>
-                    <p>
-                        Voluptate in ipsum deserunt duis sit pariatur esse. Voluptate amet magna excepteur do laboris adipisicing eu sunt sint consectetur dolor est eiusmod. Adipisicing eu enim non in nostrud laboris tempor commodo ullamco eiusmod aliqua quis do.
-                    </p>
+                    <div id='carousel' class='carouselInvisable'></div>
                 </div>
             </div>
         </section>
+
         <section class='full-height' id='content3'>
         </section>
     </div>
@@ -86,8 +99,8 @@
     <script>
         currentPage('home');
         addElements('navElements', 'nav-current');
+        addElements('hamburgerElements', 'nav-current');
         startScroll();
-        addCarouselItems()
     </script>
 </body>
 

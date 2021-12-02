@@ -1,9 +1,84 @@
+@media screen and (max-width: 450px) {
+    #navElements {
+        display: none;
+    }
+
+    #hamburgerMenu {
+        display: visible;
+    }
+
+    #aboutUs h1 {
+        font-size: 2.5rem;
+    }
+
+    .aboutusSelector {
+        width: 65%;
+    }
+
+    h2.carouselText {
+        font-size: 1rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+
+    p.carouselText {
+        font-size: 0.9rem;
+    }
+
+    :root {
+        --car-distance-pos: 2rem;
+        --car-distance-neg: -2rem;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    #aboutUs h1 {
+        font-size: 4rem;
+    }
+
+    #hamburgerMenu {
+        display: none;
+    }
+
+    .aboutusSelector {
+        width: 50%;
+    }
+
+    h2.carouselText {
+        font-size: 1.5rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+
+    :root {
+        --car-distance-pos: 5rem;
+        --car-distance-neg: -5rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #aboutUs h1 {
+        font-size: 6rem;
+    }
+
+    .aboutusSelector {
+        width: 25rem;
+    }
+
+    h2.carouselText {
+        font-size: 2rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+
+    :root {
+        --car-distance-pos: 7rem;
+        --car-distance-neg: -7rem;
+    }
+}
+
 :root {
-    --font-color: #22223B;
-    --font-color-light: #4659DC;
     --page-indicator: #cdcbca;
     --page-indicator-active: #22223B;
 }
+
 
 #splashContent {
     display: flex;
@@ -42,7 +117,6 @@
 .splashTextContent p b a {
     color: var(--font-color-light);
 }
-
 
 /*
     Landing squares
@@ -129,7 +203,7 @@
 }
 
 #pageIndicator {
-    z-index: 5000;
+    z-index: 195;
     position: fixed;
     bottom: 1rem;
 }
@@ -152,6 +226,7 @@
 }
 
 .pageIndicatorElementActive {
+    transform: scale(1.25);
     background-color: var(--page-indicator-active);
 }
 
@@ -160,31 +235,25 @@
     About us section
 */
 
-#aboutUs {
-    padding: 1rem;
+#aboutUs > div {
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} 
 
 #aboutUs h1 {
-    font-size: 5rem;
     font-weight: 900;
     color: var(--font-color);
     margin: 0;
     padding: 0;
-    width: 75%;
     text-align: center;
 }
 
-.aboutusSelector {
-    width: 50%
-}
-
 .aboutusSelector img {
-    width: 100%;
     height: auto;
+    width: 100%;
     border-radius: 0.5rem;
 }
 
@@ -252,9 +321,18 @@
 #carousel {
     display: grid;
     transform: scale(0.9);
+    transition: all 2s ease;
 }
 
-#carousel img {
+.carouselInvisable {
+    opacity: 0;
+}
+
+.carouselVisable {
+    opacity: 1;
+}
+
+#carousel div {
     grid-row: 1;
     grid-column: 1;
     transition: all 2s ease;
@@ -283,7 +361,7 @@
 
 @keyframes scaleInFromLeft {
     0% {
-        transform: scale(1) translateX(-7rem) rotateY(-180deg)
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg)
     }
     100% {
         transform: scale(1.15) translateX(0);
@@ -301,7 +379,7 @@
         transform: scale(1.15) translateX(0);
     }
     100% {
-        transform: scale(1) translateX(-7rem) rotateY(-180deg);
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
     }
 }
 
@@ -313,7 +391,7 @@
 @keyframes moveCenterFromLeft {
     0% {
         opacity: 1.0;
-        transform: scale(1) translateX(-7rem) rotateY(-180deg);
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
     }
     100% {
         opacity: 0.0;
@@ -333,7 +411,7 @@
     }
     100% {
         opacity: 1.0;
-        transform: scale(1) translateX(-7rem) rotateY(-180deg);
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
     }
 }
 
@@ -346,7 +424,7 @@
 
 @keyframes scaleInFromRight {
     0% {
-        transform: scale(1) translateX(7rem) rotateY(180deg);
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
     }
     100% {
         transform: scale(1.15) translateX(0);
@@ -364,7 +442,7 @@
         transform: scale(1.15) translateX(0);
     }
     100% {
-        transform: scale(1) translateX(7rem) rotateY(180deg);
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
     }
 }
 
@@ -377,7 +455,7 @@
 @keyframes moveCenterFromRight {
     0% {
         opacity: 1.0;
-        transform: scale(1) translateX(7rem) rotateY(-180deg);
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(-180deg);
     }
     100% {
         opacity: 0.0;
@@ -397,6 +475,45 @@
     }
     100% {
         opacity: 1.0;
-        transform: scale(1) translateX(7rem) rotateY(180deg);
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
     }
+}
+
+/* TEXT */
+
+.carouselText {
+    transition: all 2s ease;
+}
+
+h2.carouselText {
+    font-weight: 800;
+    color: var(--font-color);
+}
+
+#carouselLeft .carouselText {
+    opacity: 0;
+} 
+
+#carouselRight .carouselText {
+    opacity: 0;
+}
+
+#carouselCenter .carouselText {
+    opacity: 1;
+}
+
+#carouselCenter .carouselImg {
+    box-shadow: 0 0 1rem 0.5rem #00000030;
+}
+
+.carouselImg { 
+    transition: all 0.5s ease;
+}
+
+.carouselImg:hover {
+    transform: scale(1.02);
+}
+
+.carouselImg:active {
+    transform: scale(0.98);
 }

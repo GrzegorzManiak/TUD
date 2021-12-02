@@ -14,9 +14,31 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <nav class='full-width flex-vertical-horizontal gradient'>
+        <nav class='full-width flex-vertical-horizontal'>
+            <div class='logo'>
+                <p>
+                    Group 17
+                </p>
+            </div>
             <ul id='navElements'>
             </ul>
+            <div id='hamburgerMenu'>
+                <div id='hamburgerBtn'>
+                    <input type="checkbox" id='hamburgerMenuBtn'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id='hamburgerContent' class='hamburgerContentInvisible'>
+                    <div class='logo'>
+                        <p class='logoHamburger'>
+                            Group 17
+                        </p>
+                    </div>
+                    <ul id='hamburgerElements'>
+                    </ul>
+                </div>
+            </div>
         </nav>
 
         <div id='mainContent' class='flex-column'>
@@ -32,6 +54,7 @@
         <script>
             currentPage('ui/ux');
             addElements('navElements', 'nav-current');
+            addElements('hamburgerElements', 'nav-current');
         </script>
     </body>
 </html>

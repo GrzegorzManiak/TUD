@@ -1,4 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap');
+
+@media screen and (max-width: 450px) {
+    #navElements {
+        display: none;
+    }
+
+    #hamburgerMenu {
+        display: visible;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    #hamburgerMenu {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+}
+
 :root {
     --max-width: 70rem;
     --body-color: #f4f1ef;
@@ -17,6 +38,8 @@
     --footer-height: 4rem;
     --footer-color: #292929;
     --scroll-bar-color: #22223B;
+    --font-color: #22223B;
+    --font-color-light: #4659DC;
     --scroll-bar-width: 0.5rem;
 }
 
@@ -25,6 +48,10 @@ html {
     /* Removes the horizontal scroll bar */
     overflow-x: hidden;
     margin: 0;
+}
+
+.htmlStopScroll {
+    overflow: hidden;
 }
 
 body {
@@ -47,13 +74,11 @@ body {
 
 #mainContent section {
     width: 100vw;
+    height: 100vh;
     max-width: var(--max-width);
+    padding: 0;
+    margin: 0;
 }
-
-#mainContent section div {
-    padding: 1rem;
-}
-
 
 /*
     Navigation Bar
@@ -71,22 +96,26 @@ nav {
     /* Sets the background color */
     background-color: var(--nav-bar-color);
     /* makes the nav bar appear on top of everything */
-    z-index: 1000;
+    z-index: 200;
 }
 
-nav div {
-    padding: 2rem;
+div.logo {
+    padding: 0 0 0 2rem;
     position: absolute;
     left: 0;
 }
 
-nav div p {
+div.logo p {
     color: var(--nav-bar-font-color);
     font-size: 1.3rem;
     font-weight: 900;
 }
 
-nav ul {
+.logoHamburger {
+    color: var(--body-color)!important;
+}
+
+nav > ul {
     position: absolute;
     margin: 0;
     padding: 0;
@@ -130,6 +159,108 @@ nav ul li:active {
     font-weight: 900;
     /* Im using a border insted of text-decoration as it gives me more controll over the underline*/
     border-bottom: 0.1rem solid var(--nav-bar-font-color);
+}
+
+/*
+    Hamburger Menu
+*/
+
+#hamburgerBtn {
+    display: grid;
+    height: 1rem;
+    position: absolute;
+    padding: 0 2rem 0 0;
+    margin-top: -0.5rem;
+    right: 0;
+}
+
+/* There is 3 seperate classes for lines as they all will have diffrent animations */
+
+#hamburgerMenu span {
+    z-index: 255;
+    border-radius: 0.2rem;
+    margin: 0.1rem;
+    width: 2rem;
+    height: 0.3rem;
+    background-color: var(--font-color);
+}
+
+#hamburgerMenuBtn {
+    z-index: 270;
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+}
+
+/* First line in the hamburger menu */
+#hamburgerMenuBtn:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translateY(0.40rem);
+}
+
+/* Seccond line in the hamburger menu */
+#hamburgerMenuBtn:checked ~ span:nth-child(3) {
+    transform: scale(0);
+}
+
+/* Third line of hamburger menu */
+#hamburgerMenuBtn:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translateY(-0.50rem);
+}
+
+#hamburgerMenuBtn:checked ~ span {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin: 0rem;
+    background-color: var(--body-color);
+}
+
+#hamburgerMenuBtn ~ span {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin: 0.1rem;
+    transform: rotate(0) translateY(0) scale(1);
+}
+
+#hamburgerContent {
+    top: 0;
+    width: 100vw;
+    z-index: 250;
+    height: 100vh;
+    position: absolute;
+    background-color: var(--nav-bar-font-color);
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hamburgerContentVisible {
+    left: 0;
+}
+
+.hamburgerContentInvisible {
+    left:100%;
+}
+
+#hamburgerElements {
+    margin: 5rem 0 0 0;
+    padding-left: 2rem;
+}
+
+#hamburgerElements li{
+    float: none;
+}
+
+#hamburgerElements li p {
+    font-size: 2.5rem;
+    color: var(--body-color);
+    margin: 0.2rem 0 0 0;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#hamburgerElements li p:hover {
+    transform: scale(1.05);
+}
+
+#hamburgerElements li p:active {
+    transform: scale(0.95);
 }
 
 
