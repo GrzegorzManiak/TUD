@@ -314,3 +314,59 @@ section {
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+#formContainer {
+    padding: 0.5rem;
+}
+
+#formContainer div h2 {
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 1rem;
+    height: 3rem!important;
+    border-radius: 0.5rem;
+    border: 1px solid var(--col2);
+}
+
+input#fname {
+    width: 50%;
+    margin-top: 1rem;
+    border: 1px solid var(--col2);
+}
+
+input#lname {
+    width: 50%;
+    margin-top: 1rem;
+    border: 1px solid var(--col2);
+}
+
+input#email {
+    width: 50%;
+    margin-top: 1rem;
+    border: 1px solid var(--col2);
+}
+
+.listPoint{
+    border-radius: 1rem;
+}
+
+#blogcontainer {
+    border-radius: 1rem;
+}
+
+#blogcontainer ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+blockquote{
+    padding: 0;
+}
+
+nav a:hover {
+    color: var(--col4);
+}
