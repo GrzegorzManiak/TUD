@@ -2,31 +2,25 @@
     #navElements {
         display: none;
     }
-
     #hamburgerMenu {
         display: visible;
     }
-
     #aboutUs h1 {
         font-size: 2.5rem;
     }
-
     .aboutusSelector {
         width: 65%;
     }
-
     h2.carouselText {
         font-size: 1rem;
         margin: 1rem 0 0.5rem 0;
     }
-
     p.carouselText {
         font-size: 0.9rem;
     }
-
-    :root {
-        --car-distance-pos: 2rem;
-        --car-distance-neg: -2rem;
+     :root {
+        --car-distance-pos: 3rem;
+        --car-distance-neg: -3rem;
     }
 }
 
@@ -34,21 +28,17 @@
     #aboutUs h1 {
         font-size: 4rem;
     }
-
     #hamburgerMenu {
         display: none;
     }
-
     .aboutusSelector {
         width: 50%;
     }
-
     h2.carouselText {
         font-size: 1.5rem;
         margin: 1rem 0 0.5rem 0;
     }
-
-    :root {
+     :root {
         --car-distance-pos: 5rem;
         --car-distance-neg: -5rem;
     }
@@ -58,17 +48,14 @@
     #aboutUs h1 {
         font-size: 6rem;
     }
-
     .aboutusSelector {
         width: 25rem;
     }
-
     h2.carouselText {
         font-size: 2rem;
         margin: 1rem 0 0.5rem 0;
     }
-
-    :root {
+     :root {
         --car-distance-pos: 7rem;
         --car-distance-neg: -7rem;
     }
@@ -78,7 +65,6 @@
     --page-indicator: #cdcbca;
     --page-indicator-active: #22223B;
 }
-
 
 #splashContent {
     display: flex;
@@ -117,6 +103,7 @@
 .splashTextContent p b a {
     color: var(--font-color-light);
 }
+
 
 /*
     Landing squares
@@ -235,13 +222,13 @@
     About us section
 */
 
-#aboutUs > div {
+#aboutUs>div {
     padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-} 
+}
 
 #aboutUs h1 {
     font-weight: 900;
@@ -310,9 +297,9 @@
 
     the z-index is like BOMDAS, it's an order of precedence, the higher the number, the higher the priority.
     eg you could have this.
-
-    <img style='z-index: 50' src='./imgs/img1.png'>
-    <img style='z-index: 100' src='./imgs/img2.png'>
+    
+    <img style='z-index: 50; position:absolute; top:0; left:0' src='./imgs/aboutus/1.jpg'>
+    <img style='z-index: 100; position:absolute; top:0; left:0' src='./imgs/aboutus/2.jpg'>
 
     if IMG1 overlapped (EG if both had their position's set to absolute) onto IMG2 you'd expect IMG1 to still be visible,
     but since we have a higher z-index set for IMG2, The image that will still be visible is IMG2.
@@ -335,7 +322,7 @@
 #carousel div {
     grid-row: 1;
     grid-column: 1;
-    transition: all 2s ease;
+    transition: all 2000ms ease 7.47774ms;
 }
 
 .carouselSelected {
@@ -351,6 +338,7 @@
         transform: scale(1.15);
     }
 }
+
 
 /* LEFT */
 
@@ -415,6 +403,7 @@
     }
 }
 
+
 /* RIGHT */
 
 .scaleInFromRight {
@@ -434,7 +423,7 @@
 .scaleOutToRight {
     z-index: 90;
     transform: scale(1.15);
-    animation: scaleOutToRight 2s forwards;
+    animation: 2000ms ease 0ms 1 normal forwards running scaleOutToRight;
 }
 
 @keyframes scaleOutToRight {
@@ -445,7 +434,6 @@
         transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
     }
 }
-
 
 .moveCenterFromRight {
     z-index: 80;
@@ -479,6 +467,7 @@
     }
 }
 
+
 /* TEXT */
 
 .carouselText {
@@ -492,7 +481,7 @@ h2.carouselText {
 
 #carouselLeft .carouselText {
     opacity: 0;
-} 
+}
 
 #carouselRight .carouselText {
     opacity: 0;
@@ -506,7 +495,7 @@ h2.carouselText {
     box-shadow: 0 0 1rem 0.5rem #00000030;
 }
 
-.carouselImg { 
+.carouselImg {
     transition: all 0.5s ease;
 }
 
