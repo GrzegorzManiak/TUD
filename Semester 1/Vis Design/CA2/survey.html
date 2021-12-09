@@ -1,0 +1,109 @@
+<html class="htmlStopScroll">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--God, for some reason, removing minimum-scale breaks the site completly-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+    <!---Title of the web page-->
+    <title>Survey | Group 17</title>
+
+    <!--The description of the site, Metadata, used for SEO-->
+    <meta name="description" content="Group 17 Project for VDUX">
+
+    <!--General CSS Used by all pages-->
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!--CSS Only relative to this page-->
+    <link rel="stylesheet" href="./css/survey.css">
+</head>
+
+<body>
+    <!--
+        Navigation Bar
+    -->
+    <nav class='full-width flex-vertical-horizontal'>
+        <!-- I was going to make a logo, but got lazy -->
+        <div id='navLogo' class='logoColorMenuClosed'>
+            <p>
+                Group 17
+            </p>
+        </div>
+
+        <!-- This element will have all nav elements added to it -->
+        <!-- I done this to save me copy and pasteing, etc. -->
+        <ul id='navElements'>
+        </ul>
+
+        <!-- This is the hamburger menu that shows up once the page gets small enough -->
+        <!-- and the nav bar elements dont fit on the page any more -->
+        <div id='hamburgerMenu'>
+
+            <!-- This is the acutal button that shows up in the top right of the page -->
+            <div id='hamburgerBtn'>
+                <!-- This uses a checkbox with absoulute positioning -->
+                <!-- which saves on having to use javascript -->
+                <input type="checkbox" id='hamburgerMenuBtn'>
+                <!-- the span tag is usefull, as it has 0 predefined styles. -->
+                <!-- it dose nothing by it self. -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- This is the menu that slides out if the check box is clicked -->
+            <div id='hamburgerContent' class='hamburgerContentInvisible'>
+                <ul id='hamburgerElements'>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--
+        End of Navigation Bar
+    -->
+
+    <!--
+        Main content
+    -->
+    <div id="mainContent" class="flex-column flex-vertical-horizontal">
+        <!-- Survey, microsoft allows and provides embeds -->
+        <iframe loading="lazy" src="https://forms.office.com/Pages/ResponsePage.aspx?id=yxdjdkjpX06M7Nq8ji_V2hWF6HktqLlKjqL3UJ5sYaFUMUtFRE5HUFFKWExTVUxaQ1pMMFFKUFhDMS4u&embed=false" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen webkitallowfullscreen
+            mozallowfullscreen msallowfullscreen> </iframe>
+    </div>
+    <!--
+        End of Main content
+    -->
+
+    <!--
+        Footer
+    -->
+    <footer class="full-width flex-vertical-horizontal ">
+        <ul id="footElements ">
+        </ul>
+    </footer>
+    <!--
+        End of Footer
+    -->
+
+    <!-- Load in the main script -->
+    <script src="./js/main.js "></script>
+    <script>
+        // define the current page we are on
+        currentPageName = 'survey';
+
+        // add logic to the hamburger menu
+        hamburger('hamburgerMenuBtn');
+
+        // load the elements into the nav bar
+        addElements('navElements', 'nav-current');
+
+        // load the elements into the hamburger menu
+        addElements('hamburgerElements', 'nav-current', 'hamburger=true');
+    </script>
+
+
+</body>
+
+</html>

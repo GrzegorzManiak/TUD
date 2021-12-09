@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap');
+:root {
+    /* navbar */
+    --nav-bar-height: 4rem;
+    --nav-bar-height-mobile: 3rem;
+    --nav-bar-color: #f4f1ef;
+    --nav-bar-font-color: #22223B;
+    --nav-bar-item-padding: 0.5rem;
+    --nav-bar-max-width: 75rem;
+    /* Gradient */
+    --gradient-angle: 45deg;
+    --gradient-time: 30s;
+    --gradient-1: #ffafbd;
+    --gradient-2: #2193b0;
+    --gradient-3: #cc2b5e;
+    --gradient-4: #de6262;
+    --gradient-5: #56ab2f;
+    /* Header */
+    --header-height: 20rem;
+    --header-font-color: #ffffff;
+    /* Footer */
+    --footer-height: 4rem;
+    --footer-color: #ffffff;
+    /* Scrollbar */
+    --scroll-bar-color: #e0e0e0;
+    --scroll-bar-width: 0.5rem;
+    /* General */
+    --font-color: #22223B;
+    --font-color-light: #4659DC;
+    --max-width: 70rem;
+    --body-color: #f4f1ef;
+}
+
 @media screen and (max-width: 450px) {
     #navElements {
         display: none;
@@ -5,504 +38,465 @@
     #hamburgerMenu {
         display: visible;
     }
-    #aboutUs h1 {
-        font-size: 2.5rem;
+    nav {
+        /* Sets the height of the nav bar for mobile devices */
+        height: var(--nav-bar-height-mobile);
     }
-    .aboutusSelector {
-        width: 65%;
-    }
-    h2.carouselText {
-        font-size: 1rem;
-        margin: 1rem 0 0.5rem 0;
-    }
-    p.carouselText {
-        font-size: 0.9rem;
+    #header h1 {
+        margin: 0.2rem;
+        padding-top: 1rem;
+        font-size: 1.5rem;
+        text-align: center;
     }
      :root {
-        --car-distance-pos: 3rem;
-        --car-distance-neg: -3rem;
+        --nav-bar-height-dynamic: var(--nav-bar-height-mobile);
+        --header-height: 10rem;
     }
 }
 
 @media screen and (min-width: 450px) {
-    #aboutUs h1 {
-        font-size: 4rem;
-    }
     #hamburgerMenu {
         display: none;
     }
-    .aboutusSelector {
-        width: 50%;
+    nav {
+        /* Sets the height of the nav */
+        height: var(--nav-bar-height);
     }
-    h2.carouselText {
+    #navElements {
+        right: 1.8rem;
+    }
+    #header h1 {
+        margin: 1rem;
+        padding-top: 1rem;
         font-size: 1.5rem;
-        margin: 1rem 0 0.5rem 0;
+        text-align: center;
     }
      :root {
-        --car-distance-pos: 5rem;
-        --car-distance-neg: -5rem;
+        --nav-bar-height-dynamic: var(--nav-bar-height);
+        --header-height: 10rem;
     }
 }
 
 @media screen and (min-width: 800px) {
-    #aboutUs h1 {
-        font-size: 6rem;
+    #navElements {
+        right: auto;
     }
-    .aboutusSelector {
-        width: 25rem;
-    }
-    h2.carouselText {
-        font-size: 2rem;
-        margin: 1rem 0 0.5rem 0;
+    #header h1 {
+        padding-top: 0;
+        font-size: normal;
+        text-align: left;
     }
      :root {
-        --car-distance-pos: 7rem;
-        --car-distance-neg: -7rem;
+        --nav-bar-height-dynamic: var(--nav-bar-height);
+        --header-height: 20rem;
     }
 }
 
-:root {
-    --page-indicator: #cdcbca;
-    --page-indicator-active: #22223B;
+html {
+    scroll-behavior: smooth;
+    /* Removes the horizontal scroll bar */
+    overflow-x: hidden;
+    margin: 0;
 }
 
-#splashContent {
+.htmlStopScroll {
+    overflow: hidden;
+}
+
+body {
+    /* Sets the font to the best font in the world */
+    font-family: 'Montserrat', sans-serif;
+    /* Sets the display mode to flex */
     display: flex;
-    height: 100vh;
+    /* Removes the margin arround the body */
+    margin: 0;
     flex-direction: column;
-    align-content: center;
+    justify-content: center;
+    background-color: var(--body-color);
     align-items: center;
+}
+
+#mainContent {
+    min-height: calc(100vh - var(--footer-height));
     width: 100vw;
 }
 
-#splashContentInner {
-    display: flex;
+#mainContent section {
     max-width: var(--max-width);
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: space-between;
+    padding: 0;
+    margin: var(--nav-bar-height) 0 0 0;
 }
 
-.splashTextContent {
-    padding: 1rem;
-    max-width: 50%;
+
+/*
+    Navigation Bar
+*/
+
+nav {
+    transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* Sets the position to absolute */
+    position: fixed;
+    /* Makes the navbar stick to the top of the page */
+    top: 0;
+    /* Sets the max width of the nav */
+    max-width: var(--nav-bar-max-width);
+    /* Sets the background color */
+    z-index: 200;
 }
 
-.splashTextContent p {
+div#navLogo {
+    padding: 0 0 0 2rem;
+    position: absolute;
+    left: 0;
+    z-index: 500;
+}
+
+div#navLogo p {
+    transition: color 0.5s ease;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.logoColorMenuClosed {
+    color: var(--nav-bar-font-color);
+}
+
+.logoColorMenuOpen {
+    color: var(--body-color);
+}
+
+nav>ul {
+    position: absolute;
     margin: 0;
     padding: 0;
 }
 
-.splashTextContent p b {
-    font-weight: 900;
-    color: var(--font-color);
-    font-size: 2.5rem;
-}
-
-.splashTextContent p b a {
-    color: var(--font-color-light);
-}
-
-
-/*
-    Landing squares
-*/
-
-.splashImgContent {
-    /*
-        Declaring the display as grid allows me
-        to allow the squares to overlap
-
-        i use transform: translateX(x, y)
-        Because it alows me to move the squares
-        vertically and horizontally within the grid.
-
-        As margin-top/bottom dosent work within a grid.
-    */
-    display: grid;
-    transform: scale(1.3);
-    width: 17rem;
-}
-
-.splashImgContent div {
-    grid-row: 1;
-    grid-column: 1;
-}
-
-.square1 {
-    border-radius: 1rem;
-    width: 12rem;
-    height: 12rem;
-    background-color: #22223B;
-    transform: rotate(2.5deg);
-    z-index: 15;
-}
-
-.square2 {
-    border-radius: 1.2rem;
-    width: 6rem;
-    height: 6rem;
-    background-color: #323264;
-    transform: rotate(6.5deg);
-    transform: translate(-3rem, -3rem);
-    z-index: 14;
-}
-
-.square3 {
-    border-radius: 2em;
-    width: 3rem;
-    height: 3rem;
-    background-color: #B4B6DE;
-    transform: rotate(6.5deg);
-    transform: translate(1rem, -1.5rem);
-    z-index: 14;
-}
-
-.square4 {
-    border-radius: 1em;
-    width: 4rem;
-    height: 4rem;
-    background-color: #464697;
-    transform: rotate(-32deg);
-    transform: translate(-2rem, 2rem);
-    z-index: 14;
-}
-
-.square5 {
-    border-radius: 1em;
-    width: 6rem;
-    height: 6rem;
-    background-color: #4B4B7A;
-    transform: rotate(-10deg);
-    transform: translate(9rem, 9rem);
-    z-index: 14;
-}
-
-.square6 {
-    border-radius: 1.5em;
-    width: 3.5rem;
-    height: 3.5rem;
-    background-color: #7073BF;
-    transform: rotate(5deg);
-    transform: translate(7rem, 10rem);
-    z-index: 14;
-}
-
-#pageIndicator {
-    z-index: 195;
-    position: fixed;
-    bottom: 1rem;
-}
-
-.pageIndicatorElement {
-    background-color: var(--page-indicator);
-    width: 0.8rem;
-    height: 0.8rem;
-    margin: 0.2rem;
-    border-radius: 1rem;
+nav ul li {
+    /* Removes the dots beside the LI */
+    display: inline;
+    /* Makes the UL horizontal insted of Vertical */
+    float: left;
+    /* Add spacing between LI's */
+    padding: 0 var(--nav-bar-item-padding) 0 var(--nav-bar-item-padding);
+    /* Ease all animations and rule changes */
     transition: all 0.25s ease;
+    /* Remove the ability to select text */
+    user-select: none;
+    /* make the font bold */
+    font-weight: 400;
 }
 
-.pageIndicatorElement:hover {
-    transform: scale(1.25);
+
+/* When the user hovers over this LI */
+
+ul li:hover {
+    /* Transform the size of this LI by 1.05 */
+    transform: scale(1.05);
 }
 
-.pageIndicatorElement:active {
-    transform: scale(0.8);
+
+/* When the user clicks this LI */
+
+ul li:active {
+    /* Transform the size of this LI by 0.95 */
+    transform: scale(0.95);
 }
 
-.pageIndicatorElementActive {
-    transform: scale(1.25);
-    background-color: var(--page-indicator-active);
+.nav-current {
+    /* make the font bolder */
+    font-weight: 900;
+}
+
+
+/* Nav bar header */
+
+nav.overHeader {
+    background-color: #ffffff00;
+}
+
+nav.overHeader li {
+    /* Change font color */
+    color: var(--nav-bar-color);
+}
+
+nav.overHeader>div>p {
+    /* Change font color */
+    color: var(--body-color)!important;
+}
+
+nav.overHeader span {
+    background-color: var(--body-color)!important;
+}
+
+
+/* Nav bar below header  */
+
+nav.belowHeader {
+    background-color: var(--nav-bar-color);
+}
+
+nav.belowHeader li {
+    /* Change font color */
+    color: var(--nav-bar-font-color);
 }
 
 
 /*
-    About us section
+    Hamburger Menu
 */
 
-#aboutUs>div {
+#hamburgerBtn {
+    display: grid;
+    height: 1rem;
+    position: absolute;
+    right: calc(var(--nav-bar-height-mobile) / 4);
+    top: calc(var(--nav-bar-height-mobile) / 4);
+}
+
+
+/* There is 3 seperate classes for lines as they all will have diffrent animations */
+
+#hamburgerMenu span {
+    z-index: 255;
+    border-radius: 0.2rem;
+    margin: 0.1rem;
+    width: 2rem;
+    height: 0.3rem;
+    background-color: var(--font-color);
+}
+
+#hamburgerMenuBtn {
+    z-index: 270;
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+}
+
+
+/* First line in the hamburger menu */
+
+#hamburgerMenuBtn:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+
+/* Seccond line in the hamburger menu */
+
+#hamburgerMenuBtn:checked~span:nth-child(3) {
+    transform: scale(0);
+}
+
+
+/* Third line of hamburger menu */
+
+#hamburgerMenuBtn:checked~span:nth-child(4) {
+    transform: rotate(-45deg);
+}
+
+#hamburgerMenuBtn:checked~span {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin: 0rem;
+    background-color: var(--body-color);
+}
+
+#hamburgerMenuBtn~span {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin: 0.1rem;
+    transform: rotate(0) translateY(0) scale(1);
+}
+
+#hamburgerContent {
+    top: 0;
+    width: 100vw;
+    z-index: 250;
+    height: 100vh;
+    position: absolute;
+    background-color: var(--nav-bar-font-color);
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hamburgerContentVisible {
+    left: 0;
+}
+
+.hamburgerContentInvisible {
+    left: 100%;
+}
+
+#hamburgerElements {
+    margin: 5rem 0 0 0;
+    padding-left: 2rem;
+}
+
+#hamburgerElements li {
+    float: none;
+}
+
+#hamburgerElements li p {
+    font-size: 2.5rem;
+    color: var(--body-color);
+    margin: 0.2rem 0 0 0;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#hamburgerElements li p:hover {
+    transform: scale(1.05);
+}
+
+#hamburgerElements li p:active {
+    transform: scale(0.95);
+}
+
+
+/*
+    Footer
+*/
+
+footer {
+    bottom: 0;
+    height: var(--footer-height);
+    background-color: var(--footer-color);
+}
+
+footer ul {
+    margin: 0;
     padding: 0;
+}
+
+footer ul li {
+    /* Removes the dots beside the LI */
+    display: inline;
+    /* Makes the UL horizontal insted of Vertical */
+    float: left;
+    /* Add spacing between LI's */
+    padding: 0 var(--nav-bar-item-padding) 0 var(--nav-bar-item-padding);
+    /* Change font color */
+    color: var(--nav-bar-font-color);
+    /* Ease all animations and rule changes */
+    transition: all 0.25s ease;
+    /* Remove the ability to select text */
+    user-select: none;
+    /* make the font bold */
+    font-weight: 400;
+}
+
+.foot-current {
+    /* make the font bolder */
+    font-weight: 600;
+}
+
+
+/*
+    Gradient
+*/
+
+.gradient {
+    /* 
+        Creates a gradient that changes horizontaly, 
+        if you were to take a horizontal 1 pixle slice from the bottom
+        and take another horizontal 1 pixle slice from the top of the gradient
+        and compared them, theyd be the same.
+
+        thats why we are putting it at an angle to create more color variation
+    */
+    background: linear-gradient( var(--gradient-angle), var(--gradient-1), var(--gradient-2), var(--gradient-3), var(--gradient-4), var(--gradient-5));
+    /*
+        This effect works by making the background of the element massive
+        and moveing the background arround, while only looking at a small part of the 
+        background
+    */
+    background-size: 500%, 500%;
+    animation: gradientTransition var(--gradient-time) infinite;
+}
+
+@keyframes gradientTransition {
+    0% {
+        /* 0--------- start from the left */
+        background-position: 0%, 50%;
+    }
+    50% {
+        /* ---------0 move to the right */
+        background-position: 100%, 50%;
+    }
+    100% {
+        /* 0--------- move back to the left */
+        background-position: 0%, 50%;
+    }
+}
+
+
+/*
+    scroll bar
+*/
+
+::-webkit-scrollbar {
+    width: var(--scroll-bar-width);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-color);
+}
+
+
+/*
+    Header
+*/
+
+#header {
+    transition: height 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* margin-top: var(--nav-bar-height-dynamic); */
+    height: var(--header-height);
+}
+
+#header>h1 {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: var(--header-font-color);
+}
+
+
+/*
+    General rules used quite often, stops bloat within classes and id's,
+    a poor man's `Tailwind css`
+*/
+
+.flex-vertical-horizontal {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#aboutUs h1 {
-    font-weight: 900;
-    color: var(--font-color);
-    margin: 0;
-    padding: 0;
-    text-align: center;
+.flex-row {
+    display: flex;
+    flex-direction: row;
 }
 
-.aboutusSelector img {
-    height: auto;
-    width: 100%;
-    border-radius: 0.5rem;
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
-
-/*
-    So,
-
-    This is the carousel, the workings of it are described in the main.js file.
-    I created this carousel with the use of keyframes, transform, and js.
-
-    There are keyframes for,
-
-    [1] When the images are first loaded in.
-    [2] When the images are moved to the left.
-    [3] When the images are moved to the right.
-    [4] When the images are moved to the center.
-    [5] When the images are loaded in from the stack.
-
-    The stack is an array it contains the images that are hidden as only 3 images are visible at a time.
-        [ img, img, img, img ] <-- The stack.
-    left img, center img, right img
-
-    as an image is pushed off one side, it's loaded into the appropriate side of the array.
-    eg you click the left image in the carousel, causing the image that's in the center, to be pushed to the right,
-    and the image that was in the right beforehand gets pushed into the right side of the array.
-
-                       V-- That's the img we just added to the stack.
-    [ img, img, img, img ] <-- The stack.
-
-    as we moved that left image to the center, we now have an empty spot on the left side of the carousel,
-    now we can load an image to fill in that empty spot by pulling it from the left side of the stack and then
-    removing it from the stack.
-
-        V-- That's the image we just loaded in from the stack.
-    [ img, img, img, img ] <-- The stack.
-
-    I won't go over the 150 lines, but ill go over every unique rule.
-
-    scale(1), this transform changes the scales of the element, pretty self-explanatory.
-
-    translateX() and translateY(), these two move the element in the x and y-axis accordingly.
-    eg they used to move the elements to the left and right, up and down.
-    you can set the values back to 0 and the element will return to its original position.
-
-            y
-            *
-            *
-            *
-    x********
-    
-    rotateY(deg) this rotates the element in the y axis, I tried explaining this but I don't know how to make it sound good.
-    literally, pick up any item, hold it up
-    and turn your wrist, thas your Y,
-
-    the z-index is like BOMDAS, it's an order of precedence, the higher the number, the higher the priority.
-    eg you could have this.
-    
-    <img style='z-index: 50; position:absolute; top:0; left:0' src='./imgs/aboutus/1.jpg'>
-    <img style='z-index: 100; position:absolute; top:0; left:0' src='./imgs/aboutus/2.jpg'>
-
-    if IMG1 overlapped (EG if both had their position's set to absolute) onto IMG2 you'd expect IMG1 to still be visible,
-    but since we have a higher z-index set for IMG2, The image that will still be visible is IMG2.
-*/
-
-#carousel {
-    display: grid;
-    transform: scale(0.9);
-    transition: all 2s ease;
+.full-width {
+    /* Sets the width of the element to the width of the browser window */
+    width: 100vw;
 }
 
-.carouselInvisable {
-    opacity: 0;
+.full-height {
+    /* Sets the height of the element to the height of the browser window */
+    height: 100vh;
 }
 
-.carouselVisable {
-    opacity: 1;
+.invisible {
+    /* Makes the element invisable */
+    visibility: hidden;
+    /* Sets the position to absolute so it dosent interact with any other element */
+    position: absolute;
+    left: 10000rem
 }
 
-#carousel div {
-    grid-row: 1;
-    grid-column: 1;
-    transition: all 2000ms ease 7.47774ms;
-}
-
-.carouselSelected {
-    z-index: 100;
-    animation: start 2s forwards ease;
-}
-
-@keyframes start {
-    0% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1.15);
-    }
-}
-
-
-/* LEFT */
-
-.scaleInFromLeft {
-    z-index: 100;
-    animation: scaleInFromLeft 2s forwards;
-}
-
-@keyframes scaleInFromLeft {
-    0% {
-        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg)
-    }
-    100% {
-        transform: scale(1.15) translateX(0);
-    }
-}
-
-.scaleOutToLeft {
-    z-index: 90;
-    transform: scale(1.15);
-    animation: scaleOutToLeft 2s forwards;
-}
-
-@keyframes scaleOutToLeft {
-    0% {
-        transform: scale(1.15) translateX(0);
-    }
-    100% {
-        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
-    }
-}
-
-.moveCenterFromLeft {
-    z-index: 80;
-    animation: moveCenterFromLeft 2s forwards;
-}
-
-@keyframes moveCenterFromLeft {
-    0% {
-        opacity: 1.0;
-        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
-    }
-    100% {
-        opacity: 0.0;
-        transform: scale(1) translateX(0rem);
-    }
-}
-
-.moveLeftFromCenter {
-    z-index: 90;
-    animation: moveLeftFromCenter 2s forwards;
-}
-
-@keyframes moveLeftFromCenter {
-    0% {
-        opacity: 0.0;
-        transform: scale(0.5) translateX(0rem);
-    }
-    100% {
-        opacity: 1.0;
-        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
-    }
-}
-
-
-/* RIGHT */
-
-.scaleInFromRight {
-    z-index: 100;
-    animation: scaleInFromRight 2s forwards;
-}
-
-@keyframes scaleInFromRight {
-    0% {
-        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
-    }
-    100% {
-        transform: scale(1.15) translateX(0);
-    }
-}
-
-.scaleOutToRight {
-    z-index: 90;
-    transform: scale(1.15);
-    animation: 2000ms ease 0ms 1 normal forwards running scaleOutToRight;
-}
-
-@keyframes scaleOutToRight {
-    0% {
-        transform: scale(1.15) translateX(0);
-    }
-    100% {
-        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
-    }
-}
-
-.moveCenterFromRight {
-    z-index: 80;
-    animation: moveCenterFromRight 2s forwards;
-}
-
-@keyframes moveCenterFromRight {
-    0% {
-        opacity: 1.0;
-        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(-180deg);
-    }
-    100% {
-        opacity: 0.0;
-        transform: scale(1) translateX(0rem);
-    }
-}
-
-.moveRightFromCenter {
-    z-index: 90;
-    animation: moveRightFromCenter 2s forwards;
-}
-
-@keyframes moveRightFromCenter {
-    0% {
-        opacity: 0.0;
-        transform: scale(0.5) translateX(0rem);
-    }
-    100% {
-        opacity: 1.0;
-        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
-    }
-}
-
-
-/* TEXT */
-
-.carouselText {
-    transition: all 2s ease;
-}
-
-h2.carouselText {
-    font-weight: 800;
-    color: var(--font-color);
-}
-
-#carouselLeft .carouselText {
-    opacity: 0;
-}
-
-#carouselRight .carouselText {
-    opacity: 0;
-}
-
-#carouselCenter .carouselText {
-    opacity: 1;
-}
-
-#carouselCenter .carouselImg {
-    box-shadow: 0 0 1rem 0.5rem #00000030;
-}
-
-.carouselImg {
-    transition: all 0.5s ease;
-}
-
-.carouselImg:hover {
-    transform: scale(1.02);
-}
-
-.carouselImg:active {
-    transform: scale(0.98);
+.max-width {
+    /* Sets the max width of the element */
+    max-width: var(--max-width);
 }

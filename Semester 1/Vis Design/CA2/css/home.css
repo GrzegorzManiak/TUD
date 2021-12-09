@@ -1,0 +1,155 @@
+:root {
+    --page-indicator: #cdcbca;
+    --page-indicator-active: #22223B;
+}
+
+#splashContent {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+#splashContentInner {
+    display: flex;
+    max-width: var(--max-width);
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.splashTextContent {
+    padding: 1rem;
+    max-width: 50%;
+}
+
+.splashTextContent p {
+    margin: 0;
+    padding: 0;
+}
+
+.splashTextContent p b {
+    font-weight: 900;
+    color: var(--font-color);
+    font-size: 2.5rem;
+}
+
+.splashTextContent p b a {
+    color: var(--font-color-light);
+}
+
+
+/*
+    Landing squares
+*/
+
+.splashImgContent {
+    /*
+        Declaring the display as grid allows me
+        to allow the squares to overlap
+
+        i use transform: translateX(x, y)
+        Because it alows me to move the squares
+        vertically and horizontally within the grid.
+
+        As margin-top/bottom dosent work within a grid.
+    */
+    display: grid;
+    transform: scale(1.3);
+    width: 17rem;
+}
+
+.splashImgContent div {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.square1 {
+    border-radius: 1rem;
+    width: 12rem;
+    height: 12rem;
+    background-color: #22223B;
+    transform: rotate(2.5deg);
+    z-index: 15;
+}
+
+.square2 {
+    border-radius: 1.2rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: #323264;
+    transform: rotate(6.5deg);
+    transform: translate(-3rem, -3rem);
+    z-index: 14;
+}
+
+.square3 {
+    border-radius: 2em;
+    width: 3rem;
+    height: 3rem;
+    background-color: #B4B6DE;
+    transform: rotate(6.5deg);
+    transform: translate(1rem, -1.5rem);
+    z-index: 14;
+}
+
+.square4 {
+    border-radius: 1em;
+    width: 4rem;
+    height: 4rem;
+    background-color: #464697;
+    transform: rotate(-32deg);
+    transform: translate(-2rem, 2rem);
+    z-index: 14;
+}
+
+.square5 {
+    border-radius: 1em;
+    width: 6rem;
+    height: 6rem;
+    background-color: #4B4B7A;
+    transform: rotate(-10deg);
+    transform: translate(9rem, 9rem);
+    z-index: 14;
+}
+
+.square6 {
+    border-radius: 1.5em;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #7073BF;
+    transform: rotate(5deg);
+    transform: translate(7rem, 10rem);
+    z-index: 14;
+}
+
+#pageIndicator {
+    z-index: 195;
+    position: fixed;
+    bottom: 1rem;
+}
+
+.pageIndicatorElement {
+    background-color: var(--page-indicator);
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0.2rem;
+    border-radius: 1rem;
+    transition: all 0.25s ease;
+}
+
+.pageIndicatorElement:hover {
+    transform: scale(1.25);
+}
+
+.pageIndicatorElement:active {
+    transform: scale(0.8);
+}
+
+.pageIndicatorElementActive {
+    transform: scale(1.25);
+    background-color: var(--page-indicator-active);
+}

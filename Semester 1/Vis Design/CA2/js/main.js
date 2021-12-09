@@ -1,6 +1,9 @@
 const pages = {
-    'home': './index.html',
-    'ui/ux': './uxui.html'
+    'home': './home.html',
+    'ui': './ui.html',
+    'ux': './ux.html',
+    'about us': './aboutus.html',
+    'survey': './survey.html',
 }
 
 let stack = [],
@@ -16,6 +19,11 @@ function sleep(ms) {
         // once done exec resolve(), resolving the promise.
         setTimeout(resolve, ms);
     })
+}
+
+function getUrlParam(param) {
+    // get the param from the url and return it
+    return new URL(window.location.href).searchParams.get(param);
 }
 
 function hamburger(id) {
@@ -38,10 +46,12 @@ function hamburger(id) {
                 break;
         }
     });
+
+    document.documentElement.className = '';
 }
 
 // adds elements to the nav bar from the 'pages' object.
-function addElements(navID, selected) {
+function addElements(navID, selected, urlParams = '') {
     // Get the navbar element
     let element = document.getElementById(navID);
 
@@ -63,7 +73,8 @@ function addElements(navID, selected) {
             await sleep(200);
 
             // if the user is trying to get, eg, from home => home, dont refresh
-            if (currentPageName != key) document.location = pages[key];
+            if (currentPageName != key)
+                document.location = `${pages[key]}?${urlParams}`;
         });
 
         if (currentPageName == key) p.className = selected;
@@ -88,12 +99,11 @@ function selectPageIndicator(num) {
 async function startScroll() {
     let prevPos = -1,
         currentPage = 0,
-        loaded = false,
         notScrolledFor = 0;
 
     while (true) {
         // Get the current scroll position  
-        scroll = document.scrollingElement.scrollTop; // Scroll top dosent work on mobile?
+        scroll = document.scrollingElement.scrollTop;
         height = document.documentElement.clientHeight;
 
         await sleep(5);
@@ -116,12 +126,6 @@ async function startScroll() {
         currentPage = Math.round(scroll / height);
         selectPageIndicator(currentPage);
 
-        if (currentPage == 1 && !loaded) {
-            await sleep(100);
-            addCarouselItems();
-            loaded = true;
-        }
-
         prevPos = scroll;
     }
 }
@@ -143,7 +147,7 @@ const imgs = {
         img: './imgs/aboutus/3.jpg',
         elem: undefined,
         name: 'Gregor',
-        bio: 'My name is Moyin Olusona. I am 17 years old and am in my first year of college. I went to St. Louis High school. My favourite subjects were English and Geography. I like to read and watch tv and movies.'
+        bio: 'Ello, my name is Gregor, I\'m studying computing at TU Tallaght campus, I have a great interest in web and software development, I also enjoy the outdoors, I love to travel, camp and hike.'
     },
     '3': {
         img: './imgs/aboutus/4.jpg',
@@ -202,7 +206,14 @@ function addCarouselItems() {
     });
 }
 
-function carouselScroll(elem) {
+let curentlyAnimating = false;
+
+async function carouselScroll(elem) {
+    if (curentlyAnimating === true)
+        return;
+
+    else curentlyAnimating = true;
+
     //Which side did the uer click on?
     let from = '';
 
@@ -254,7 +265,7 @@ function carouselScroll(elem) {
             cs.id = 'carouselRight'; //lable the imgs position
             cs.className = 'scaleOutToRight'; //animate the move
 
-            return;
+            break;
 
         case 'Right': // move the img to the left
             //If theres an image to the left, move it behind the center
@@ -273,8 +284,12 @@ function carouselScroll(elem) {
             cs.id = 'carouselLeft'; //lable the imgs position
             cs.className = 'scaleOutToLeft'; //animate the move
 
-            return;
+            break;
     }
+
+    //Wait for the animations to finish, they take 2 seconds
+    await sleep(1700);
+    return curentlyAnimating = false;
 }
 
 function carousel(side) {

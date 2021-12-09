@@ -15,17 +15,17 @@
     <meta name="description" content="Group 17 Project for VDUX">
 
     <!--General CSS Used by all pages-->
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/index.css">
 
     <!--CSS Only relative to this page-->
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/home.css">
 </head>
 
 <body>
     <!--
         Navigation Bar
     -->
-    <nav class='full-width flex-vertical-horizontal'>
+    <nav class='full-width flex-vertical-horizontal belowHeader'>
         <!-- I was going to make a logo, but got lazy -->
         <div id='navLogo' class='logoColorMenuClosed'>
             <p>
@@ -108,26 +108,8 @@
         Main content
     -->
     <div id='mainContent' class='flex-column flex-vertical-horizontal'>
-        <!-- About us section -->
         <section class='full-height' id='aboutUs'>
-            <div class='full-height flex-flex-vertical-horizontal'>
-                <h1>
-                    ABOUT US
-                </h1>
-                <div class='aboutusSelector'>
-                    <!-- Map used by the carousel, to allow the user to navigate the carousel -->
-                    <!-- using the left and right hand side of the main image -->
-                    <map name="aboutus">
-                        <area onclick="carousel('left')" shape="rect" coords="225,0,500,500" alt="left" href="#left">
-                        <area onclick="carousel('right')" shape="rect" coords="0,0,225,500" alt="right" href="#right">
-                    </map>
 
-                    <!-- This is where the images for the carousel will be loaded into -->
-                    <div id='carousel' class='carouselInvisable'>
-
-                    </div>
-                </div>
-            </div>
         </section>
 
         <section class='full-height' id='content3'>
