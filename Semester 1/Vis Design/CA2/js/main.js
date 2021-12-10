@@ -34,15 +34,19 @@ function hamburger(id) {
     hamburgerBtn.addEventListener('click', () => {
         switch (hamburgerBtn.checked) {
             case true:
-                hamburgerContent.className = 'hamburgerContentVisible';
+                hamburgerContent.className = hamburgerContent.className.replace('hamburgerContentInvisible', '');
+                hamburgerContent.className += ' hamburgerContentVisible';
+
                 document.documentElement.className = 'htmlStopScroll';
-                navLogo.className = 'logoColorMenuOpen';
+                navLogo.classList.replace('logoColorMenuClosed', 'logoColorMenuOpen');
                 break;
 
             case false:
-                hamburgerContent.className = 'hamburgerContentInvisible';
+                hamburgerContent.className = hamburgerContent.className.replace('hamburgerContentVisible', '');
+                hamburgerContent.className += ' hamburgerContentInvisible';
+
                 document.documentElement.className = '';
-                navLogo.className = 'logoColorMenuClosed';
+                navLogo.classList.replace('logoColorMenuOpen', 'logoColorMenuClosed');
                 break;
         }
     });
@@ -138,7 +142,7 @@ const imgs = {
         bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, laboris nisi ut aliquip ex ea commodo consequat.'
     },
     '1': {
-        img: './imgs/aboutus/2.jpg',
+        img: './imgs/aboutus/greg1.png',
         elem: undefined,
         name: 'Grzegorz',
         bio: 'Hey, my name is Grzegorz Maniak, I\'m studying computing at TU Tallaght campus, I have a great interest in web and software development, I also enjoy the outdoors, I love to travel, camp and hike.'

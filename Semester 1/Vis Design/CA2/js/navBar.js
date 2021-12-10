@@ -23,9 +23,10 @@ function remToPx(rem) {
         if (previosScrollPos === scroll)
             continue;
 
+        //get the document styles
         let styles = getComputedStyle(document.documentElement),
-            navBar = document.getElementsByTagName('nav')[0],
-            headerHeight = parseInt(styles.getPropertyValue('--header-height'));
+            navBar = document.getElementsByTagName('nav')[0], // get the nav bar element
+            headerHeight = parseFloat(styles.getPropertyValue('--header-height')); // get the header height
 
         //convert the nav bar height to px from rem
         let headerHeightPX = remToPx(headerHeight);
