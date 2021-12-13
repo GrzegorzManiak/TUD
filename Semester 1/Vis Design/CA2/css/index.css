@@ -3,7 +3,7 @@
     /* navbar */
     --nav-bar-height: 4rem;
     --nav-bar-height-mobile: 4rem;
-    --nav-bar-color: #f4f1ef;
+    --nav-bar-color: #FAF9F6;
     --nav-bar-font-color: #22223B;
     --nav-bar-item-padding: 0.5rem;
     --nav-bar-max-width: 75rem;
@@ -28,7 +28,7 @@
     --font-color: #22223B;
     --font-color-light: #4659DC;
     --max-width: 50rem;
-    --body-color: #f4f1ef;
+    --body-color: #FAF9F6;
 }
 
 @media screen and (max-width: 450px) {
