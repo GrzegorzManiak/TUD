@@ -1,26 +1,15 @@
-function remToPx(rem) {
-    let styles = getComputedStyle(document.documentElement);
-    //all rem is, is the root font size of the HTML document, which is generally 16px.
-    //this means, all we have to do is get the font size of the HTML document,
-    //multiply it by the rem value, and we have the px value.
-
-    //we have to parse the value of the font size, because it is a string.
-    //returned as '16px', formating it returns it as a 16.
-    return parseFloat(styles.fontSize) * rem;
-}
-
 (async() => {
     let previosScrollPos = undefined;
 
     while (true) {
-        //Slow down the loop a little
+        //Slow down the loop down a little, saves on resources
         await sleep(1);
 
         //get the current scroll position
-        let scroll = document.scrollingElement.scrollTop;
+        let scrollPos = window.scrollY;
 
-        //check if the user has scrolled, if not, dont continue
-        if (previosScrollPos === scroll)
+        //check if the user has scrollPos, if not, dont continue
+        if (previosScrollPos === scrollPos)
             continue;
 
         //get the document styles
@@ -32,7 +21,7 @@ function remToPx(rem) {
         let headerHeightPX = remToPx(headerHeight);
 
         //if the user scrolled past the header, change its class
-        if (scroll > headerHeightPX - (headerHeightPX * 0.3)) {
+        if (scrollPos > headerHeightPX - (headerHeightPX * 0.8)) {
             navBar.classList.add("belowHeader");
             navBar.classList.remove("overHeader");
         } else {
@@ -41,6 +30,6 @@ function remToPx(rem) {
         }
 
         //set the previous scroll position to the current scroll position
-        previosScrollPos = scroll;
+        previosScrollPos = scrollPos;
     }
 })();

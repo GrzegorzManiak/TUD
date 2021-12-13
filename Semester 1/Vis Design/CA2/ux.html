@@ -17,14 +17,14 @@
     <link rel="stylesheet" href="./css/index.css">
 
     <!--CSS Only relative to this page-->
-    <link rel="stylesheet" href="./css/survey.css">
+    <link rel="stylesheet" href="./css/ui.css">
 </head>
 
 <body>
     <!--
         Navigation Bar
     -->
-    <nav class='full-width flex-vertical-horizontal'>
+    <nav class='full-width flex-vertical-horizontal overHeader'>
         <!-- I was going to make a logo, but got lazy -->
         <div id='navLogo' class='logoColorMenuClosed'>
             <p>
@@ -77,16 +77,38 @@
     -->
 
     <!--
+        header content
+        -->
+    <div id='header' class='full-width flex-vertical-horizontal gradient'>
+        <h1>
+            User experience design.
+        </h1>
+    </div>
+    <!--
+            End of header
+        -->
+
+    <!--
         Main content
     -->
-    <div id="mainContent" class="flex-column flex-vertical-horizontal">
-        <!-- About us section -->
-        <section class="full-height" id="aboutUs">
-            <div class="full-height flex-flex-vertical-horizontal">
+    <div id="mainContent" class="full-width flex-column flex-vertical-horizontal">
+
+        <!-- Practicality section -->
+        <section class="" id="practicality">
+            <div class="max-width  flex-vertical-horizontal">
+                <p>
+                    UI is the visual interface of a site / program, Its what you see, unlike UX, which interacts with you on a subconius level, UI design focuses on the actual look and style of the site, This allows the designer to create cool and unique sites, even if its
+                    not the most practical thing to do.
+                </p>
             </div>
         </section>
 
         <section class="full-height" id="content3">
+            <div class="full-height">
+                <h1>
+                    test
+                </h1>
+            </div>
         </section>
     </div>
     <!--
@@ -106,6 +128,10 @@
 
     <!-- Load in the main script -->
     <script src="./js/main.js"></script>
+
+    <!-- Load in the script responsible for the navbar -->
+    <script src="./js/navbar.js"></script>
+
     <script>
         // define the current page we are on
         currentPageName = 'ux';

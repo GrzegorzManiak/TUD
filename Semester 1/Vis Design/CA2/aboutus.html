@@ -82,7 +82,7 @@
     <div id='mainContent' class='flex-column flex-vertical-horizontal'>
         <!-- About us section -->
         <section class='full-height' id='aboutUs'>
-            <div class='full-height flex-flex-vertical-horizontal'>
+            <div class='flex-flex-vertical-horizontal'>
                 <h1>
                     ABOUT US
                 </h1>
@@ -100,9 +100,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class='full-height' id='content3'>
         </section>
     </div>
     <!--
@@ -122,8 +119,15 @@
 
     <!-- Load in the main script -->
     <script src="./js/main.js"></script>
+
+    <!-- Load in the page specific script -->
+    <script src="./js/aboutUs.js"></script>
     <script>
-        addCarouselItems()
+        // Load the carousel in, add content to it
+        addCarouselItems();
+
+        // load the horizontal scrolling text
+        //followScroll('hobbiesScroll');
 
         // define the current page we are on
         currentPageName = 'about us';

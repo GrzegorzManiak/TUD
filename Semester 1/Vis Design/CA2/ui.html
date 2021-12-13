@@ -81,7 +81,7 @@
         -->
     <div id='header' class='full-width flex-vertical-horizontal gradient'>
         <h1>
-            User Interface's arent always practical.
+            User interface design.
         </h1>
     </div>
     <!--
@@ -91,26 +91,248 @@
     <!--
         Main content
     -->
-    <div id="mainContent" class="full-width flex-column flex-vertical-horizontal">
+    <div id="mainContent" class="full-width flex-column flex-horizontal">
 
         <!-- Practicality section -->
-        <section class="" id="practicality">
-            <div class="max-width  flex-vertical-horizontal">
-                <p>
-                    UI is the visual interface of a site / program, Its what you see, unlike UX, which interacts with you on a subconius level, UI design focuses on the actual look and style of the site, This allows the designer to create cool and unique sites, even if its
-                    not the most practical thing to do.
-                </p>
-            </div>
-        </section>
+        <section id="practicality">
+            <div class="max-width flex-column">
+                <div>
+                    <p>
+                        The 8 golden rules of user interface design according to <a href='https://en.wikipedia.org/wiki/Ben_Shneiderman'>Ben Shneiderman</a>, with interactive examples.
+                    </p>
 
-        <section class="full-height" id="content3">
-            <div class="full-height">
-                <h1>
-                    test
-                </h1>
+                    <div class='flex-horizontal flex-column'>
+                        <section class='rules'>
+                            <h1>
+                                1. Consistency
+                            </h1>
+                            <p>
+                                The user interface should be consistent with the rest of the application, take a look at Spotify as an example as their app is on multiple devices.
+                            </p>
+                            <p>
+                                As you can see, the app is very consistent, with the same general design on all devices.
+                            </p>
+                            <img src='.\imgs\blog\ui\Spotify.jpg' alt='spotify running on a range of devices'>
+                        </section>
+
+                        <section class='rules'>
+                            <h1>
+                                2. Shortcuts
+                            </h1>
+                            <p>
+                                Again, taking a look at Spotify, you can see that there are a lot of shortcuts, such as the search shortcut (Ctrl-l), the next track shortcut (Ctrl-right), and the previous track shortcut (Ctrl-left).
+                            </p>
+                            <div class='interactiveSection flex-column shortcutParent'>
+                                <div class='shortcutBox' id='ctrl-right'>
+                                    <p>
+                                        ctrl
+                                    </p>
+                                    <p>
+                                        right
+                                    </p>
+                                </div>
+                                <div class='shortcutBox' id='search'>
+                                    <p>
+                                        ctrl
+                                    </p>
+                                    <p>
+                                        L
+                                    </p>
+                                </div>
+                                <div class='shortcutBox' id='ctrl-left'>
+                                    <p>
+                                        ctrl
+                                    </p>
+                                    <p>
+                                        left
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class='rules'>
+                            <h1>
+                                3. Feedback
+                            </h1>
+                            <p>
+                                An example of Feedback is the folder, once a user hovers over one, it becomes highlighted, once they click it, a border is shown around the folder, indicating that the user has that folder selected.
+                            </p>
+                            <p>
+                                We can expand this, if you take a look at "Folder 2", you can clearly tell that it contains files.
+                            </p>
+                            <div class='interactiveSection flex-vertical-horizontal folderParent'>
+                                <button class='folderContainer'>
+                                    <div class='folder'>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span>Folder 1</span>
+                                    </div>
+                                </button>
+                                <button class='folderContainer'>
+                                    <div class='folder folderFiles'>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span>Folder 2</span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </button>
+                            </div>
+                        </section>
+
+                        <!-- 
+                            Dialouge rule
+                         -->
+                        <section class='rules'>
+                            <h1>
+                                4. Dialogue
+                            </h1>
+                            <!-- Success dialog -->
+                            <p>
+                                As the user performs actions that will take to execute, the user will be prompted with a dialogue box, the user want to know exactly whats happening, you want to be as descriptive as possible.
+                            </p>
+                            <div class='interactiveSection flex-column menuBarClass'>
+                                <div>
+                                    <p class='menuTitle'>Working</p>
+                                    <div class='menuBtns'>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class='menuContent'>
+                                    <span class='normMenu'></span>
+                                    <div>
+                                        <h2>Downloading files</h2>
+                                        <p class='downloadString'>C://programs/g17/app.exe</p>
+                                        <div class='outerBar'>
+                                            <div class="innerBar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Warning example -->
+                            <p>
+                                You need to let the user know that thet are about to do something that might result in something that they do not want.
+                            </p>
+                            <div class='interactiveSection flex-column menuBarClass'>
+                                <div>
+                                    <p class='menuTitle'>Warning</p>
+                                    <div class='menuBtns'>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class='menuContent'>
+                                    <span class='warnMenu'></span>
+                                    <div>
+                                        <h2>Warning, limited disk space</h2>
+                                        <div class='menuButtonString'>
+                                            <p>The install might fail because you are running out of storage on your device</p>
+                                            <div class='menuButtonContainer'>
+                                                <div class='menuButton'>
+                                                    <p>Continue</p>
+                                                </div>
+                                                <div class='menuButton cancelButton'>
+                                                    <p>Cancel</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Error example -->
+                            <p>
+                                You need to be descriptive, especially once an error occurs, clearly lable why the action failed, dont use complicated jargon.
+                            </p>
+                            <div class='interactiveSection flex-column menuBarClass'>
+                                <div>
+                                    <p class='menuTitle'>Error</p>
+                                    <div class='menuBtns'>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class='menuContent'>
+                                    <span class='errorMenu'></span>
+                                    <div>
+                                        <h2>Error downloading files</h2>
+                                        <div class='menuButtonString'>
+                                            <p>The install failed because you have ran out of storage on your device</p>
+                                            <div class='menuButtonContainer'>
+                                                <div class='menuButton'>
+                                                    <p>Continue</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- 
+                            end of dialogue rule
+                         -->
+
+                        <section class='rules'>
+                            <h1>
+                                5. Clarity
+                            </h1>
+                            <p>
+                                You want your website to be easily usable and easy to navigate, dont use overly complicated word.
+                            </p>
+                            <!-- 
+                                Examples start
+                             -->
+                            <div class='flex-row menuFlex'>
+                                <!-- Example one -->
+                                <div class='interactiveSection flex-column menuBarClass'>
+                                    <div>
+                                        <p class='menuTitle'>Example 1</p>
+                                        <div class='menuBtns'>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class='menuContent'>
+                                        <div>
+                                            <h2>Incorect password</h2>
+                                            <p>Your password does not match the requirements</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- example two -->
+                                <div class='interactiveSection flex-column menuBarClass'>
+                                    <div>
+                                        <p class='menuTitle'>Example 2</p>
+                                        <div class='menuBtns'>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class='menuContent'>
+                                        <div>
+                                            <h2>Incorect password</h2>
+                                            <p>You did not include an upper case character</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 
+                                Examples end
+                             -->
+                        </section>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
+
     <!--
         End of Main content
     -->
@@ -127,12 +349,19 @@
     -->
 
     <!-- Load in the main script -->
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js "></script>
 
     <!-- Load in the script responsible for the navbar -->
-    <script src="./js/navbar.js"></script>
+    <script src="./js/navbar.js "></script>
+
+    <!-- Load in the script responsible for the blog -->
+    <script src="./js/uiux.js "></script>
 
     <script>
+        defineShortcut('ctrl-right', 'ArrowRight');
+        defineShortcut('search', 'KeyL');
+        defineShortcut('ctrl-left', 'ArrowLeft');
+
         // define the current page we are on
         currentPageName = 'ui';
 

@@ -341,3 +341,24 @@ h2.carouselText {
 .carouselImg:active {
     transform: scale(0.98);
 }
+
+
+/*
+#hobbiesScroll {
+    position: absolute;
+    word-wrap: hidden;
+    margin: 0;
+    width: 1000000px;
+    font-size: 10rem;
+    left: 100vh
+}
+*/
+
+
+/*
+    General Styles
+*/
+
+#mainContent {
+    margin-top: var(--nav-bar-height-dynamic);
+}
