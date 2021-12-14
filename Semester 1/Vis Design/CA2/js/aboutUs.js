@@ -135,19 +135,3 @@ function carousel(side) {
             return carouselScroll(document.getElementById('carouselRight'));
     }
 }
-
-// //Horizontal scrolling text
-
-// function followScroll(elem) {
-//     elem = document.getElementById(elem);
-//     document.addEventListener('scroll', () => {
-//         let scrollTop = window.scrollY,
-//             width = window.innerWidth,
-//             height = window.innerHeight;
-
-//         let moveBy = (width - scrollTop - height * 1.2);
-//         elem.style.left = `${moveBy}px`;
-
-//         window.scrollTo(0, window.scrollY);
-//     });
-// }

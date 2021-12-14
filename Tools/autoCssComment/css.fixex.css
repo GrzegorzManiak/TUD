@@ -3,11 +3,23 @@
         /* This rule is used to specify the display of the element. */
         display: none;
     }
+    .menuFlex {
+        /* This rule is used to specify the flex-wrap of the element. */
+        flex-wrap: wrap;
+    }
 }
 
 :root {
     --width: 40rem;
     --interactive-background-color: #e6e6e6;
+    --box-size: 3rem;
+    --box-font-size: 2rem;
+    --box-font-weight: 500;
+    --box-font-color: #747474;
+    --box-normal-color: #aaa7a7;
+    --box-hover-color: #009ffd;
+    --box-active-color: #00bcd4;
+    --box-scale-by: 0.02;
 }
 
 #practicality>div {
@@ -17,7 +29,7 @@
 
 .rules {
     /* This rule is used to specify the max-width of the element. */
-    max-width: var(--width)!important;
+    max-width: var(--width);
 }
 
 .rules h1 {
@@ -529,4 +541,84 @@
     /* This rule is used to specify the color of the text. */
     color: #0f5769;
     transform: scale(1.03);
+}
+
+#otpParent {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: row;
+    /* This rule is used to specify the flex-wrap of the element. */
+    flex-wrap: wrap;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+}
+
+.tfaInputBox {
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+    caret-color: transparent;
+    /* This rule is used to specify the text decoration of the text such as underline. */
+    text-decoration: none;
+    /* This rule is used to specify the text alignment of the text. */
+    text-align: center;
+    /* This rule is used to specify the border style of the element. */
+    border-style: solid;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.7rem;
+    /* This rule is used to specify the border width of the element. */
+    border-width: 0.15rem;
+    /* This rule is used to specify the border color of the element. */
+    border-color: var(--box-normal-color);
+    /* This rule is used to specify the color of the text. */
+    color: var(--box-font-color);
+    /* This rule is used to specify the font size of the text. */
+    font-size: var(--box-font-size);
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: var(--box-font-weight);
+    /* This rule is used to specify the width of the element. */
+    width: var(--box-size);
+    /* This rule is used to specify the height of the element. */
+    height: var(--box-size);
+}
+
+.tfaInputBox:hover {
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.6rem;
+    /* This rule is used to specify the border width of the element. */
+    border-width: 0.18rem;
+    /* This rule is used to specify the border color of the element. */
+    border-color: var(--box-hover-color);
+    transform: scale(calc(1 + var(--box-scale-by)));
+}
+
+.tfaInputBox:focus {
+    /* This rule is used to specify the outline of the element. */
+    outline: none;
+    /* This rule is used to specify the border width of the element. */
+    border-width: 0.15rem;
+    transform: scale(1);
+    /* This rule is used to specify the border color of the element. */
+    border-color: var(--box-active-color);
+}
+
+.tfaInputBox:active {
+    transform: scale(calc(1 - var(--box-scale-by)));
+}
+
+.otpFeild {
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem;
+}
+
+.tfaInputNorm {
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the height of the element. */
+    height: 3rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
 }

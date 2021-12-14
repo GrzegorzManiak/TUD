@@ -1,7 +1,6 @@
 const pages = {
     'home': './home.html',
-    'ui': './ui.html',
-    'ux': './ux.html',
+    'ui/ux': './uiux.html',
     'about us': './aboutus.html',
     'survey': './survey.html',
 }
