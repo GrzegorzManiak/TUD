@@ -1,33 +1,40 @@
 const pages = {
     'home': './home.html',
     'ui/ux': './uiux.html',
+    'colors': 'colors.html',
     'about us': './aboutus.html',
-    'survey': './survey.html',
+    'survey': './survey.html'
 }
 
 const imgs = {
-    'greg': {
-        img: './imgs/aboutus/1.jpg',
+    'gregoria': {
+        img: './imgs/aboutus/greg1.png',
         elem: undefined,
-        name: 'Greg',
+        name: 'Gregoria',
         bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, laboris nisi ut aliquip ex ea commodo consequat.'
     },
     'grzegorz': {
-        img: './imgs/aboutus/greg1.png',
+        img: './imgs/aboutus/greg5.png',
         elem: undefined,
         name: 'Grzegorz',
         bio: 'Hey, my name is Grzegorz Maniak, I\'m studying computing at TU Tallaght campus, I have a great interest in web and software development, I also enjoy the outdoors, I love to travel, camp and hike.'
     },
     'gregor': {
-        img: './imgs/aboutus/3.jpg',
+        img: './imgs/aboutus/greg2.png',
         elem: undefined,
         name: 'Gregor',
         bio: 'Ello, my name is Gregor, I\'m studying computing at TU Tallaght campus, I have a great interest in web and software development, I also enjoy the outdoors, I love to travel, camp and hike.'
     },
-    'gorg': {
-        img: './imgs/aboutus/4.jpg',
+    'grock': {
+        img: './imgs/aboutus/greg4.png',
         elem: undefined,
-        name: 'Gorg',
+        name: 'Grock',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    'grebarack': {
+        img: './imgs/aboutus/greg3.png',
+        elem: undefined,
+        name: 'Grebarack',
         bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, laboris nisi ut aliquip ex ea commodo consequat.'
     },
 }
