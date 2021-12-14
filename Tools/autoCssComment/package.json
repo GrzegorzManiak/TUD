@@ -1,0 +1,11 @@
+{
+    "name": "autocsscomment",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.ts",
+    "scripts": {
+        "nodemon": "nodemon index.ts C:\\Users\\Greg\\Desktop\\TUD\\Tools\\autoCssComment\\css\\index.css"
+    },
+    "author": "",
+    "license": "ISC"
+}

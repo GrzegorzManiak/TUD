@@ -1,0 +1,532 @@
+@media screen and (max-width: 450px) {
+    .shortcutParent {
+        /* This rule is used to specify the display of the element. */
+        display: none;
+    }
+}
+
+:root {
+    --width: 40rem;
+    --interactive-background-color: #e6e6e6;
+}
+
+#practicality>div {
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem;
+}
+
+.rules {
+    /* This rule is used to specify the max-width of the element. */
+    max-width: var(--width)!important;
+}
+
+.rules h1 {
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+    /* This rule is used to specify the padding of the element. */
+    padding: 5rem 0 0 0;
+    /* This rule is used to specify the font size of the text. */
+    font-size: 2rem;
+}
+
+.rules img {
+    /* This rule is used to specify the max-width of the element. */
+    max-width: var(--width);
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+.interactiveSection {
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+    /* This rule is used to specify the max-width of the element. */
+    max-width: var(--width);
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the height of the element. */
+    height: auto;
+    /* This rule is used to specify the background color of the element. */
+    background-color: var(--interactive-background-color);
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 1;
+}
+
+
+/*
+ The following styles are for the interactive elements
+*/
+
+
+/* Section 1, Feedback */
+
+.folderParent {
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem 0 1rem 0
+}
+
+.folderContainer {
+    /* This rule is used to specify the background color of the element. */
+    background-color: #ffffff00;
+    transition: all 0.1s ease-in-out;
+    /* This rule is used to specify the border of the element. */
+    border: #ffffff00 solid 0.1rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+.folderContainer:focus {
+    /* This rule is used to specify the background color of the element. */
+    background-color: #c4c4c49a;
+    /* This rule is used to specify the border of the element. */
+    border: #6b6b6b solid 0.1rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+.folderContainer:hover {
+    /* This rule is used to specify the background color of the element. */
+    background-color: #c4c4c49a;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+.folder {
+    /* This rule is used to specify the padding of the element. */
+    padding: 1.5rem 0 2.5rem 0;
+    /* This rule is used to specify the width of the element. */
+    width: 7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+}
+
+.folder>span:first-child {
+    /* This rule is used to specify the width of the element. */
+    width: 6rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #62c5ff;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.25rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+.folder>span:nth-child(2) {
+    /* This rule is used to specify the width of the element. */
+    width: 6rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #0971ad;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.25rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 9;
+    transform: translateY(-0.5rem);
+}
+
+.folder>span:nth-child(3) {
+    /* This rule is used to specify the width of the element. */
+    width: 2rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #0971ad;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.25rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 9;
+    transform: translate(-2rem, -0.8rem);
+}
+
+.folder>span:nth-child(4) {
+    transform: translateY(5rem);
+    /* This rule is used to specify the height of the element. */
+    height: 1rem;
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: bold;
+    /* This rule is used to specify the color of the text. */
+    color: #4b4b4b;
+}
+
+.folderFiles>span:nth-child(5) {
+    /* This rule is used to specify the width of the element. */
+    width: 5rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #e2e2e2;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.1rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 9;
+    transform: translateY(-0.4rem) rotate(2deg);
+}
+
+.folderFiles>span:nth-child(6) {
+    /* This rule is used to specify the width of the element. */
+    width: 5rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #d1d1d1;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.1rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 9;
+    transform: translateY(-0.3rem) rotate(-2deg);
+}
+
+
+/* Section 2, loading bar */
+
+.menuBarClass {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: flex-start;
+}
+
+.menuBarClass>div:first-child {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the max-width of the element. */
+    max-width: var(--width);
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the height of the element. */
+    height: 1.4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #cfcfcf;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: flex-end;
+}
+
+.menuContent {
+    /* This rule is used to specify the padding of the element. */
+    padding: 0 1rem 1rem 1rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: space-between;
+}
+
+.menuFlex {
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+}
+
+
+/*
+    the 3 buttons in the menu bar
+*/
+
+
+/* parent container */
+
+.menuBtns {
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the padding-right of the element. */
+    padding-right: 0.5rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the gap of the element. */
+    gap: 0.5rem;
+}
+
+
+/* Maximize */
+
+.menuBtns>span:first-child {
+    /* This rule is used to specify the width of the element. */
+    width: 0.7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 0.7rem;
+    /* This rule is used to specify the background of the element. */
+    background: #00b63d;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 5rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+
+/* Minimize */
+
+.menuBtns>span:nth-child(2) {
+    /* This rule is used to specify the width of the element. */
+    width: 0.7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 0.7rem;
+    /* This rule is used to specify the background of the element. */
+    background: #ff9900;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 5rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+
+/* close */
+
+.menuBtns>span:nth-child(3) {
+    /* This rule is used to specify the width of the element. */
+    width: 0.7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 0.7rem;
+    /* This rule is used to specify the background of the element. */
+    background: #ff3939;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 5rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+
+/* Menu title */
+
+.menuTitle {
+    /* This rule is used to specify the position of the element. */
+    position: relative;
+    /* This rule is used to specify the text alignment of the text. */
+    text-align: center;
+    /* This rule is used to specify the margin-left of the element. */
+    margin-left: auto;
+    /* This rule is used to specify the margin-right of the element. */
+    margin-right: auto;
+}
+
+
+/* Downloading files icon */
+
+.normMenu {
+    /* This rule is used to specify the width of the element. */
+    width: 7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 7rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+    /* This rule is used to specify the background of the element. */
+    background: #00b63d;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 100%;
+}
+
+
+/* Limited diskspace icon */
+
+.warnMenu {
+    /* This rule is used to specify the width of the element. */
+    width: 7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 7rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+    /* This rule is used to specify the background of the element. */
+    background: #ec9e28;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 5%;
+}
+
+
+/* Out of disk space icon */
+
+.errorMenu {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+    /* This rule is used to specify the border-left of the element. */
+    border-left: 3.5rem solid transparent;
+    /* This rule is used to specify the border-right of the element. */
+    border-right: 3.5rem solid transparent;
+    /* This rule is used to specify the border-bottom of the element. */
+    border-bottom: 7rem solid #ff4027;
+}
+
+
+/* Flex box that aligins the text within the box and the buttons */
+
+.menuButtonString {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the flex-wrap of the element. */
+    flex-wrap: wrap;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: flex-end;
+}
+
+
+/* This is the buttons parent */
+
+.menuButtonContainer {
+    /* This rule is used to specify the float of the element. */
+    float: right;
+    /* This rule is used to specify the gap of the element. */
+    gap: 0.7rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+}
+
+
+/* the continue/cancel button text */
+
+.menuButton>p {
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 500;
+    /* This rule is used to specify the padding of the element. */
+    padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+    /* This rule is used to specify the background color of the element. */
+    background-color: #dbdbdb9a;
+    /* This rule is used to specify the color of the text. */
+    color: #383838;
+    /* This rule is used to specify the border of the element. */
+    border: #7e7e7e solid 0.1rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the font size of the text. */
+    font-size: 0.8rem;
+}
+
+.cancelButton>p {
+    /* This rule is used to specify the color of the text. */
+    color: #c21e1e!important;
+    /* This rule is used to specify the border of the element. */
+    border: #c21e1e solid 0.1rem;
+}
+
+.menuContent>div {
+    /* This rule is used to specify the width of the element. */
+    width: 80%;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: flex-start;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+}
+
+.menuContent>div>h2 {
+    /* This rule is used to specify the color of the text. */
+    color: #292929;
+    /* This rule is used to specify the font size of the text. */
+    font-size: 1.2rem;
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+}
+
+.menuContent>div p {
+    /* This rule is used to specify the color of the text. */
+    color: #292929;
+    /* This rule is used to specify the font size of the text. */
+    font-size: 1rem;
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+}
+
+
+/* Loading bar background */
+
+.outerBar {
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the height of the element. */
+    height: 1.25rem;
+    /* This rule is used to specify the background of the element. */
+    background: #c7c2c2;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+
+/* Loading bar */
+
+.innerBar {
+    /* This rule is used to specify the width of the element. */
+    width: 25%;
+    /* This rule is used to specify the background of the element. */
+    background: #00b63d;
+    /* This rule is used to specify the height of the element. */
+    height: 1.25rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+
+/* Shortcut box */
+
+.shortcutParent {
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem 0 1rem 0;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: row;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: space-evenly;
+}
+
+.shortcutBox {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+}
+
+.shortcutBox>p {
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 600;
+    /* This rule is used to specify the padding of the element. */
+    padding: 0.6rem;
+    /* This rule is used to specify the background color of the element. */
+    background-color: #c4c4c49a;
+    /* This rule is used to specify the color of the text. */
+    color: #313131;
+    /* This rule is used to specify the border of the element. */
+    border: #6b6b6b solid 0.1rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    transition: all 0.1s ease-in-out;
+}
+
+.shortcutBoxActive>p {
+    /* This rule is used to specify the color of the text. */
+    color: #0f5769;
+    transform: scale(1.03);
+}
