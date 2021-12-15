@@ -1,7 +1,8 @@
 const pages = {
     'home': './home.html',
-    'ui/ux': './uiux.html',
-    'colors': 'colors.html',
+    'tips': './tips.html',
+    'css': './css.html',
+    'html': './html.html',
     'about us': './aboutus.html',
     'survey': './survey.html'
 }
@@ -31,10 +32,10 @@ const imgs = {
         name: 'Grock',
         bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, laboris nisi ut aliquip ex ea commodo consequat.'
     },
-    'grebarack': {
+    'grebama': {
         img: './imgs/aboutus/greg3.png',
         elem: undefined,
-        name: 'Grebarack',
+        name: 'Grebama',
         bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, laboris nisi ut aliquip ex ea commodo consequat.'
     },
 }

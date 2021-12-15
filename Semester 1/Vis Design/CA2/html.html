@@ -65,18 +65,6 @@
     -->
 
     <!--
-        Page indicator
-    -->
-    <div id="pageIndicator" class="flex-row">
-        <div onclick="window.location='#splashContent'" class="pageIndicatorElement"></div>
-        <div onclick="window.location='#aboutUs'" class="pageIndicatorElement pageIndicatorElementActive"></div>
-        <div onclick="window.location='#content3'" class="pageIndicatorElement"></div>
-    </div>
-    <!--
-        End of Page indicator
-    -->
-
-    <!--
         header content
         -->
     <div id='header' class='full-width flex-vertical-horizontal gradient'>
@@ -85,8 +73,8 @@
         </h1>
     </div>
     <!--
-            End of header
-        -->
+        End of header
+    -->
 
     <!--
         Main content
@@ -392,18 +380,12 @@
     <!-- Load in the script responsible for the navbar -->
     <script src="./js/navbar.js "></script>
 
-    <!-- Load in the script responsible for the blog -->
-    <script src="./js/uiux.js "></script>
+    <!-- Load in the script responsible for the navbar -->
+    <script src="./js/navbar.js "></script>
 
     <script>
-        defineShortcut('ctrl-right', 'ArrowRight');
-        defineShortcut('search', 'KeyL');
-        defineShortcut('ctrl-left', 'ArrowLeft');
-
-        createOTP('otpParent', 4);
-
         // define the current page we are on
-        currentPageName = 'ui/ux';
+        currentPageName = 'html';
 
         // add logic to the hamburger menu
         hamburger('hamburgerMenuBtn');

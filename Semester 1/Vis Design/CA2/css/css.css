@@ -1,0 +1,92 @@
+@media screen and (max-width: 450px) {
+    .halfInteractive {
+        width: 100%;
+    }
+    .interactiveSection {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .halfInteractive {
+        width: 100%;
+    }
+    .interactiveSection {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .halfInteractive {
+        max-width: 46.5%;
+    }
+    .interactiveSection {
+        flex-wrap: nowrap;
+    }
+}
+
+.interactiveSection {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.halfInteractive {
+    width: 100%;
+}
+
+
+/*
+    Output
+*/
+
+.outputInteractive {
+    display: flex;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    /* Border */
+    border: #6b6b6b solid 0.1rem;
+}
+
+.outputInteractive p {
+    transition: all 0.5s;
+    font-weight: 600;
+}
+
+
+/*
+    Input
+*/
+
+.inputInteractive {
+    display: flex;
+    height: 100%;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inputInteractive>input {
+    all: unset;
+    height: 2.5rem;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    /* Text */
+    color: #272727;
+    padding: 0 1rem 0 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    /* Border */
+    border: #6b6b6b solid 0.1rem;
+}
+
+.inputInteractive>input:hover {
+    border: 0.1rem solid #5c5c5c;
+}
+
+.inputInteractiveFocus {
+    border: 0.15rem solid #559cdf!important;
+}

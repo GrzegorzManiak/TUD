@@ -24,7 +24,7 @@
     <!--
         Navigation Bar
     -->
-    <nav class='full-width flex-vertical-horizontal belowHeader'>
+    <nav class='full-width flex-vertical-horizontal overHeader'>
         <!-- I was going to make a logo, but got lazy -->
         <div id='navLogo' class='logoColorMenuClosed'>
             <p>
@@ -65,15 +65,15 @@
     -->
 
     <!--
-        Page indicator
-    -->
-    <div id="pageIndicator" class="flex-row">
-        <div onclick="window.location='#splashContent'" class="pageIndicatorElement"></div>
-        <div onclick="window.location='#aboutUs'" class="pageIndicatorElement pageIndicatorElementActive"></div>
-        <div onclick="window.location='#content3'" class="pageIndicatorElement"></div>
+        header content
+        -->
+    <div id='header' class='full-width flex-vertical-horizontal gradient'>
+        <h1>
+            About us.
+        </h1>
     </div>
     <!--
-        End of Page indicator
+        End of header
     -->
 
     <!--
@@ -81,11 +81,8 @@
     -->
     <div id='mainContent' class='flex-column flex-vertical-horizontal'>
         <!-- About us section -->
-        <section class='full-height' id='aboutUs'>
+        <section id='aboutUs'>
             <div class='flex-flex-vertical-horizontal'>
-                <h1>
-                    ABOUT US
-                </h1>
                 <div class='aboutusSelector'>
                     <!-- Map used by the carousel, to allow the user to navigate the carousel -->
                     <!-- using the left and right hand side of the main image -->
@@ -120,8 +117,12 @@
     <!-- Load in the main script -->
     <script src="./js/main.js"></script>
 
+    <!-- Load in the script responsible for the navbar -->
+    <script src="./js/navbar.js "></script>
+
     <!-- Load in the page specific script -->
     <script src="./js/aboutUs.js"></script>
+
     <script>
         // Load the carousel in, add content to it
         addCarouselItems();

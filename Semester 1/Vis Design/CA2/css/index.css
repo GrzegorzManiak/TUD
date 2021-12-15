@@ -16,7 +16,9 @@
     --gradient-4: #de6262;
     --gradient-5: #56ab2f;
     /* Header */
-    --header-height: 20rem;
+    --header-height-desktop: 16rem;
+    --header-height-tablet: 14rem;
+    --header-height-mobile: 10rem;
     --header-font-color: #ffffff;
     /* Footer */
     --footer-height: 4rem;
@@ -24,6 +26,9 @@
     /* Scrollbar */
     --scroll-bar-color: #e0e0e0;
     --scroll-bar-width: 0.5rem;
+    /* Blog */
+    --interactive-background-color: #ececec;
+    --blog-width: 800px;
     /* General */
     --font-color: #22223B;
     --font-color-light: #4659DC;
@@ -53,7 +58,7 @@
     }
      :root {
         --nav-bar-height-dynamic: var(--nav-bar-height-mobile);
-        --header-height: 12rem;
+        --header-height: var(--header-height-mobile);
     }
 }
 
@@ -79,7 +84,7 @@
     }
      :root {
         --nav-bar-height-dynamic: var(--nav-bar-height);
-        --header-height: 10rem;
+        --header-height: var(--header-height-tablet);
     }
 }
 
@@ -93,11 +98,11 @@
         text-align: left;
     }
     #mainContent section {
-        width: 60vw;
+        width: 70vw;
     }
      :root {
         --nav-bar-height-dynamic: var(--nav-bar-height);
-        --header-height: 20rem;
+        --header-height: var(--header-height-desktop);
     }
 }
 
@@ -145,6 +150,38 @@ body {
     max-width: var(--max-width)!important;
     padding: 0;
     margin: 0;
+}
+
+
+/*
+    Blog posts
+*/
+
+.blog {
+    transition: width 0.2s ease-out;
+    max-width: var(--blog-width);
+}
+
+.blog h1 {
+    margin: 0;
+    padding: 5rem 0 0 0;
+    font-size: 2rem;
+}
+
+.blog img {
+    max-width: var(--blog-width);
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.interactiveSection {
+    gap: 1rem;
+    max-width: var(--blog-width);
+    width: 100%;
+    border-radius: 0.5rem;
+    height: auto;
+    background-color: var(--interactive-background-color);
+    z-index: 1;
 }
 
 
@@ -376,6 +413,7 @@ nav.belowHeader li {
 
 footer {
     bottom: 0;
+    position: static;
     height: var(--footer-height);
     background-color: var(--footer-color);
 }

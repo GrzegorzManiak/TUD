@@ -8,8 +8,6 @@
 }
 
 :root {
-    --width: 40rem;
-    --interactive-background-color: #e6e6e6;
     --box-size: 3rem;
     --box-font-size: 2rem;
     --box-font-weight: 500;
@@ -20,40 +18,86 @@
     --box-scale-by: 0.02;
 }
 
-#practicality>div {
-    padding: 1rem;
-}
-
-.rules {
-    max-width: var(--width);
-}
-
-.rules h1 {
-    margin: 0;
-    padding: 5rem 0 0 0;
-    font-size: 2rem;
-}
-
-.rules img {
-    max-width: var(--width);
-    width: 100%;
-    border-radius: 0.5rem;
-}
-
-.interactiveSection {
-    gap: 1rem;
-    max-width: var(--width);
-    width: 100%;
-    border-radius: 0.5rem;
-    height: auto;
-    background-color: var(--interactive-background-color);
-    z-index: 1;
-}
-
 
 /*
  The following styles are for the interactive elements
 */
+
+
+/*
+    Spoitfy
+*/
+
+.spotifyContainer {
+    display: flex;
+    align-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1rem 0 1rem 0;
+}
+
+.pcScreen {
+    width: 15rem;
+    height: 11rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pcScreen>img {
+    border-radius: 0.5rem;
+    width: 14rem;
+    height: auto;
+    background-color: #c0c0c0;
+    border: 0.3rem solid #c0c0c0;
+    border-bottom: 1rem solid #c0c0c0;
+    z-index: 10;
+}
+
+.pcScreen>span:nth-child(2) {
+    border-right: 3rem solid transparent;
+    border-left: 3rem solid transparent;
+    border-bottom: 4rem solid #818181;
+    transform: translateY(-3rem);
+}
+
+.tabletScreen {
+    width: 5.5rem;
+}
+
+.tabletScreen>img {
+    border-radius: 0.5rem;
+    width: 5rem;
+    height: auto;
+    background-color: #c0c0c0;
+    border: 0.3rem solid #c0c0c0;
+    border-bottom: 0.5rem solid #c0c0c0;
+    z-index: 10;
+}
+
+.mobileScreen {
+    width: 3.5rem;
+}
+
+.mobileScreen>img {
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: auto;
+    background-color: #c0c0c0;
+    border: 0.3rem solid #c0c0c0;
+    border-bottom: 0.5rem solid #c0c0c0;
+    z-index: 10;
+}
+
+.spoHover {
+    transition: transform 0.2s ease-out;
+}
+
+.spoHover:hover {
+    transform: scale(1.05);
+}
 
 
 /* Section 1, Feedback */
@@ -155,7 +199,6 @@
 
 .menuBarClass>div:first-child {
     display: flex;
-    max-width: var(--width);
     width: 100%;
     height: 1.4rem;
     background: #cfcfcf;
@@ -419,7 +462,7 @@
 }
 
 .otpFeild {
-    padding: 1rem;
+    padding: 1rem 0 1rem 0;
 }
 
 .tfaInputNorm {

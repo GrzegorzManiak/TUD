@@ -8,7 +8,7 @@ function addCarouselItems() {
         let div = document.createElement('div');
 
         //add text to the div
-        div.innerHTML = `<h2 class='carouselText'>${imgs[key].name}</h2><img class='carouselImg' src="${imgs[key].img}" alt="${imgs[key].name}"><p class='carouselText'>${imgs[key].bio}</p>`;
+        div.innerHTML = `<img class='carouselImg' src="${imgs[key].img}" alt="${imgs[key].name}"><p class='carouselText'><span class='carouselText'>${imgs[key].name},</span> ${imgs[key].bio}</p>`;
 
         //give the div a name
         div.name = key;

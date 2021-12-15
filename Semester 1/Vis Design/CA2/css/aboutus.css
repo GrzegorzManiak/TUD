@@ -73,6 +73,10 @@
     text-align: center;
 }
 
+#mainContent {
+    min-height: 65vh;
+}
+
 .aboutusSelector img {
     height: auto;
     width: 100%;
@@ -161,7 +165,7 @@
 }
 
 .carouselSelected {
-    z-index: 100;
+    z-index: 110;
     animation: start 2s forwards ease;
 }
 
@@ -258,7 +262,7 @@
 .scaleOutToRight {
     z-index: 90;
     transform: scale(1.15);
-    animation: 2000ms ease 0ms 1 normal forwards running scaleOutToRight;
+    animation: scaleOutToRight 2s forwards;
 }
 
 @keyframes scaleOutToRight {
@@ -303,14 +307,31 @@
 }
 
 
+/* FADE IN */
+
+.fadeIn {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+
 /* TEXT */
 
 .carouselText {
     transition: all 2s ease;
 }
 
-h2.carouselText {
+span.carouselText {
     font-weight: 800;
+    font-size: large;
     color: var(--font-color);
 }
 
@@ -340,25 +361,4 @@ h2.carouselText {
 
 .carouselImg:active {
     transform: scale(0.98);
-}
-
-
-/*
-#hobbiesScroll {
-    position: absolute;
-    word-wrap: hidden;
-    margin: 0;
-    width: 1000000px;
-    font-size: 10rem;
-    left: 100vh
-}
-*/
-
-
-/*
-    General Styles
-*/
-
-#mainContent {
-    margin-top: var(--nav-bar-height-dynamic);
 }
