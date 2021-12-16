@@ -69,51 +69,33 @@
     <!--
         Page indicator
     -->
-    <div id='pageIndicator' class='flex-row'>
-        <div onclick="window.location='#splashContent'" class='pageIndicatorElement pageIndicatorElementActive'></div>
-        <div onclick="window.location='#aboutUs'" class='pageIndicatorElement'></div>
-        <div onclick="window.location='#content3'" class='pageIndicatorElement'></div>
-    </div>
-    <!--
-        End of Page indicator
-    -->
 
     <!--
-        Splash content/splash page
-    -->
-    <section id='splashContent'>
-        <div id='splashContentInner'>
-            <div class='splashTextContent'>
-                <p>
-                    <b>
-                        Welcome to the <a>Group 17</a> website!
-                    </b> Voluptate in ipsum deserunt duis sit pariatur esse. Voluptate amet magna excepteur do laboris adipisicing eu sunt sint consectetur dolor est eiusmod. Adipisicing eu enim non in nostrud laboris tempor commodo
-                    ullamco eiusmod aliqua quis do.
-                </p>
-            </div>
-            <div class='splashImgContent'>
-                <div class='square1'></div>
-                <div class='square2'></div>
-                <div class='square3'></div>
-                <div class='square4'></div>
-                <div class='square5'></div>
-                <div class='square6'></div>
-            </div>
-        </div>
-    </section>
-    <!--
-        End of Splash content/splash page
+        End of Page indicator
     -->
 
     <!--
         Main content
     -->
     <div id='mainContent' class='flex-column flex-vertical-horizontal'>
-        <section class='full-height' id='aboutUs'>
+        <section class='blog'>
+            <h1>
+                Welcome to the Group 17 website.
+            </h1>
+            <p>
+                This site is focused on the VDUX (Visual Design User Experience) module, it aims to show future students how to design and develop websites.
+            </p>
+            <p>
+                This site teaches you the basics of HTML, CSS and Web design
+            </p>
+            <div class='interactiveSection codeBlockFlex' id='headingExample'>
 
-        </section>
-
-        <section class='full-height' id='content3'>
+                <div class='codeBlock'>
+                    <code class='text-center headingElementExample'>
+                        
+                    </code>
+                </div>
+            </div>
         </section>
     </div>
     <!--
@@ -123,9 +105,18 @@
     <!--
         Footer
     -->
-    <footer class='full-width flex-vertical-horizontal'>
-        <ul id='footElements'>
-        </ul>
+    <footer class='full-width'>
+        <div>
+            <h3>Group 17</h3>
+            <div class='sdgfa'>
+                <h4>Usefull links:</h4>
+                <div class='flex-column'>
+                    <a href='https://www.w3schools.com/' target='_blank'>W3 Schools</a>
+                    <a href='https://developer.mozilla.org/en-US/docs' target='_blank'>MDN</a>
+                </div>
+            </div>
+            <a href='./aboutus.html' target='_blank'>Credits</a>
+        </div>
     </footer>
     <!--
         End of Footer
@@ -147,7 +138,7 @@
         addElements('hamburgerElements', 'nav-current');
 
         // start the smooth scrolling
-        startScroll();
+        //startScroll();
     </script>
 </body>
 

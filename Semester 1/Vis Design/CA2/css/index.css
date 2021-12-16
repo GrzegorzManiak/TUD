@@ -411,37 +411,29 @@ nav.belowHeader li {
 */
 
 footer {
-    bottom: 0;
-    position: static;
-    height: var(--footer-height);
-    background-color: var(--footer-color);
+    /* soft dropshadow up */
+    box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
-footer ul {
-    margin: 0;
-    padding: 0;
+footer>div {
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
-footer ul li {
-    /* Removes the dots beside the LI */
-    display: inline;
-    /* Makes the UL horizontal insted of Vertical */
-    float: left;
-    /* Add spacing between LI's */
-    padding: 0 var(--nav-bar-item-padding) 0 var(--nav-bar-item-padding);
-    /* Change font color */
-    color: var(--nav-bar-font-color);
-    /* Ease all animations and rule changes */
-    transition: all 0.25s ease;
-    /* Remove the ability to select text */
-    user-select: none;
-    /* make the font bold */
-    font-weight: 400;
-}
-
-.foot-current {
-    /* make the font bolder */
-    font-weight: 600;
+.sdgfa {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
