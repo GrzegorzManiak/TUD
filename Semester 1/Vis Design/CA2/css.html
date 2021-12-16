@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+
+
 <html class="htmlStopScroll">
 
 <head>
@@ -90,12 +93,90 @@
                             What is css?
                         </h1>
                         <p>
-                            Cascading Style Sheets are a set of rules that define how an HTML document is displayed on a web page.
+                            Cascading Style Sheets are a set of rules that define how an HTML document is displayed and how it is laid out on a page.
                         </p>
                         <p>
                             It is only intended to be used for styling web pages, and is not a general-purpose language like e.g javascript, lets take a look at some examples.
                         </p>
                     </section>
+
+                    <section class='blog'>
+                        <h1>
+                            How can I use it?
+                        </h1>
+                        <p>
+                            There are multiple ways of using CSS on your webpage, only one is reccomended though, we have, Inline styles, Embedded styles, Imported styles and External styles, the only method we actualy use is External styles.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex'>
+                            <p>External</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;head&gt;</span>
+        <span class='codeTag'>&lt;link</span> <span class='codeInline'>rel</span>=<span class='codeString'>'stylesheet'</span> <span class='codeInline'>href</span>=<span class='codeString'>'./index.css'</span><span class='codeTag'>&gt;</span>
+    <span class='codeTag'>&lt;/head&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                            <p>Inline</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;body&gt;</span>
+        <span class='codeTag'>&lt;div</span> <span class='codeInline'>style</span>=<span class='codeString'>'<span class='codeRule'>background-color</span>: <span class='codeString'>#fafafa</span>;'</span><span class='codeTag'>&gt;</span><span class='codeTag'>&lt;/div&gt;</span>
+    <span class='codeTag'>&lt;/body&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                            <p>Embedded</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;head&gt;</span>
+        <span class='codeTag'>&lt;style&gt;</span> 
+            <span class='codeSelector'>body</span> {
+                <span class='codeRule'>background-color</span>: <span class='codeString'>#fafafa</span>;  
+            }
+        <span class='codeTag'>&lt;/style&gt;</span> 
+    <span class='codeTag'>&lt;/head&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            How css selectors work
+                        </h1>
+                        <p>
+                            The css selectors are used to select elements on a webpage, the syntax is,
+                        </p>
+                        <div class='interactiveSection codeBlockFlex'>
+                            <p>ID selector</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeCssComment'>/* &lt;div id='imAnElementWithAnId'&gt;&lt;/div&gt; */</span>                                    
+<span class='codeIdSelector'>#imAnElementWithAnId</span> {
+    <span class='codeRule'>background-color</span>: <span class='codeString'>#fafafa</span>;  
+}</pre>
+                            </div>
+                            <p>Class selector</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeCssComment'>/* &lt;div class='classElement'&gt;&lt;/div&gt; */</span>                                    
+<span class='codeClassSelector'>.classElement</span> {
+    <span class='codeRule'>background-color</span>: <span class='codeString'>#fafafa</span>;  
+}</pre>
+                            </div>
+                            <p>Tag seletor</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeCssComment'>/* &lt;body&gt;&lt;/body&gt; */</span>
+<span class='codeSelector'>body</span> {
+    <span class='codeRule'>background-color</span>: <span class='codeString'>#fafafa</span>;  
+}</pre>
+                            </div>
+                        </div>
+                    </section>
+
 
                     <section class='blog'>
                         <h1>
@@ -137,7 +218,29 @@
                             </div>
                             <div class='outputInteractive halfInteractive'>
                                 <p>
-                                    Here, you can change how to background appears behind this text.
+                                    Here you can change how the background appears on this element.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Text
+                        </h1>
+                        <p>
+                            Using css, you can change the style of text in multiple ways.
+                        </p>
+                        <div class='interactiveSection' id='textInteractive'>
+                            <div class='inputInteractive halfInteractive'>
+                                <input spellcheck="false" type="text" value="font-weight: light">
+                                <input spellcheck="false" type="text" value="font-size: 1.5em">
+                                <input spellcheck="false" type="text" value="font-style: italic">
+                                <input spellcheck="false" type="text" value="font-family: Georgia, serif">
+                            </div>
+                            <div class='outputInteractive halfInteractive'>
+                                <p>
+                                    This is some random text, use the inputs on the right to change this text.
                                 </p>
                             </div>
                         </div>
@@ -148,7 +251,8 @@
                             Borders
                         </h1>
                         <p>
-                            You can use the 'border' rule to add or remove a border from your element.
+                            You can use the 'border' rule to add or remove a border from your element. there is a alot more border styles that can be used, I didnt list them all here, but you can find them all
+                            <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/border'>here</a>.
                         </p>
                         <div class='interactiveSection' id='borderInteractive'>
                             <div class='inputInteractive halfInteractive'>
@@ -161,6 +265,28 @@
                             <div class='outputInteractive halfInteractive'>
                                 <p>
                                     Sample text
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Border radius
+                        </h1>
+                        <p>
+                            You can use the 'border-radius' rule to add rounded edges to you element.
+                        </p>
+                        <div class='interactiveSection' id='brInteractive'>
+                            <div class='inputInteractive halfInteractive'>
+                                <input spellcheck="false" type="text" value="border-radius: 1rem">
+                                <input spellcheck="false" type="text" value="border-radius: 25% 10%">
+                                <input spellcheck="false" type="text" value="border-radius: 10% 25% 50% 40%">
+                                <input spellcheck="false" type="text" value="border-radius: 1rem 0 1rem 0">
+                            </div>
+                            <div class='outputInteractive halfInteractive'>
+                                <p>
+                                    This is some random text.
                                 </p>
                             </div>
                         </div>
@@ -197,7 +323,8 @@
         addVisualizer('colorHexInteractive', 'color');
         addVisualizer('backgroundInteractive', 'background');
         addVisualizer('borderInteractive', 'border');
-
+        addVisualizer('textInteractive', 'text');
+        addVisualizer('brInteractive', 'border-radius', 'background-color: #272727; color: white; padding: 0.5rem');
         // define the current page we are on
         currentPageName = 'css';
 

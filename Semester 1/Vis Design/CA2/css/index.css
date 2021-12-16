@@ -177,7 +177,6 @@ body {
 .interactiveSection {
     gap: 1rem;
     max-width: var(--blog-width);
-    width: 100%;
     border-radius: 0.5rem;
     height: auto;
     background-color: var(--interactive-background-color);
@@ -560,4 +559,14 @@ footer ul li {
 .max-width {
     /* Sets the max width of the element */
     max-width: var(--max-width);
+}
+
+.text-center {
+    text-align: center;
+    align-self: center;
+    width: 100%;
+}
+
+.margin-top {
+    margin-top: var(--nav-bar-height-dynamic);
 }

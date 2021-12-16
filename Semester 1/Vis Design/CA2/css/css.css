@@ -5,6 +5,9 @@
     .interactiveSection {
         flex-wrap: wrap;
     }
+    #importingCss>img {
+        height: 7rem;
+    }
 }
 
 @media screen and (min-width: 450px) {
@@ -14,22 +17,45 @@
     .interactiveSection {
         flex-wrap: wrap;
     }
+    #importingCss>img {
+        height: 10rem;
+    }
 }
 
 @media screen and (min-width: 800px) {
     .halfInteractive {
-        max-width: 46.5%;
+        /* max-width: 46%; */
     }
     .interactiveSection {
         flex-wrap: nowrap;
     }
+    #importingCss>img {
+        height: 6rem;
+    }
+}
+
+#importingCss {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#importingCss>img {
+    width: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+#importingCss>img:hover {
+    transform: scale(1.06);
 }
 
 .interactiveSection {
     display: flex;
     align-items: center;
     padding: 1rem;
-    justify-content: space-between;
+    flex-direction: column;
+    align-content: space-around;
 }
 
 .halfInteractive {
@@ -43,11 +69,13 @@
 
 .outputInteractive {
     display: flex;
-    padding: 1rem;
-    background: #ffffff;
+    /* padding: 1rem; */
+    background: #f8f8f8;
     border-radius: 0.5rem;
     /* Border */
-    border: #6b6b6b solid 0.1rem;
+    border: #8b8b8b solid 0.1rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .outputInteractive p {
@@ -89,4 +117,133 @@
 
 .inputInteractiveFocus {
     border: 0.15rem solid #559cdf!important;
+}
+
+
+/*
+    code Examples
+*/
+
+.codeBlock {
+    display: flex;
+    padding: 1rem;
+    width: 95%;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    /* Border */
+    border: #6b6b6b solid 0.1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.codeBlockFlex {
+    gap: 0.2rem;
+    flex-wrap: wrap;
+}
+
+.codeBlockFlex>a {
+    padding: 0;
+}
+
+.codeBlock>pre {
+    width: 100%;
+    white-space: pre-wrap;
+}
+
+.codeTag {
+    color: #255fff;
+}
+
+.codeInline {
+    color: #e83bff;
+}
+
+.codeSelector {
+    color: #394cf7;
+}
+
+.codeIdSelector {
+    color: #f73939;
+}
+
+.codeCssComment {
+    color: #575757;
+}
+
+.codeClassSelector {
+    color: #479c83;
+}
+
+.codeRule {
+    color: #ff8a3c;
+}
+
+.codeString {
+    color: #73a107;
+}
+
+
+/*
+    HTML examples
+*/
+
+.headingElementExample *:first-child {
+    transition: all 0.2s ease-in-out;
+    /* margin: 0; */
+    padding: 0;
+}
+
+.headingButtonParent {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.headingButtonParent>button {
+    all: unset;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: #272727;
+    /* Border */
+    border: #6b6b6b solid 0.1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.headingButtonParent>button:hover {
+    border: 0.15rem solid #5c5c5c;
+    transform: scale(1.02);
+}
+
+.headingButtonParent>button:active {
+    transform: scale(0.97);
+}
+
+.headingButtonActive {
+    border: 0.15rem solid #559cdf!important;
+}
+
+.codePaddingLeft {
+    padding-left: 1rem;
+}
+
+ol.codeList,
+ul.codeList {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+/*
+    Image examples
+*/
+
+#imgExample img {
+    width: 15rem;
+    height: auto;
+    border-radius: 0.5rem;
 }

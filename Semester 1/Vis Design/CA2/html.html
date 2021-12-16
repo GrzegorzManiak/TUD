@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html class="htmlStopScroll">
 
 <head>
@@ -8,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
     <!---Title of the web page-->
-    <title>Ui/Ux | Group 17</title>
+    <title>Html | Group 17</title>
 
     <!--The description of the site, Metadata, used for SEO-->
     <meta name="description" content="Group 17 Project for VDUX">
@@ -17,7 +19,7 @@
     <link rel="stylesheet" href="./css/index.css">
 
     <!--CSS Only relative to this page-->
-    <link rel="stylesheet" href="./css/uiux.css">
+    <link rel="stylesheet" href="./css/css.css">
 </head>
 
 <body>
@@ -69,7 +71,7 @@
         -->
     <div id='header' class='full-width flex-vertical-horizontal gradient'>
         <h1>
-            User interface design.
+            Basic html.
         </h1>
     </div>
     <!--
@@ -84,277 +86,159 @@
         <!-- Practicality section -->
         <section id="practicality">
             <div class="max-width flex-column">
-                <div>
-                    <div class='flex-horizontal flex-column'>
-                        <section class='rules'>
-                            <p>
-                                I have compiled and interpited some general rules of user interface design according to design teams, industry leaders and proffesors such as <a href='https://en.wikipedia.org/wiki/Ben_Shneiderman'>Ben Shneiderman</a>,
-                                I've added interactive examples to push my points accross.
-                            </p>
-                            <p>
-                                Here they are in a non sequential order.
-                            </p>
-                        </section>
+                <div class='flex-horizontal flex-column'>
+                    <section class='blog'>
+                        <h1>
+                            What is html?
+                        </h1>
+                        <p>
+                            HTML stands for Hyper Text Markup Language. HTML is the standard markup language for creating web pages. It is used to create web pages.
+                        </p>
+                        <p>
+                            HTML is only intended for creating web pages. It is not a general-purpose language.
+                        </p>
+                    </section>
 
-                        <section class='rules'>
-                            <h1>
-                                Consistency
-                            </h1>
-                            <p>
-                                The user interface should be consistent with the rest of the application, take a look at Spotify as an example as their app is on multiple devices.
-                            </p>
-                            <p>
-                                As you can see, the app is very consistent, with the same general design on all devices.
-                            </p>
-                            <img src='.\imgs\blog\ui\Spotify.jpg' alt='spotify running on a range of devices'>
-                        </section>
+                    <section class='blog'>
+                        <h1>
+                            Doctype
+                        </h1>
+                        <p>
+                            The doctype is the first thing that is written in an HTML document. It defines the document type, it must allways be the first thing in the document, and it only appers once per page.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex'>
+                            <p>Example</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;!DOCTYPE</span> <span class='codeInline'>html</span><span class='codeTag'>&gt;</span>
+<span class='codeTag'>&lt;html&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                        </div>
+                    </section>
 
-                        <section class='rules'>
-                            <h1>
-                                Shortcuts
-                            </h1>
-                            <p>
-                                Again, taking a look at Spotify, you can see that there are a lot of shortcuts, such as the search shortcut (Ctrl-l), the next track shortcut (Ctrl-right), and the previous track shortcut (Ctrl-left).
-                            </p>
-                            <div class='interactiveSection flex-column shortcutParent'>
-                                <div class='shortcutBox' id='ctrl-right'>
-                                    <p>
-                                        ctrl
-                                    </p>
-                                    <p>
-                                        right
-                                    </p>
-                                </div>
-                                <div class='shortcutBox' id='search'>
-                                    <p>
-                                        ctrl
-                                    </p>
-                                    <p>
-                                        L
-                                    </p>
-                                </div>
-                                <div class='shortcutBox' id='ctrl-left'>
-                                    <p>
-                                        ctrl
-                                    </p>
-                                    <p>
-                                        left
-                                    </p>
-                                </div>
+                    <section class='blog'>
+                        <h1>
+                            Metadata
+                        </h1>
+                        <p>
+                            Metadata is information about the document, it is not visible to the user, but it can be used by the browser to make decisions about how to display the document, its also used by search engines to index the document.
+                        </p>
+                        <p>
+                            Metadata is stored in the head of the document, you can learn more about it <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head" target="_blank">here</a>.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex'>
+                            <p>Title</p>
+                            <div class='inputInteractive halfInteractive'>
+                                <input id='tabTitleExample' spellcheck="false" type="text" placeholder="Look! you can edit me, then look at the name of the tab!">
                             </div>
-                        </section>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;head&gt;</span>
+        <span class='codeInline'>&lt;title&gt;</span> Title of the page <span class='codeInline'>&lt;/title&gt;</span>
+    <span class='codeTag'>&lt;/head&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                            <p>Descripton</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;head&gt;</span>
+        <span class='codeTag'>&lt;meta</span> <span class='codeClassSelector'>name</span>=<span class='codeString'>'description'</span> <span class='codeClassSelector'>content</span>=<span class='codeString'>'What even is this page?'</span><span class='codeTag'>&gt;</span><span class='codeTag'>&lt;/meta&gt;</span>
+    <span class='codeTag'>&lt;/head&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                        </div>
+                    </section>
 
-                        <section class='rules'>
-                            <h1>
-                                Feedback
-                            </h1>
-                            <p>
-                                An example of Feedback is the common folder, once a user hovers over one, it becomes highlighted, once they click it, a border is shown around the folder, indicating that the user has that folder selected.
-                            </p>
-                            <p>
-                                We can expand this by chageing the folders look depending if it has files in it or not, if you take a look at "Folder 2", you can clearly tell that it contains files.
-                            </p>
-                            <div class='interactiveSection flex-vertical-horizontal folderParent'>
-                                <button class='folderContainer'>
-                                    <div class='folder'>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span>Folder 1</span>
-                                    </div>
-                                </button>
-                                <button class='folderContainer'>
-                                    <div class='folder folderFiles'>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span>Folder 2</span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </button>
+                    <section class='blog'>
+                        <h1>
+                            Headings
+                        </h1>
+                        <p>
+                            The HTML spec provides a set of 6 heading tags to create diferently sized headings, you should only use the h1 tag once per page, and preferably at the top of the page.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex' id='headingExample'>
+                            <div class='headingButtonParent'>
+                                <button>&lt;h1&gt;</button>
+                                <button>&lt;h2&gt;</button>
+                                <button>&lt;h3&gt;</button>
+                                <button>&lt;h4&gt;</button>
+                                <button>&lt;h5&gt;</button>
+                                <button>&lt;h6&gt;</button>
                             </div>
-                        </section>
+                            <div class='codeBlock'>
+                                <code class='text-center headingElementExample'>
+                                    
+                                </code>
+                            </div>
+                        </div>
+                    </section>
 
-                        <!-- 
-                            Dialouge rule
-                         -->
-                        <section class='rules'>
-                            <h1>
-                                Dialogue
-                            </h1>
-                            <!-- Success dialog -->
-                            <p>
-                                We need to inform the user that something has happened or is happening, like downloading a file, updateing their profile, etc. Its important that we notify our user, to not leave them confused.
-                            </p>
-                            <p>
-                                lets use this as our example, a user is installing a preogram and they have ran out of space, mid installation.
-                            </p>
-                            <p>
-                                As the user performs actions that might take time to execute, the user will be prompted with a dialogue box, the user want to know exactly whats happening, you want to be as descriptive as possible.
-                            </p>
-                            <div class='interactiveSection flex-column menuBarClass'>
-                                <div>
-                                    <p class='menuTitle'>Working</p>
-                                    <div class='menuBtns'>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class='menuContent'>
-                                    <span class='normMenu'></span>
-                                    <div>
-                                        <h2>Downloading files</h2>
-                                        <p class='downloadString'>C://programs/g17/app.exe</p>
-                                        <div class='outerBar'>
-                                            <div class="innerBar"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <section class='blog'>
+                        <h1>
+                            Paragraphs
+                        </h1>
+                        <p>
+                            To add a paragraph to your page, you can use the p tag, it is the most basic element in HTML, its used to display text.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex'>
+                            <div class='codeBlock'>
+                                <p>
+                                    I am a paragraph! I contain text and thats about it.
+                                </p>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;body&gt;</span>
+        <span class='codeTag'>&lt;p&gt;</span>I am a paragraph! I contain text and thats about it.<span class='codeTag'>&lt;/p&gt;</span>
+    <span class='codeTag'>&lt;/body&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
                             </div>
-                            <!-- Warning example -->
-                            <p>
-                                You need to let the user know that thet are about to do something that might result in something that they do not want.
-                            </p>
-                            <div class='interactiveSection flex-column menuBarClass'>
-                                <div>
-                                    <p class='menuTitle'>Warning</p>
-                                    <div class='menuBtns'>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class='menuContent'>
-                                    <span class='warnMenu'></span>
-                                    <div>
-                                        <h2>Warning, limited disk space</h2>
-                                        <div class='menuButtonString'>
-                                            <p>The install might fail because you are running out of storage on your device</p>
-                                            <div class='menuButtonContainer'>
-                                                <div class='menuButton'>
-                                                    <p>Continue</p>
-                                                </div>
-                                                <div class='menuButton cancelButton'>
-                                                    <p>Cancel</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Error example -->
-                            <p>
-                                You need to be descriptive, especially once an error occurs, clearly lable why the action failed, dont use complicated jargon.
-                            </p>
-                            <div class='interactiveSection flex-column menuBarClass'>
-                                <div>
-                                    <p class='menuTitle'>Error</p>
-                                    <div class='menuBtns'>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div class='menuContent'>
-                                    <span class='errorMenu'></span>
-                                    <div>
-                                        <h2>Error downloading files</h2>
-                                        <div class='menuButtonString'>
-                                            <p>The install failed because you have ran out of storage on your device</p>
-                                            <div class='menuButtonContainer'>
-                                                <div class='menuButton'>
-                                                    <p>Continue</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- 
-                            end of dialogue rule
-                         -->
+                        </div>
+                    </section>
 
-                        <section class='rules'>
-                            <h1>
-                                Clarity
-                            </h1>
-                            <p>
-                                You want your website to be easily usable and easy to navigate, dont use overly complicated word.
-                            </p>
-                            <!-- 
-                                Examples start
-                             -->
-                            <div class='flex-row menuFlex'>
-                                <!-- Example one -->
-                                <div class='interactiveSection flex-column menuBarClass'>
-                                    <div>
-                                        <p class='menuTitle'>Example 1</p>
-                                        <div class='menuBtns'>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                    <div class='menuContent'>
-                                        <div>
-                                            <h2>Incorect password</h2>
-                                            <p>Your password does not match the requirements</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- example two -->
-                                <div class='interactiveSection flex-column menuBarClass'>
-                                    <div>
-                                        <p class='menuTitle'>Example 2</p>
-                                        <div class='menuBtns'>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                    <div class='menuContent'>
-                                        <div>
-                                            <h2>Incorect password</h2>
-                                            <p>You did not include an upper case character</p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <section class='blog'>
+                        <h1>
+                            Lists
+                        </h1>
+                        <p>
+                            Lists are used to display a list of items, they can be ordered or unordered, the diferrence is that unordered lists are displayed with bullet points, while ordered lists are displayed with numbers.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex' id='listExample'>
+                            <div class='headingButtonParent'>
+                                <button>orderd list</button>
+                                <button>unorderd list</button>
                             </div>
-                            <!-- 
-                                Examples end
-                             -->
-                        </section>
+                            <div class='codeBlock full-width'>
+                                <code class='headingElementExample'>
+                                    
+                                </code>
+                            </div>
+                        </div>
+                    </section>
 
-                        <!--
-                            Ease of use
-                        -->
-                        <section class='rules'>
-                            <h1>
-                                Ease of use
-                            </h1>
-                            <p>
-                                To make a great website, you want to make the users visit as friction free as posible, lets take a look at this, as our example.
-                            </p>
-                            <p>
-                                we need the user to input their 4 digit 2FA code, this is a very nominal task and should be made as easy to do as possible. In the first example, I demonstrate a proper implementation, there are 4 boxes, clearly signifying that the user needs to input
-                                the 4 digits they just recived, each interaction provides visual feedback to the user.
-                            </p>
-                            <!-- Example one -->
-                            <div id='otpParent' class='interactiveSection flex-column menuBarClass otpFeild'>
+                    <section class='blog'>
+                        <h1>
+                            Images
+                        </h1>
+                        <p>
+                            To add an image to your page you can use the img tag, you can also add a alt attribute to the image, this is used by search engines to index the page, it is aslo used to describe the image, incase the image dosent load, it aslo aids in accessibility.
+                        </p>
+                        <p>
+                            You can also reference an external file, by setting the src attribute to the url of the file, the img tag dose not only support images but also other file types, you can find a list of file types <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"
+                                target="_blank">here</a>.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex' id='imgExample'>
+                            <div class='inputInteractive halfInteractive'>
+                                <input spellcheck="false" type="text" value="<img src='./imgs/aboutus/greg1.png' alt='a picture of a human'>">
+                                <input spellcheck="false" type="text" value="<img src='./imgs/blog/ui/giphy.webp' alt='a webp of a wow'>">
                             </div>
-                            <p>
-                                In the second example, I demonstrate a inproper implementation, the user needs to input 4 digits, but theres just one input feild, not clearly specifing lenght, there is no feedback provided at all, leaving the user in the dark.
-                            </p>
-                            <!-- example two -->
-                            <div class='interactiveSection flex-column menuBarClass otpFeild'>
-                                <input maxlength="4" class='tfaInputNorm'>
+                            <div class='outputInteractive halfInteractive'>
+                                <img>
                             </div>
-
-                        </section>
-                    </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>
@@ -381,9 +265,17 @@
     <script src="./js/navbar.js "></script>
 
     <!-- Load in the script responsible for the navbar -->
-    <script src="./js/navbar.js "></script>
+    <script src="./js/interactives.js "></script>
 
     <script>
+        headingExample('headingExample', 'This is some text!');
+
+        listExample('listExample');
+
+        titleExample('tabTitleExample');
+
+        imgExample('imgExample');
+
         // define the current page we are on
         currentPageName = 'html';
 
