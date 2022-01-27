@@ -1,6 +1,6 @@
 async function addVisualizer(dom, targetTag, style = '') {
     dom = document.getElementById(dom);
-
+    
     let children = [...dom.children],
         inputs = [...children[0].children],
         output = children[1].children[0];
