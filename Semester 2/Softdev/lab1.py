@@ -56,7 +56,3 @@ def ex3():
     print("Average sales    : " + str(sum(sales)/len(sales)))
     print("Maximum sales    : " + str(max(sales)))
     print("Minimum sales    : " + str(min(sales)))
-
-ex1()
-ex2()
-ex3()
