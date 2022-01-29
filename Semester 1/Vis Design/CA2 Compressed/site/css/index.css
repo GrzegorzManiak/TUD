@@ -1,0 +1,1680 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap');
+:root {
+    /* navbar */
+    --nav-bar-height: 4rem;
+    --nav-bar-height-mobile: 4rem;
+    --nav-bar-color: #FAF9F6;
+    --nav-bar-font-color: #22223B;
+    --nav-bar-item-padding: 0.5rem;
+    --nav-bar-max-width: 75rem;
+    /* Gradient */
+    --gradient-angle: 45deg;
+    --gradient-time: 30s;
+    --gradient-1: #ffafbd;
+    --gradient-2: #2193b0;
+    --gradient-3: #cc2b5e;
+    --gradient-4: #de6262;
+    --gradient-5: #56ab2f;
+    /* Header */
+    --header-height-desktop: 16rem;
+    --header-height-tablet: 14rem;
+    --header-height-mobile: 10rem;
+    --header-font-color: #ffffff;
+    /* Footer */
+    --footer-height: 4rem;
+    --footer-color: #ffffff;
+    /* Scrollbar */
+    --scroll-bar-color: #e0e0e0;
+    --scroll-bar-width: 0.5rem;
+    /* Blog */
+    --interactive-background-color: #ececec;
+    --blog-width: 800px;
+    /* General */
+    --font-color: #22223B;
+    --font-color-light: #4659DC;
+    --max-width: 50rem;
+    --body-color: #FAF9F6;
+    /* TIPS page */
+    --box-size: 3rem;
+    --box-font-size: 2rem;
+    --box-font-weight: 500;
+    --box-font-color: #747474;
+    --box-normal-color: #aaa7a7;
+    --box-hover-color: #009ffd;
+    --box-active-color: #00bcd4;
+    --box-scale-by: 0.02;
+}
+
+@media screen and (max-width: 450px) {
+    #navElements {
+        display: none;
+    }
+    #hamburgerMenu {
+        display: visible;
+    }
+    #mainContent section {
+        width: 90vw;
+    }
+    nav {
+        /* Sets the height of the nav bar for mobile devices */
+        height: var(--nav-bar-height-mobile);
+    }
+    #header h1 {
+        margin: 0.2rem;
+        padding-top: 2rem;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    .halfInteractive {
+        width: 100%;
+    }
+    .interactiveSection {
+        flex-wrap: wrap;
+    }
+    #importingCss>img {
+        height: 7rem;
+    }
+    .shortcutParent {
+        display: none;
+    }
+    .menuFlex {
+        flex-wrap: wrap;
+    }
+    #aboutUs h1 {
+        font-size: 2.5rem;
+    }
+    .aboutusSelector {
+        width: 65%;
+    }
+    h2.carouselText {
+        font-size: 1rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+    p.carouselText {
+        font-size: 0.9rem;
+    }
+     :root {
+        --car-distance-pos: 3rem;
+        --car-distance-neg: -3rem;
+        --nav-bar-height-dynamic: var(--nav-bar-height-mobile);
+        --header-height: var(--header-height-mobile);
+    }
+}
+
+@media screen and (min-width: 450px) {
+    #hamburgerMenu {
+        display: none;
+    }
+    nav {
+        /* Sets the height of the nav */
+        height: var(--nav-bar-height);
+    }
+    #mainContent section {
+        width: 80vw;
+    }
+    #navElements {
+        right: 1.8rem;
+    }
+    #header h1 {
+        margin: 1rem;
+        padding-top: 1rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .halfInteractive {
+        width: 100%;
+    }
+    .interactiveSection {
+        flex-wrap: wrap;
+    }
+    #importingCss>img {
+        height: 10rem;
+    }
+    #aboutUs h1 {
+        font-size: 4rem;
+    }
+    .aboutusSelector {
+        width: 50%;
+    }
+    h2.carouselText {
+        font-size: 1.5rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+     :root {
+        --car-distance-pos: 5rem;
+        --car-distance-neg: -5rem;
+        --nav-bar-height-dynamic: var(--nav-bar-height);
+        --header-height: var(--header-height-tablet);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #navElements {
+        right: auto;
+    }
+    #header h1 {
+        padding-top: 0;
+        font-size: xx-large;
+        text-align: left;
+    }
+    #mainContent section {
+        width: 70vw;
+    }
+    .interactiveSection {
+        flex-wrap: nowrap;
+    }
+    #importingCss>img {
+        height: 6rem;
+    }
+    #aboutUs h1 {
+        font-size: 6rem;
+    }
+    .aboutusSelector {
+        width: 25rem;
+    }
+    h2.carouselText {
+        font-size: 2rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+     :root {
+        --car-distance-pos: 7rem;
+        --car-distance-neg: -7rem;
+        --nav-bar-height-dynamic: var(--nav-bar-height);
+        --header-height: var(--header-height-desktop);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Removes the horizontal scroll bar */
+    max-width: 100vw;
+    /*
+        the scroll bar thumb background color
+        makes the page over flow for some reason?
+    */
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.htmlStopScroll {
+    overflow: hidden;
+}
+
+body {
+    /* Sets the font to the best font in the world */
+    font-family: 'Montserrat', sans-serif;
+    /* Sets the display mode to flex */
+    display: flex;
+    /* Removes the margin arround the body */
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--body-color);
+    align-items: center;
+    max-width: 100vw;
+    /*
+        the scroll bar thumb background color
+        makes the page over flow for some reason?
+    */
+    overflow-x: hidden;
+}
+
+#mainContent {
+    min-height: calc(100vh - var(--footer-height));
+    width: 100vw;
+}
+
+#mainContent>section {
+    max-width: var(--max-width)!important;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*
+    Blog posts
+*/
+
+.blog {
+    transition: width 0.2s ease-out;
+    max-width: var(--blog-width);
+}
+
+.blog h1 {
+    margin: 0;
+    padding: 5rem 0 0 0;
+    font-size: 2rem;
+}
+
+.blog img {
+    max-width: var(--blog-width);
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.interactiveSection {
+    gap: 1rem;
+    max-width: var(--blog-width);
+    border-radius: 0.5rem;
+    height: auto;
+    background-color: var(--interactive-background-color);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    align-content: space-around;
+}
+
+
+/*
+    Navigation Bar
+*/
+
+nav {
+    box-sizing: border-box;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* Sets the position to absolute */
+    position: fixed;
+    /* Makes the navbar stick to the top of the page */
+    top: 0;
+    /* Sets the background color */
+    z-index: 200;
+}
+
+div#navLogo {
+    padding: 0 0 0 2rem;
+    position: absolute;
+    left: 0;
+    z-index: 500;
+}
+
+div#navLogo p {
+    transition: color 0.5s ease;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.logoColorMenuClosed {
+    color: var(--nav-bar-font-color);
+}
+
+.logoColorMenuOpen {
+    color: var(--body-color);
+}
+
+nav>ul {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    /* Removes the dots beside the LI */
+    display: inline;
+    /* Makes the UL horizontal insted of Vertical */
+    float: left;
+    /* Add spacing between LI's */
+    padding: 0 var(--nav-bar-item-padding) 0 var(--nav-bar-item-padding);
+    /* Ease all animations and rule changes */
+    transition: all 0.25s ease;
+    /* Remove the ability to select text */
+    user-select: none;
+    /* make the font bold */
+    font-weight: 400;
+}
+
+
+/* When the user hovers over this LI */
+
+ul li:hover {
+    /* Transform the size of this LI by 1.05 */
+    transform: scale(1.05);
+}
+
+
+/* When the user clicks this LI */
+
+ul li:active {
+    /* Transform the size of this LI by 0.95 */
+    transform: scale(0.95);
+}
+
+.nav-current {
+    /* make the font bolder */
+    font-weight: 900;
+}
+
+
+/* Nav bar header */
+
+nav.overHeader {
+    background-color: #ffffff00;
+}
+
+nav.overHeader li {
+    /* Change font color */
+    color: var(--nav-bar-color);
+}
+
+nav.overHeader>div>p {
+    /* Change font color */
+    color: var(--body-color)!important;
+}
+
+nav.overHeader span {
+    background-color: var(--body-color)!important;
+}
+
+
+/* Nav bar below header  */
+
+nav.belowHeader {
+    background-color: var(--nav-bar-color);
+}
+
+nav.belowHeader li {
+    /* Change font color */
+    color: var(--nav-bar-font-color);
+}
+
+
+/*
+    Hamburger Menu
+*/
+
+#hamburgerBtn {
+    display: grid;
+    height: 1rem;
+    position: absolute;
+    right: calc(var(--nav-bar-height-mobile) / 4);
+    top: calc(var(--nav-bar-height-mobile) / 4);
+}
+
+
+/* There is 3 seperate classes for lines as they all will have diffrent animations */
+
+#hamburgerMenu span {
+    z-index: 255;
+    border-radius: 0.2rem;
+    margin: 0.1rem;
+    width: 2rem;
+    height: 0.3rem;
+    background-color: var(--font-color);
+}
+
+#hamburgerMenuBtn {
+    z-index: 270;
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+}
+
+
+/* First line in the hamburger menu */
+
+#hamburgerMenuBtn:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+
+/* Seccond line in the hamburger menu */
+
+#hamburgerMenuBtn:checked~span:nth-child(3) {
+    transform: scale(0);
+}
+
+
+/* Third line of hamburger menu */
+
+#hamburgerMenuBtn:checked~span:nth-child(4) {
+    transform: rotate(-45deg);
+}
+
+#hamburgerMenuBtn:checked~span {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin: 0rem;
+    background-color: var(--body-color);
+}
+
+#hamburgerMenuBtn~span {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin: 0.1rem;
+    transform: rotate(0) translateY(0) scale(1);
+}
+
+#hamburgerContent {
+    top: 0;
+    width: 100vw;
+    z-index: 250;
+    height: 100vh;
+    position: absolute;
+    background-color: var(--nav-bar-font-color);
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hamburgerContentVisible {
+    left: 0;
+}
+
+.hamburgerContentInvisible {
+    left: 100%;
+}
+
+#hamburgerElements {
+    margin: 5rem 0 0 0;
+    padding-left: 2rem;
+}
+
+#hamburgerElements li {
+    float: none;
+}
+
+#hamburgerElements li p {
+    font-size: 2.5rem;
+    color: var(--body-color);
+    margin: 0.2rem 0 0 0;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#hamburgerElements li p:hover {
+    transform: scale(1.05);
+}
+
+#hamburgerElements li p:active {
+    transform: scale(0.95);
+}
+
+
+/*
+    Footer
+*/
+
+footer {
+    /* soft dropshadow up */
+    box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 5rem;
+    max-height: var(--nav-bar-height);
+    height: var(--nav-bar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+footer>div {
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.sdgfa {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*
+    Gradient
+*/
+
+.gradient {
+    /* 
+        Creates a gradient that changes horizontaly, 
+        if you were to take a horizontal 1 pixle slice from the bottom
+        and take another horizontal 1 pixle slice from the top of the gradient
+        and compared them, theyd be the same.
+
+        thats why we are putting it at an angle to create more color variation
+    */
+    background: linear-gradient( var(--gradient-angle), var(--gradient-1), var(--gradient-2), var(--gradient-3), var(--gradient-4), var(--gradient-5));
+    /*
+        This effect works by making the background of the element massive
+        and moveing the background arround, while only looking at a small part of the 
+        background
+    */
+    background-size: 500%, 500%;
+    animation: gradientTransition var(--gradient-time) infinite;
+}
+
+@keyframes gradientTransition {
+    0% {
+        /* 0--------- start from the left */
+        background-position: 0%, 50%;
+    }
+    50% {
+        /* ---------0 move to the right */
+        background-position: 100%, 50%;
+    }
+    100% {
+        /* 0--------- move back to the left */
+        background-position: 0%, 50%;
+    }
+}
+
+
+/*
+    scroll bar
+*/
+
+::-webkit-scrollbar {
+    width: var(--scroll-bar-width);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-bar-color);
+}
+
+
+/*
+    Header
+*/
+
+#header {
+    transition: height 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* margin-top: var(--nav-bar-height-dynamic); */
+    height: var(--header-height);
+}
+
+#header>h1 {
+    transition: font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: var(--header-font-color);
+}
+
+
+/*
+    General rules used quite often, stops bloat within classes and id's,
+    a poor man's `Tailwind css`
+*/
+
+.flex-vertical-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-horizontal {
+    display: flex;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    /* Sets the width of the element to the width of the browser window */
+    width: 100vw;
+}
+
+.full-height {
+    /* Sets the height of the element to the height of the browser window */
+    height: 100vh;
+}
+
+.invisible {
+    /* Makes the element invisable */
+    visibility: hidden;
+    /* Sets the position to absolute so it dosent interact with any other element */
+    position: absolute;
+}
+
+.max-width {
+    /* Sets the max width of the element */
+    max-width: var(--max-width);
+}
+
+.text-center {
+    text-align: center;
+    align-self: center;
+    width: 100%;
+}
+
+.margin-top {
+    margin-top: var(--nav-bar-height-dynamic);
+}
+
+.padding {
+    padding: 1rem;
+}
+
+
+/*
+    Home page
+*/
+
+#splashContent {
+    margin-top: 5rem;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.splashTextContent {
+    padding: 1rem;
+}
+
+.splashTextContent p {
+    margin: 0;
+    padding: 0;
+}
+
+.splashTextContent p b {
+    font-weight: 900;
+    color: var(--font-color);
+    font-size: 2.5rem;
+}
+
+.splashTextContent p b a {
+    color: var(--font-color-light);
+}
+
+
+/*
+    Survey page
+*/
+
+iframe {
+    position: absolute;
+    top: 4rem;
+    border: none;
+    width: 100vw;
+    height: 200vh;
+}
+
+
+/*
+    css and html page
+*/
+
+#importingCss {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#importingCss>img {
+    width: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+#importingCss>img:hover {
+    transform: scale(1.06);
+}
+
+.halfInteractive {
+    width: 100%;
+}
+
+
+/*
+    Output
+*/
+
+.outputInteractive {
+    display: flex;
+    /* padding: 1rem; */
+    background: #f8f8f8;
+    border-radius: 0.5rem;
+    /* Border */
+    border: #8b8b8b solid 0.1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.outputInteractive p {
+    transition: all 0.5s;
+    font-weight: 600;
+}
+
+
+/*
+    Input
+*/
+
+.inputInteractive {
+    display: flex;
+    height: 100%;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inputInteractive>input {
+    all: unset;
+    height: 2.5rem;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    /* Text */
+    color: #272727;
+    padding: 0 1rem 0 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    /* Border */
+    border: #6b6b6b solid 0.1rem;
+}
+
+.inputInteractive>input:hover {
+    border: 0.1rem solid #5c5c5c;
+}
+
+.inputInteractiveFocus {
+    border: 0.15rem solid #559cdf!important;
+}
+
+
+/*
+    code Examples
+*/
+
+.codeBlock {
+    display: flex;
+    padding: 1rem;
+    width: 95%;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    /* Border */
+    border: #6b6b6b solid 0.1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.codeBlockFlex {
+    gap: 0.2rem;
+    flex-wrap: wrap;
+}
+
+.codeBlockFlex>a {
+    padding: 0;
+}
+
+.codeBlock>pre {
+    width: 100%;
+    white-space: pre-wrap;
+}
+
+.codeTag {
+    color: #255fff;
+}
+
+.codeInline {
+    color: #e83bff;
+}
+
+.codeSelector {
+    color: #394cf7;
+}
+
+.codeIdSelector {
+    color: #f73939;
+}
+
+.codeCssComment {
+    color: #575757;
+}
+
+.codeClassSelector {
+    color: #479c83;
+}
+
+.codeRule {
+    color: #ff8a3c;
+}
+
+.codeString {
+    color: #73a107;
+}
+
+
+/*
+    HTML examples
+*/
+
+.headingElementExample *:first-child {
+    transition: all 0.2s ease-in-out;
+    /* margin: 0; */
+    padding: 0;
+}
+
+.headingButtonParent {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.headingButtonParent>button {
+    all: unset;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: #272727;
+    /* Border */
+    border: #6b6b6b solid 0.1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.headingButtonParent>button:hover {
+    border: 0.15rem solid #5c5c5c;
+    transform: scale(1.02);
+}
+
+.headingButtonParent>button:active {
+    transform: scale(0.97);
+}
+
+.headingButtonActive {
+    border: 0.15rem solid #559cdf!important;
+}
+
+.codePaddingLeft {
+    padding-left: 1rem;
+}
+
+ol.codeList,
+ul.codeList {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+/*
+    Image examples
+*/
+
+#imgExample img {
+    width: 15rem;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+
+/*
+ The following styles are for the interactive elements
+*/
+
+
+/*
+    Spoitfy
+*/
+
+.spotifyContainer {
+    display: flex;
+    align-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1rem 0 1rem 0;
+}
+
+.pcScreen {
+    width: 15rem;
+    height: 11rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pcScreen>img {
+    border-radius: 0.5rem;
+    width: 14rem;
+    height: auto;
+    background-color: #c0c0c0;
+    border: 0.3rem solid #c0c0c0;
+    border-bottom: 1rem solid #c0c0c0;
+    z-index: 10;
+}
+
+.pcScreen>span:nth-child(2) {
+    border-right: 3rem solid transparent;
+    border-left: 3rem solid transparent;
+    border-bottom: 4rem solid #818181;
+    transform: translateY(-3rem);
+}
+
+.tabletScreen {
+    width: 5.5rem;
+}
+
+.tabletScreen>img {
+    border-radius: 0.5rem;
+    width: 5rem;
+    height: auto;
+    background-color: #c0c0c0;
+    border: 0.3rem solid #c0c0c0;
+    border-bottom: 0.5rem solid #c0c0c0;
+    z-index: 10;
+}
+
+.mobileScreen {
+    width: 3.5rem;
+}
+
+.mobileScreen>img {
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: auto;
+    background-color: #c0c0c0;
+    border: 0.3rem solid #c0c0c0;
+    border-bottom: 0.5rem solid #c0c0c0;
+    z-index: 10;
+}
+
+.spoHover {
+    transition: transform 0.2s ease-out;
+}
+
+.spoHover:hover {
+    transform: scale(1.05);
+}
+
+
+/* Section 1, Feedback */
+
+.folderParent {
+    padding: 1rem 0 1rem 0
+}
+
+.folderContainer {
+    background-color: #ffffff00;
+    transition: all 0.1s ease-in-out;
+    border: #ffffff00 solid 0.1rem;
+    border-radius: 0.5rem;
+}
+
+.folderContainer:focus {
+    background-color: #c4c4c49a;
+    border: #6b6b6b solid 0.1rem;
+    border-radius: 0.5rem;
+}
+
+.folderContainer:hover {
+    background-color: #c4c4c49a;
+    border-radius: 0.5rem;
+}
+
+.folder {
+    padding: 1.5rem 0 2.5rem 0;
+    width: 7rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.folder>span:first-child {
+    width: 6rem;
+    height: 4rem;
+    background: #62c5ff;
+    position: absolute;
+    border-radius: 0.25rem;
+    z-index: 10;
+}
+
+.folder>span:nth-child(2) {
+    width: 6rem;
+    height: 4rem;
+    background: #0971ad;
+    position: absolute;
+    border-radius: 0.25rem;
+    z-index: 9;
+    transform: translateY(-0.5rem);
+}
+
+.folder>span:nth-child(3) {
+    width: 2rem;
+    height: 4rem;
+    background: #0971ad;
+    position: absolute;
+    border-radius: 0.25rem;
+    z-index: 9;
+    transform: translate(-2rem, -0.8rem);
+}
+
+.folder>span:nth-child(4) {
+    transform: translateY(5rem);
+    height: 1rem;
+    font-weight: bold;
+    color: #4b4b4b;
+}
+
+.folderFiles>span:nth-child(5) {
+    width: 5rem;
+    height: 4rem;
+    background: #e2e2e2;
+    position: absolute;
+    border-radius: 0.1rem;
+    z-index: 9;
+    transform: translateY(-0.4rem) rotate(2deg);
+}
+
+.folderFiles>span:nth-child(6) {
+    width: 5rem;
+    height: 4rem;
+    background: #d1d1d1;
+    position: absolute;
+    border-radius: 0.1rem;
+    z-index: 9;
+    transform: translateY(-0.3rem) rotate(-2deg);
+}
+
+
+/* Section 2, loading bar */
+
+.menuBarClass {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.menuBarClass>div:first-child {
+    display: flex;
+    width: 100%;
+    height: 1.4rem;
+    background: #cfcfcf;
+    border-radius: 0.5rem;
+    z-index: 10;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.menuContent {
+    padding: 0 1rem 1rem 1rem;
+    display: flex;
+    width: 95%;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.menuFlex {
+    gap: 1rem;
+}
+
+
+/*
+    the 3 buttons in the menu bar
+*/
+
+
+/* parent container */
+
+.menuBtns {
+    position: absolute;
+    padding-right: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+/* Maximize */
+
+.menuBtns>span:first-child {
+    width: 0.7rem;
+    height: 0.7rem;
+    background: #00b63d;
+    border-radius: 5rem;
+    z-index: 10;
+}
+
+
+/* Minimize */
+
+.menuBtns>span:nth-child(2) {
+    width: 0.7rem;
+    height: 0.7rem;
+    background: #ff9900;
+    border-radius: 5rem;
+    z-index: 10;
+}
+
+
+/* close */
+
+.menuBtns>span:nth-child(3) {
+    width: 0.7rem;
+    height: 0.7rem;
+    background: #ff3939;
+    border-radius: 5rem;
+    z-index: 10;
+}
+
+
+/* Menu title */
+
+.menuTitle {
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Downloading files icon */
+
+.normMenu {
+    width: 7rem;
+    height: 7rem;
+    z-index: 10;
+    background: #00b63d;
+    border-radius: 1000%;
+}
+
+
+/* Limited diskspace icon */
+
+.warnMenu {
+    width: 7rem;
+    height: 7rem;
+    z-index: 10;
+    background: #ec9e28;
+    border-radius: 5%;
+}
+
+
+/* Out of disk space icon */
+
+.errorMenu {
+    z-index: 10;
+    border-left: 3.5rem solid transparent;
+    border-right: 3.5rem solid transparent;
+    border-bottom: 7rem solid #ff4027;
+}
+
+
+/* Flex box that aligins the text within the box and the buttons */
+
+.menuButtonString {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+/* This is the buttons parent */
+
+.menuButtonContainer {
+    float: right;
+    gap: 0.7rem;
+    display: flex;
+}
+
+
+/* the continue/cancel button text */
+
+.menuButton>p {
+    font-weight: 500;
+    padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+    background-color: #dbdbdb9a;
+    color: #383838;
+    border: #7e7e7e solid 0.1rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.cancelButton>p {
+    color: #c21e1e!important;
+    border: #c21e1e solid 0.1rem;
+}
+
+.menuContent>div {
+    width: 80%;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menuContent>div>h2 {
+    color: #292929;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.menuContent>div p {
+    color: #292929;
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+/* Loading bar background */
+
+.outerBar {
+    width: 100%;
+    height: 1.25rem;
+    background: #c7c2c2;
+    border-radius: 0.5rem;
+    z-index: 10;
+}
+
+
+/* Loading bar */
+
+.innerBar {
+    width: 25%;
+    background: #00b63d;
+    height: 1.25rem;
+    border-radius: 0.5rem;
+}
+
+
+/* Shortcut box */
+
+.shortcutParent {
+    align-items: center;
+    padding: 1rem 0 1rem 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.shortcutBox {
+    display: flex;
+    gap: 1rem;
+}
+
+.shortcutBox>p {
+    font-weight: 600;
+    padding: 0.6rem;
+    background-color: #c4c4c49a;
+    color: #313131;
+    border: #6b6b6b solid 0.1rem;
+    border-radius: 0.5rem;
+    transition: all 0.1s ease-in-out;
+}
+
+.shortcutBoxActive>p {
+    color: #0f5769;
+    transform: scale(1.03);
+}
+
+#otpParent {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.tfaInputBox {
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+    caret-color: transparent;
+    text-decoration: none;
+    text-align: center;
+    border-style: solid;
+    border-radius: 0.7rem;
+    border-width: 0.15rem;
+    border-color: var(--box-normal-color);
+    color: var(--box-font-color);
+    font-size: var(--box-font-size);
+    font-weight: var(--box-font-weight);
+    width: var(--box-size);
+    height: var(--box-size);
+}
+
+.tfaInputBox:hover {
+    border-radius: 0.6rem;
+    border-width: 0.18rem;
+    border-color: var(--box-hover-color);
+    transform: scale(calc(1 + var(--box-scale-by)));
+}
+
+.tfaInputBox:focus {
+    outline: none;
+    border-width: 0.15rem;
+    transform: scale(1);
+    border-color: var(--box-active-color);
+}
+
+.tfaInputBox:active {
+    transform: scale(calc(1 - var(--box-scale-by)));
+}
+
+.otpFeild {
+    padding: 1rem 0 1rem 0;
+}
+
+.tfaInputNorm {
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+}
+
+
+/*
+    About us section
+*/
+
+#aboutUs>div {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutUs h1 {
+    font-weight: 900;
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#mainContent {
+    min-height: 65vh;
+}
+
+.aboutusSelector img {
+    height: auto;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+
+/*
+    So,
+
+    This is the carousel, the workings of it are described in the main.js file.
+    I created this carousel with the use of keyframes, transform, and js.
+
+    There are keyframes for,
+
+    [1] When the images are first loaded in.
+    [2] When the images are moved to the left.
+    [3] When the images are moved to the right.
+    [4] When the images are moved to the center.
+    [5] When the images are loaded in from the stack.
+
+    The stack is an array it contains the images that are hidden as only 3 images are visible at a time.
+        [ img, img, img, img ] <-- The stack.
+    left img, center img, right img
+
+    as an image is pushed off one side, it's loaded into the appropriate side of the array.
+    eg you click the left image in the carousel, causing the image that's in the center, to be pushed to the right,
+    and the image that was in the right beforehand gets pushed into the right side of the array.
+
+                       V-- That's the img we just added to the stack.
+    [ img, img, img, img ] <-- The stack.
+
+    as we moved that left image to the center, we now have an empty spot on the left side of the carousel,
+    now we can load an image to fill in that empty spot by pulling it from the left side of the stack and then
+    removing it from the stack.
+
+        V-- That's the image we just loaded in from the stack.
+    [ img, img, img, img ] <-- The stack.
+
+    I won't go over the 150 lines, but ill go over every unique rule.
+
+    scale(1), this transform changes the scales of the element, pretty self-explanatory.
+
+    translateX() and translateY(), these two move the element in the x and y-axis accordingly.
+    eg they used to move the elements to the left and right, up and down.
+    you can set the values back to 0 and the element will return to its original position.
+
+            y
+            *
+            *
+            *
+    x********
+    
+    rotateY(deg) this rotates the element in the y axis, I tried explaining this but I don't know how to make it sound good.
+    literally, pick up any item, hold it up
+    and turn your wrist, thas your Y,
+
+    the z-index is like BOMDAS, it's an order of precedence, the higher the number, the higher the priority.
+    eg you could have this.
+    
+    <img style='z-index: 50; position:absolute; top:0; left:0' src='./imgs/aboutus/1.jpg'>
+    <img style='z-index: 100; position:absolute; top:0; left:0' src='./imgs/aboutus/2.jpg'>
+
+    if IMG1 overlapped (EG if both had their position's set to absolute) onto IMG2 you'd expect IMG1 to still be visible,
+    but since we have a higher z-index set for IMG2, The image that will still be visible is IMG2.
+*/
+
+#carousel {
+    display: grid;
+    transform: scale(0.9);
+    transition: all 2s ease;
+}
+
+
+/* Set opacity of the carousel to 0 */
+
+.carouselInvisable {
+    opacity: 0;
+}
+
+
+/* Set opacity of the carousel to 1 */
+
+.carouselVisable {
+    opacity: 1;
+}
+
+#carousel div {
+    grid-row: 1;
+    grid-column: 1;
+    transition: all 2000ms ease 7.47774ms;
+}
+
+.carouselSelected {
+    z-index: 110;
+    animation: start 2s forwards ease;
+}
+
+@keyframes start {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* LEFT */
+
+.scaleInFromLeft {
+    z-index: 100;
+    animation: scaleInFromLeft 2s forwards;
+}
+
+@keyframes scaleInFromLeft {
+    0% {
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg)
+    }
+    100% {
+        transform: scale(1.15) translateX(0);
+    }
+}
+
+.scaleOutToLeft {
+    z-index: 90;
+    transform: scale(1.15);
+    animation: scaleOutToLeft 2s forwards;
+}
+
+@keyframes scaleOutToLeft {
+    0% {
+        transform: scale(1.15) translateX(0);
+    }
+    100% {
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
+    }
+}
+
+.moveCenterFromLeft {
+    z-index: 80;
+    animation: moveCenterFromLeft 2s forwards;
+}
+
+@keyframes moveCenterFromLeft {
+    0% {
+        opacity: 1.0;
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
+    }
+    100% {
+        opacity: 0.0;
+        transform: scale(1) translateX(0rem);
+    }
+}
+
+.moveLeftFromCenter {
+    z-index: 90;
+    animation: moveLeftFromCenter 2s forwards;
+}
+
+@keyframes moveLeftFromCenter {
+    0% {
+        opacity: 0.0;
+        transform: scale(0.5) translateX(0rem);
+    }
+    100% {
+        opacity: 1.0;
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
+    }
+}
+
+
+/* RIGHT */
+
+.scaleInFromRight {
+    z-index: 100;
+    animation: scaleInFromRight 2s forwards;
+}
+
+@keyframes scaleInFromRight {
+    0% {
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
+    }
+    100% {
+        transform: scale(1.15) translateX(0);
+    }
+}
+
+.scaleOutToRight {
+    z-index: 90;
+    transform: scale(1.15);
+    animation: scaleOutToRight 2s forwards;
+}
+
+@keyframes scaleOutToRight {
+    0% {
+        transform: scale(1.15) translateX(0);
+    }
+    100% {
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
+    }
+}
+
+.moveCenterFromRight {
+    z-index: 80;
+    animation: moveCenterFromRight 2s forwards;
+}
+
+@keyframes moveCenterFromRight {
+    0% {
+        opacity: 1.0;
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(-180deg);
+    }
+    100% {
+        opacity: 0.0;
+        transform: scale(1) translateX(0rem);
+    }
+}
+
+.moveRightFromCenter {
+    z-index: 90;
+    animation: moveRightFromCenter 2s forwards;
+}
+
+@keyframes moveRightFromCenter {
+    0% {
+        opacity: 0.0;
+        transform: scale(0.5) translateX(0rem);
+    }
+    100% {
+        opacity: 1.0;
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
+    }
+}
+
+
+/* FADE IN */
+
+.fadeIn {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+
+/* TEXT */
+
+.carouselText {
+    transition: all 2s ease;
+}
+
+span.carouselText {
+    font-weight: 800;
+    font-size: large;
+    color: var(--font-color);
+}
+
+#carouselLeft .carouselText {
+    opacity: 0;
+}
+
+#carouselRight .carouselText {
+    opacity: 0;
+}
+
+#carouselCenter .carouselText {
+    opacity: 1;
+}
+
+#carouselCenter .carouselImg {
+    box-shadow: 0 0 1rem 0.5rem #00000030;
+}
+
+.carouselImg {
+    transition: all 0.5s ease;
+}
+
+.carouselImg:hover {
+    transform: scale(1.02);
+}
+
+.carouselImg:active {
+    transform: scale(0.98);
+}

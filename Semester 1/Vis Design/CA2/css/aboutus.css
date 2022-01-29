@@ -150,9 +150,15 @@
     transition: all 2s ease;
 }
 
+
+/* Set opacity of the carousel to 0 */
+
 .carouselInvisable {
     opacity: 0;
 }
+
+
+/* Set opacity of the carousel to 1 */
 
 .carouselVisable {
     opacity: 1;

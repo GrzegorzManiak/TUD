@@ -23,9 +23,6 @@
 }
 
 @media screen and (min-width: 800px) {
-    .halfInteractive {
-        /* max-width: 46%; */
-    }
     .interactiveSection {
         flex-wrap: nowrap;
     }
