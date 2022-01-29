@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+
+<html class="htmlStopScroll">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--God, for some reason, removing minimum-scale breaks the site completly-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+    <!---Title of the web page-->
+    <title>Ui/Ux | Group 17</title>
+
+    <!--The description of the site, Metadata, used for SEO-->
+    <meta name="description" content="Group 17 Project for VDUX">
+
+    <!--General CSS Used by all pages-->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!--
+        Navigation Bar
+    -->
+    <nav class='full-width flex-vertical-horizontal overHeader'>
+        <!-- I was going to make a logo, but got lazy -->
+        <div id='navLogo' class='logoColorMenuClosed'>
+            <p>
+                Group 17
+            </p>
+        </div>
+
+        <!-- This element will have all nav elements added to it -->
+        <!-- I done this to save me copy and pasteing, etc. -->
+        <ul id='navElements'>
+        </ul>
+
+        <!-- This is the hamburger menu that shows up once the page gets small enough -->
+        <!-- and the nav bar elements dont fit on the page any more -->
+        <div id='hamburgerMenu'>
+
+            <!-- This is the acutal button that shows up in the top right of the page -->
+            <div id='hamburgerBtn'>
+                <!-- This uses a checkbox with absoulute positioning -->
+                <!-- which saves on having to use javascript -->
+                <input type="checkbox" id='hamburgerMenuBtn'>
+                <!-- the span tag is usefull, as it has 0 predefined styles. -->
+                <!-- it dose nothing by it self. -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- This is the menu that slides out if the check box is clicked -->
+            <div id='hamburgerContent' class='gradient hamburgerContentInvisible'>
+                <ul id='hamburgerElements'>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--
+        End of Navigation Bar
+    -->
+
+    <!--
+        header content
+        -->
+    <div id='header' class='full-width flex-vertical-horizontal gradient'>
+        <h1>
+            Basic css.
+        </h1>
+    </div>
+    <!--
+        End of header
+    -->
+
+    <!--
+        Main content
+    -->
+    <div id="mainContent" class="full-width flex-column flex-horizontal">
+
+        <!-- Practicality section -->
+        <section id="practicality">
+            <div class="max-width flex-column">
+                <div class='flex-horizontal flex-column'>
+                    <section class='blog'>
+                        <h1>
+                            What is css?
+                        </h1>
+                        <p>
+                            Cascading Style Sheets are a set of rules that define how an HTML document is displayed and how it is laid out on a page.
+                        </p>
+                        <p>
+                            It is only intended to be used for styling web pages, and is not a general-purpose language like e.g javascript, lets take a look at some examples.
+                        </p>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            How can I use it?
+                        </h1>
+                        <p>
+                            There are multiple ways of using CSS on your webpage, only one is reccomended though, we have, Inline styles, Embedded styles, Imported styles and External styles, the only method we actualy use is External styles.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex padding'>
+                            <p>External</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;head&gt;</span>
+        <span class='codeTag'>&lt;link</span> <span class='codeInline'>rel</span>=<span class='codeString'>'stylesheet'</span> <span class='codeInline'>href</span>=<span class='codeString'>'./index.css'</span><span class='codeTag'>&gt;</span>
+    <span class='codeTag'>&lt;/head&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                            <p>Inline</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;body&gt;</span>
+        <span class='codeTag'>&lt;div</span> <span class='codeInline'>style</span>=<span class='codeString'>'<span class='codeRule'>background-color</span>: <span class='codeString'>#fafafa</span>;'</span><span class='codeTag'>&gt;</span><span class='codeTag'>&lt;/div&gt;</span>
+    <span class='codeTag'>&lt;/body&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                            <p>Embedded</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;head&gt;</span>
+        <span class='codeTag'>&lt;style&gt;</span> 
+            <span class='codeSelector'>body</span> {
+                <span class='codeRule'>background-color</span>: <span class='codeString'>#fafafa</span>;  
+            }
+        <span class='codeTag'>&lt;/style&gt;</span> 
+    <span class='codeTag'>&lt;/head&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            How css selectors work
+                        </h1>
+                        <p>
+                            The css selectors are used to select elements on a webpage, the syntax is,
+                        </p>
+                        <div class='interactiveSection codeBlockFlex padding'>
+                            <p>ID selector</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeCssComment'>/* &lt;div id='imAnElementWithAnId'&gt;&lt;/div&gt; */</span>                                    
+<span class='codeIdSelector'>#imAnElementWithAnId</span> {
+    <span class='codeRule'>background-color</span>: <span class='codeString'>#fafafa</span>;  
+}</pre>
+                            </div>
+                            <p>Class selector</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeCssComment'>/* &lt;div class='classElement'&gt;&lt;/div&gt; */</span>                                    
+<span class='codeClassSelector'>.classElement</span> {
+    <span class='codeRule'>background-color</span>: <span class='codeString'>#fafafa</span>;  
+}</pre>
+                            </div>
+                            <p>Tag seletor</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeCssComment'>/* &lt;body&gt;&lt;/body&gt; */</span>
+<span class='codeSelector'>body</span> {
+    <span class='codeRule'>background-color</span>: <span class='codeString'>#fafafa</span>;  
+}</pre>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class='blog'>
+                        <h1>
+                            Colors
+                        </h1>
+                        <p>
+                            There are multiple ways of defining colors, but the most common is by using hexadecimal values, the color rule is used to change the color of text.
+                        </p>
+                        <div class='interactiveSection padding' id='colorHexInteractive'>
+                            <div class='inputInteractive halfInteractive'>
+                                <input spellcheck="false" type="text" value="color: blue">
+                                <input spellcheck="false" type="text" value="color: #10aa33">
+                                <input spellcheck="false" type="text" value="color: rgb(132, 35, 220)">
+                                <input spellcheck="false" type="text" value="color: rgba(132, 35, 220, 0.5)">
+                                <input spellcheck="false" type="text" value="color: hsl(144, 100%, 50%)">
+                                <input spellcheck="false" type="text" value="color: hsla(144, 100%, 50%, 0.5)">
+                            </div>
+                            <div class='outputInteractive halfInteractive'>
+                                <p>
+                                    This is some text, you can change my color by clicking any of the values on the left. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, laboriosam! Molestias, quasi incidunt quam suscipit dolore
+                                    debitis vel officia expedita sed? Earum iure harum adipisci iste tempore exercitationem quae temporibus?
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Background
+                        </h1>
+                        <p>
+                            The background rule is used to change the background color and style of an element.
+                        </p>
+                        <div class='interactiveSection padding' id='backgroundInteractive'>
+                            <div class='inputInteractive halfInteractive'>
+                                <input spellcheck="false" type="text" value="background: blue">
+                                <input spellcheck="false" type="text" value="background: linear-gradient(45deg, #10aa33, blue)">
+                                <input spellcheck="false" type="text" value="background: url('./imgs/aboutus/greg1.png') 50% 50%">
+                            </div>
+                            <div class='outputInteractive halfInteractive'>
+                                <p>
+                                    Here you can change how the background appears on this element.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Text
+                        </h1>
+                        <p>
+                            Using css, you can change the style of text in multiple ways.
+                        </p>
+                        <div class='interactiveSection padding' id='textInteractive'>
+                            <div class='inputInteractive halfInteractive'>
+                                <input spellcheck="false" type="text" value="font-weight: light">
+                                <input spellcheck="false" type="text" value="font-size: 1.5em">
+                                <input spellcheck="false" type="text" value="font-style: italic">
+                                <input spellcheck="false" type="text" value="font-family: Georgia, serif">
+                            </div>
+                            <div class='outputInteractive halfInteractive'>
+                                <p>
+                                    This is some random text, use the inputs on the right to change this text.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Borders
+                        </h1>
+                        <p>
+                            You can use the 'border' rule to add or remove a border from your element. there is a alot more border styles that can be used, I didnt list them all here, but you can find them all
+                            <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/border'>here</a>.
+                        </p>
+                        <div class='interactiveSection padding' id='borderInteractive'>
+                            <div class='inputInteractive halfInteractive'>
+                                <input spellcheck="false" type="text" value="border: solid blue">
+                                <input spellcheck="false" type="text" value="border: dotted green 5px">
+                                <input spellcheck="false" type="text" value="border: inset yellow">
+                                <input spellcheck="false" type="text" value="border-bottom: dashed red">
+                                <input spellcheck="false" type="text" value="border-top: outset yellow">
+                            </div>
+                            <div class='outputInteractive halfInteractive'>
+                                <p>
+                                    Sample text
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Border radius
+                        </h1>
+                        <p>
+                            You can use the 'border-radius' rule to add rounded edges to you element.
+                        </p>
+                        <div class='interactiveSection padding' id='brInteractive'>
+                            <div class='inputInteractive halfInteractive'>
+                                <input spellcheck="false" type="text" value="border-radius: 1rem">
+                                <input spellcheck="false" type="text" value="border-radius: 25% 10%">
+                                <input spellcheck="false" type="text" value="border-radius: 10% 25% 50% 40%">
+                                <input spellcheck="false" type="text" value="border-radius: 1rem 0 1rem 0">
+                            </div>
+                            <div class='outputInteractive halfInteractive'>
+                                <p>
+                                    This is some random text.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--
+        End of Main content
+    -->
+
+    <!--
+        Footer
+    -->
+    <footer class='full-width'>
+        <div>
+            <h3>Group 17</h3>
+            <div class='sdgfa'>
+                <h4>Usefull links:</h4>
+                <div class='flex-column'>
+                    <a href='https://www.w3schools.com/' target='_blank'>W3 Schools</a>
+                    <a href='https://developer.mozilla.org/en-US/docs' target='_blank'>MDN</a>
+                </div>
+            </div>
+            <a href='./aboutus.html' target='_blank'>Credits</a>
+        </div>
+    </footer>
+    <!--
+        End of Footer
+    -->
+
+    <!-- Load in the main script -->
+    <script src="./js/index.js"></script>
+
+    <script>
+        addVisualizer('colorHexInteractive', 'color');
+        addVisualizer('backgroundInteractive', 'background');
+        addVisualizer('borderInteractive', 'border');
+        addVisualizer('textInteractive', 'text');
+        addVisualizer('brInteractive', 'border-radius', 'background-color: #272727; color: white; padding: 0.5rem');
+        // define the current page we are on
+        currentPageName = 'css';
+
+        // add logic to the hamburger menu
+        hamburger('hamburgerMenuBtn');
+
+        // load the elements into the nav bar
+        addElements('navElements', 'nav-current');
+
+        // load the elements into the hamburger menu
+        addElements('hamburgerElements', 'nav-current');
+
+        // load in the nav Header fader
+        navPos();
+    </script>
+
+
+</body>
+
+</html>

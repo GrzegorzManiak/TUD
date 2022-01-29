@@ -1,0 +1,2179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap');
+:root {
+    /* navbar */
+    --nav-bar-height: 4rem;
+    --nav-bar-height-mobile: 4rem;
+    --nav-bar-color: #FAF9F6;
+    --nav-bar-font-color: #22223B;
+    --nav-bar-item-padding: 0.5rem;
+    --nav-bar-max-width: 75rem;
+    /* Gradient */
+    --gradient-angle: 45deg;
+    --gradient-time: 30s;
+    --gradient-1: #ffafbd;
+    --gradient-2: #2193b0;
+    --gradient-3: #cc2b5e;
+    --gradient-4: #de6262;
+    --gradient-5: #56ab2f;
+    /* Header */
+    --header-height-desktop: 16rem;
+    --header-height-tablet: 14rem;
+    --header-height-mobile: 10rem;
+    --header-font-color: #ffffff;
+    /* Footer */
+    --footer-height: 4rem;
+    --footer-color: #ffffff;
+    /* Scrollbar */
+    --scroll-bar-color: #e0e0e0;
+    --scroll-bar-width: 0.5rem;
+    /* Blog */
+    --interactive-background-color: #ececec;
+    --blog-width: 800px;
+    /* General */
+    --font-color: #22223B;
+    --font-color-light: #4659DC;
+    --max-width: 50rem;
+    --body-color: #FAF9F6;
+    /* TIPS page */
+    --box-size: 3rem;
+    --box-font-size: 2rem;
+    --box-font-weight: 500;
+    --box-font-color: #747474;
+    --box-normal-color: #aaa7a7;
+    --box-hover-color: #009ffd;
+    --box-active-color: #00bcd4;
+    --box-scale-by: 0.02;
+}
+
+@media screen and (max-width: 450px) {
+    #navElements {
+        /* This rule is used to specify the display of the element. */
+        display: none;
+    }
+    #hamburgerMenu {
+        /* This rule is used to specify the display of the element. */
+        display: visible;
+    }
+    #mainContent section {
+        /* This rule is used to specify the width of the element. */
+        width: 90vw;
+    }
+    nav {
+        /* Sets the height of the nav bar for mobile devices */
+        /* This rule is used to specify the height of the element. */
+        height: var(--nav-bar-height-mobile);
+    }
+    #header h1 {
+        /* This rule is used to specify the margin of the element. */
+        margin: 0.2rem;
+        padding-top: 2rem;
+        /* This rule is used to specify the font size of the text. */
+        font-size: 1.6rem;
+        /* This rule is used to specify the text alignment of the text. */
+        text-align: center;
+    }
+    .halfInteractive {
+        /* This rule is used to specify the width of the element. */
+        width: 100%;
+    }
+    .interactiveSection {
+        /* This rule is used to specify the flex-wrap of the element. */
+        flex-wrap: wrap;
+    }
+    #importingCss>img {
+        /* This rule is used to specify the height of the element. */
+        height: 7rem;
+    }
+    .shortcutParent {
+        /* This rule is used to specify the display of the element. */
+        display: none;
+    }
+    .menuFlex {
+        /* This rule is used to specify the flex-wrap of the element. */
+        flex-wrap: wrap;
+    }
+    #aboutUs h1 {
+        /* This rule is used to specify the font size of the text. */
+        font-size: 2.5rem;
+    }
+    .aboutusSelector {
+        /* This rule is used to specify the width of the element. */
+        width: 65%;
+    }
+    h2.carouselText {
+        /* This rule is used to specify the font size of the text. */
+        font-size: 1rem;
+        /* This rule is used to specify the margin of the element. */
+        margin: 1rem 0 0.5rem 0;
+    }
+    p.carouselText {
+        /* This rule is used to specify the font size of the text. */
+        font-size: 0.9rem;
+    }
+     :root {
+        --car-distance-pos: 3rem;
+        --car-distance-neg: -3rem;
+        --nav-bar-height-dynamic: var(--nav-bar-height-mobile);
+        --header-height: var(--header-height-mobile);
+    }
+}
+
+@media screen and (min-width: 450px) {
+    #hamburgerMenu {
+        /* This rule is used to specify the display of the element. */
+        display: none;
+    }
+    nav {
+        /* Sets the height of the nav */
+        /* This rule is used to specify the height of the element. */
+        height: var(--nav-bar-height);
+    }
+    #mainContent section {
+        /* This rule is used to specify the width of the element. */
+        width: 80vw;
+    }
+    #navElements {
+        /* This rule is used to specify the right position of the element. */
+        right: 1.8rem;
+    }
+    #header h1 {
+        /* This rule is used to specify the margin of the element. */
+        margin: 1rem;
+        padding-top: 1rem;
+        /* This rule is used to specify the font size of the text. */
+        font-size: 1.5rem;
+        /* This rule is used to specify the text alignment of the text. */
+        text-align: center;
+    }
+    .halfInteractive {
+        /* This rule is used to specify the width of the element. */
+        width: 100%;
+    }
+    .interactiveSection {
+        /* This rule is used to specify the flex-wrap of the element. */
+        flex-wrap: wrap;
+    }
+    #importingCss>img {
+        /* This rule is used to specify the height of the element. */
+        height: 10rem;
+    }
+    #aboutUs h1 {
+        /* This rule is used to specify the font size of the text. */
+        font-size: 4rem;
+    }
+    .aboutusSelector {
+        /* This rule is used to specify the width of the element. */
+        width: 50%;
+    }
+    h2.carouselText {
+        /* This rule is used to specify the font size of the text. */
+        font-size: 1.5rem;
+        /* This rule is used to specify the margin of the element. */
+        margin: 1rem 0 0.5rem 0;
+    }
+     :root {
+        --car-distance-pos: 5rem;
+        --car-distance-neg: -5rem;
+        --nav-bar-height-dynamic: var(--nav-bar-height);
+        --header-height: var(--header-height-tablet);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #navElements {
+        /* This rule is used to specify the right position of the element. */
+        right: auto;
+    }
+    #header h1 {
+        padding-top: 0;
+        /* This rule is used to specify the font size of the text. */
+        font-size: xx-large;
+        /* This rule is used to specify the text alignment of the text. */
+        text-align: left;
+    }
+    #mainContent section {
+        /* This rule is used to specify the width of the element. */
+        width: 70vw;
+    }
+    .interactiveSection {
+        /* This rule is used to specify the flex-wrap of the element. */
+        flex-wrap: nowrap;
+    }
+    #importingCss>img {
+        /* This rule is used to specify the height of the element. */
+        height: 6rem;
+    }
+    #aboutUs h1 {
+        /* This rule is used to specify the font size of the text. */
+        font-size: 6rem;
+    }
+    .aboutusSelector {
+        /* This rule is used to specify the width of the element. */
+        width: 25rem;
+    }
+    h2.carouselText {
+        /* This rule is used to specify the font size of the text. */
+        font-size: 2rem;
+        /* This rule is used to specify the margin of the element. */
+        margin: 1rem 0 0.5rem 0;
+    }
+     :root {
+        --car-distance-pos: 7rem;
+        --car-distance-neg: -7rem;
+        --nav-bar-height-dynamic: var(--nav-bar-height);
+        --header-height: var(--header-height-desktop);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Removes the horizontal scroll bar */
+    /* This rule is used to specify the max-width of the element. */
+    max-width: 100vw;
+    /*
+        the scroll bar thumb background color
+        makes the page over flow for some reason?
+    */
+    /* This rule is used to specify the overflow-x of the element. */
+    overflow-x: hidden;
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+}
+
+.htmlStopScroll {
+    /* This rule is used to specify the overflow of the element. */
+    overflow: hidden;
+}
+
+body {
+    /* Sets the font to the best font in the world */
+    /* This rule is used to specify the font family of the text. */
+    font-family: 'Montserrat', sans-serif;
+    /* Sets the display mode to flex */
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* Removes the margin arround the body */
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+    /* This rule is used to specify the background color of the element. */
+    background-color: var(--body-color);
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the max-width of the element. */
+    max-width: 100vw;
+    /*
+        the scroll bar thumb background color
+        makes the page over flow for some reason?
+    */
+    /* This rule is used to specify the overflow-x of the element. */
+    overflow-x: hidden;
+}
+
+#mainContent {
+    min-height: calc(100vh - var(--footer-height));
+    /* This rule is used to specify the width of the element. */
+    width: 100vw;
+}
+
+#mainContent>section {
+    /* This rule is used to specify the max-width of the element. */
+    max-width: var(--max-width)!important;
+    /* This rule is used to specify the padding of the element. */
+    padding: 0;
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+}
+
+
+/*
+    Blog posts
+*/
+
+.blog {
+    transition: width 0.2s ease-out;
+    /* This rule is used to specify the max-width of the element. */
+    max-width: var(--blog-width);
+}
+
+.blog h1 {
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+    /* This rule is used to specify the padding of the element. */
+    padding: 5rem 0 0 0;
+    /* This rule is used to specify the font size of the text. */
+    font-size: 2rem;
+}
+
+.blog img {
+    /* This rule is used to specify the max-width of the element. */
+    max-width: var(--blog-width);
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+.interactiveSection {
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+    /* This rule is used to specify the max-width of the element. */
+    max-width: var(--blog-width);
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the height of the element. */
+    height: auto;
+    /* This rule is used to specify the background color of the element. */
+    background-color: var(--interactive-background-color);
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 1;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: row;
+    /* This rule is used to specify the align-content of the element. */
+    align-content: space-around;
+}
+
+
+/*
+    Navigation Bar
+*/
+
+nav {
+    /* This rule is used to specify the box-sizing of the element. */
+    box-sizing: border-box;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* Sets the position to absolute */
+    /* This rule is used to specify the position of the element. */
+    position: fixed;
+    /* Makes the navbar stick to the top of the page */
+    /* This rule is used to specify the top position of the element. */
+    top: 0;
+    /* Sets the background color */
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 200;
+}
+
+div#navLogo {
+    /* This rule is used to specify the padding of the element. */
+    padding: 0 0 0 2rem;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the left position of the element. */
+    left: 0;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 500;
+}
+
+div#navLogo p {
+    transition: color 0.5s ease;
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+    /* This rule is used to specify the font size of the text. */
+    font-size: 1.3rem;
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 900;
+}
+
+.logoColorMenuClosed {
+    /* This rule is used to specify the color of the text. */
+    color: var(--nav-bar-font-color);
+}
+
+.logoColorMenuOpen {
+    /* This rule is used to specify the color of the text. */
+    color: var(--body-color);
+}
+
+nav>ul {
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+    /* This rule is used to specify the padding of the element. */
+    padding: 0;
+}
+
+nav ul li {
+    /* Removes the dots beside the LI */
+    /* This rule is used to specify the display of the element. */
+    display: inline;
+    /* Makes the UL horizontal insted of Vertical */
+    /* This rule is used to specify the float of the element. */
+    float: left;
+    /* Add spacing between LI's */
+    /* This rule is used to specify the padding of the element. */
+    padding: 0 var(--nav-bar-item-padding) 0 var(--nav-bar-item-padding);
+    /* Ease all animations and rule changes */
+    transition: all 0.25s ease;
+    /* Remove the ability to select text */
+    user-select: none;
+    /* make the font bold */
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 400;
+}
+
+
+/* When the user hovers over this LI */
+
+ul li:hover {
+    /* Transform the size of this LI by 1.05 */
+    transform: scale(1.05);
+}
+
+
+/* When the user clicks this LI */
+
+ul li:active {
+    /* Transform the size of this LI by 0.95 */
+    transform: scale(0.95);
+}
+
+.nav-current {
+    /* make the font bolder */
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 900;
+}
+
+
+/* Nav bar header */
+
+nav.overHeader {
+    /* This rule is used to specify the background color of the element. */
+    background-color: #ffffff00;
+}
+
+nav.overHeader li {
+    /* Change font color */
+    /* This rule is used to specify the color of the text. */
+    color: var(--nav-bar-color);
+}
+
+nav.overHeader>div>p {
+    /* Change font color */
+    /* This rule is used to specify the color of the text. */
+    color: var(--body-color)!important;
+}
+
+nav.overHeader span {
+    /* This rule is used to specify the background color of the element. */
+    background-color: var(--body-color)!important;
+}
+
+
+/* Nav bar below header  */
+
+nav.belowHeader {
+    /* This rule is used to specify the background color of the element. */
+    background-color: var(--nav-bar-color);
+}
+
+nav.belowHeader li {
+    /* Change font color */
+    /* This rule is used to specify the color of the text. */
+    color: var(--nav-bar-font-color);
+}
+
+
+/*
+    Hamburger Menu
+*/
+
+#hamburgerBtn {
+    /* This rule is used to specify the display of the element. */
+    display: grid;
+    /* This rule is used to specify the height of the element. */
+    height: 1rem;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the right position of the element. */
+    right: calc(var(--nav-bar-height-mobile) / 4);
+    /* This rule is used to specify the top position of the element. */
+    top: calc(var(--nav-bar-height-mobile) / 4);
+}
+
+
+/* There is 3 seperate classes for lines as they all will have diffrent animations */
+
+#hamburgerMenu span {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 255;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.2rem;
+    /* This rule is used to specify the margin of the element. */
+    margin: 0.1rem;
+    /* This rule is used to specify the width of the element. */
+    width: 2rem;
+    /* This rule is used to specify the height of the element. */
+    height: 0.3rem;
+    /* This rule is used to specify the background color of the element. */
+    background-color: var(--font-color);
+}
+
+#hamburgerMenuBtn {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 270;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    opacity: 0;
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+    /* This rule is used to specify the width of the element. */
+    width: 2rem;
+    /* This rule is used to specify the height of the element. */
+    height: 2rem;
+}
+
+
+/* First line in the hamburger menu */
+
+#hamburgerMenuBtn:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+
+/* Seccond line in the hamburger menu */
+
+#hamburgerMenuBtn:checked~span:nth-child(3) {
+    transform: scale(0);
+}
+
+
+/* Third line of hamburger menu */
+
+#hamburgerMenuBtn:checked~span:nth-child(4) {
+    transform: rotate(-45deg);
+}
+
+#hamburgerMenuBtn:checked~span {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* This rule is used to specify the margin of the element. */
+    margin: 0rem;
+    /* This rule is used to specify the background color of the element. */
+    background-color: var(--body-color);
+}
+
+#hamburgerMenuBtn~span {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* This rule is used to specify the margin of the element. */
+    margin: 0.1rem;
+    transform: rotate(0) translateY(0) scale(1);
+}
+
+#hamburgerContent {
+    /* This rule is used to specify the top position of the element. */
+    top: 0;
+    /* This rule is used to specify the width of the element. */
+    width: 100vw;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 250;
+    /* This rule is used to specify the height of the element. */
+    height: 100vh;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the background color of the element. */
+    background-color: var(--nav-bar-font-color);
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hamburgerContentVisible {
+    /* This rule is used to specify the left position of the element. */
+    left: 0;
+}
+
+.hamburgerContentInvisible {
+    /* This rule is used to specify the left position of the element. */
+    left: 100%;
+}
+
+#hamburgerElements {
+    /* This rule is used to specify the margin of the element. */
+    margin: 5rem 0 0 0;
+    /* This rule is used to specify the padding-left of the element. */
+    padding-left: 2rem;
+}
+
+#hamburgerElements li {
+    /* This rule is used to specify the float of the element. */
+    float: none;
+}
+
+#hamburgerElements li p {
+    /* This rule is used to specify the font size of the text. */
+    font-size: 2.5rem;
+    /* This rule is used to specify the color of the text. */
+    color: var(--body-color);
+    /* This rule is used to specify the margin of the element. */
+    margin: 0.2rem 0 0 0;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#hamburgerElements li p:hover {
+    transform: scale(1.05);
+}
+
+#hamburgerElements li p:active {
+    transform: scale(0.95);
+}
+
+
+/*
+    Footer
+*/
+
+footer {
+    /* soft dropshadow up */
+    box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 5rem;
+    max-height: var(--nav-bar-height);
+    /* This rule is used to specify the height of the element. */
+    height: var(--nav-bar-height);
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: row;
+}
+
+footer>div {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the width of the element. */
+    width: 90vw;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: space-between;
+    /* This rule is used to specify the align-content of the element. */
+    align-content: center;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: row;
+}
+
+.sdgfa {
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: space-between;
+}
+
+
+/*
+    Gradient
+*/
+
+.gradient {
+    /* 
+        Creates a gradient that changes horizontaly, 
+        if you were to take a horizontal 1 pixle slice from the bottom
+        and take another horizontal 1 pixle slice from the top of the gradient
+        and compared them, theyd be the same.
+
+        thats why we are putting it at an angle to create more color variation
+    */
+    /* This rule is used to specify the background of the element. */
+    background: linear-gradient( var(--gradient-angle), var(--gradient-1), var(--gradient-2), var(--gradient-3), var(--gradient-4), var(--gradient-5));
+    /*
+        This effect works by making the background of the element massive
+        and moveing the background arround, while only looking at a small part of the 
+/* This rule is used to specify the background of the element. */
+    background-size: 500%, 500%;
+    animation: gradientTransition var(--gradient-time) infinite;
+}
+
+@keyframes gradientTransition {
+    0% {
+        /* 0--------- start from the left */
+        background-position: 0%, 50%;
+    }
+    50% {
+        /* ---------0 move to the right */
+        background-position: 100%, 50%;
+    }
+    100% {
+        /* 0--------- move back to the left */
+        background-position: 0%, 50%;
+    }
+}
+
+
+/*
+    scroll bar
+*/
+
+::-webkit-scrollbar {
+    /* This rule is used to specify the width of the element. */
+    width: var(--scroll-bar-width);
+}
+
+::-webkit-scrollbar-thumb {
+    /* This rule is used to specify the background of the element. */
+    background: var(--scroll-bar-color);
+}
+
+
+/*
+    Header
+*/
+
+#header {
+    transition: height 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* margin-top: var(--nav-bar-height-dynamic); */
+    /* This rule is used to specify the height of the element. */
+    height: var(--header-height);
+}
+
+#header>h1 {
+    transition: font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* This rule is used to specify the color of the text. */
+    color: var(--header-font-color);
+}
+
+
+/*
+    General rules used quite often, stops bloat within classes and id's,
+    a poor man's `Tailwind css`
+*/
+
+.flex-vertical-horizontal {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+}
+
+.flex-horizontal {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+}
+
+.flex-row {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: row;
+}
+
+.flex-column {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+}
+
+.full-width {
+    /* Sets the width of the element to the width of the browser window */
+    /* This rule is used to specify the width of the element. */
+    width: 100vw;
+}
+
+.full-height {
+    /* Sets the height of the element to the height of the browser window */
+    /* This rule is used to specify the height of the element. */
+    height: 100vh;
+}
+
+.invisible {
+    /* Makes the element invisable */
+    visibility: hidden;
+    /* Sets the position to absolute so it dosent interact with any other element */
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+}
+
+.max-width {
+    /* Sets the max width of the element */
+    /* This rule is used to specify the max-width of the element. */
+    max-width: var(--max-width);
+}
+
+.text-center {
+    /* This rule is used to specify the text alignment of the text. */
+    text-align: center;
+    /* This rule is used to specify the align-self of the element. */
+    align-self: center;
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+}
+
+.margin-top {
+    margin-top: var(--nav-bar-height-dynamic);
+}
+
+.padding {
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem;
+}
+
+
+/*
+    Home page
+*/
+
+#splashContent {
+    margin-top: 5rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the height of the element. */
+    height: 100vh;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the align-content of the element. */
+    align-content: center;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+}
+
+.splashTextContent {
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem;
+}
+
+.splashTextContent p {
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+    /* This rule is used to specify the padding of the element. */
+    padding: 0;
+}
+
+.splashTextContent p b {
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 900;
+    /* This rule is used to specify the color of the text. */
+    color: var(--font-color);
+    /* This rule is used to specify the font size of the text. */
+    font-size: 2.5rem;
+}
+
+.splashTextContent p b a {
+    /* This rule is used to specify the color of the text. */
+    color: var(--font-color-light);
+}
+
+
+/*
+    Survey page
+*/
+
+iframe {
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the top position of the element. */
+    top: 4rem;
+    /* This rule is used to specify the border of the element. */
+    border: none;
+    /* This rule is used to specify the width of the element. */
+    width: 100vw;
+    /* This rule is used to specify the height of the element. */
+    height: 200vh;
+}
+
+
+/*
+    css and html page
+*/
+
+#importingCss {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the flex-wrap of the element. */
+    flex-wrap: wrap;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: row;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+}
+
+#importingCss>img {
+    /* This rule is used to specify the width of the element. */
+    width: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+#importingCss>img:hover {
+    transform: scale(1.06);
+}
+
+.halfInteractive {
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+}
+
+
+/*
+    Output
+*/
+
+.outputInteractive {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* padding: 1rem; */
+    /* This rule is used to specify the background of the element. */
+    background: #f8f8f8;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* Border */
+    /* This rule is used to specify the border of the element. */
+    border: #8b8b8b solid 0.1rem;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+}
+
+.outputInteractive p {
+    transition: all 0.5s;
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 600;
+}
+
+
+/*
+    Input
+*/
+
+.inputInteractive {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the height of the element. */
+    height: 100%;
+    /* This rule is used to specify the gap of the element. */
+    gap: 0.5rem;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: space-between;
+}
+
+.inputInteractive>input {
+    all: unset;
+    /* This rule is used to specify the height of the element. */
+    height: 2.5rem;
+    /* This rule is used to specify the background of the element. */
+    background: #ffffff;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    /* Text */
+    /* This rule is used to specify the color of the text. */
+    color: #272727;
+    /* This rule is used to specify the padding of the element. */
+    padding: 0 1rem 0 1rem;
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 600;
+    /* This rule is used to specify the font size of the text. */
+    font-size: 0.9rem;
+    /* Border */
+    /* This rule is used to specify the border of the element. */
+    border: #6b6b6b solid 0.1rem;
+}
+
+.inputInteractive>input:hover {
+    /* This rule is used to specify the border of the element. */
+    border: 0.1rem solid #5c5c5c;
+}
+
+.inputInteractiveFocus {
+    /* This rule is used to specify the border of the element. */
+    border: 0.15rem solid #559cdf!important;
+}
+
+
+/*
+    code Examples
+*/
+
+.codeBlock {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem;
+    /* This rule is used to specify the width of the element. */
+    width: 95%;
+    /* This rule is used to specify the background of the element. */
+    background: #ffffff;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* Border */
+    /* This rule is used to specify the border of the element. */
+    border: #6b6b6b solid 0.1rem;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: space-between;
+}
+
+.codeBlockFlex {
+    /* This rule is used to specify the gap of the element. */
+    gap: 0.2rem;
+    /* This rule is used to specify the flex-wrap of the element. */
+    flex-wrap: wrap;
+}
+
+.codeBlockFlex>a {
+    /* This rule is used to specify the padding of the element. */
+    padding: 0;
+}
+
+.codeBlock>pre {
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the white-space of the element. */
+    white-space: pre-wrap;
+}
+
+.codeTag {
+    /* This rule is used to specify the color of the text. */
+    color: #255fff;
+}
+
+.codeInline {
+    /* This rule is used to specify the color of the text. */
+    color: #e83bff;
+}
+
+.codeSelector {
+    /* This rule is used to specify the color of the text. */
+    color: #394cf7;
+}
+
+.codeIdSelector {
+    /* This rule is used to specify the color of the text. */
+    color: #f73939;
+}
+
+.codeCssComment {
+    /* This rule is used to specify the color of the text. */
+    color: #575757;
+}
+
+.codeClassSelector {
+    /* This rule is used to specify the color of the text. */
+    color: #479c83;
+}
+
+.codeRule {
+    /* This rule is used to specify the color of the text. */
+    color: #ff8a3c;
+}
+
+.codeString {
+    /* This rule is used to specify the color of the text. */
+    color: #73a107;
+}
+
+
+/*
+    HTML examples
+*/
+
+.headingElementExample *:first-child {
+    transition: all 0.2s ease-in-out;
+    /* margin: 0; */
+    /* This rule is used to specify the padding of the element. */
+    padding: 0;
+}
+
+.headingButtonParent {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the gap of the element. */
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    /* This rule is used to specify the flex-wrap of the element. */
+    flex-wrap: wrap;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+}
+
+.headingButtonParent>button {
+    all: unset;
+    /* This rule is used to specify the background color of the element. */
+    background-color: white;
+    /* This rule is used to specify the padding of the element. */
+    padding: 0.5rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 600;
+    /* This rule is used to specify the color of the text. */
+    color: #272727;
+    /* Border */
+    /* This rule is used to specify the border of the element. */
+    border: #6b6b6b solid 0.1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.headingButtonParent>button:hover {
+    /* This rule is used to specify the border of the element. */
+    border: 0.15rem solid #5c5c5c;
+    transform: scale(1.02);
+}
+
+.headingButtonParent>button:active {
+    transform: scale(0.97);
+}
+
+.headingButtonActive {
+    /* This rule is used to specify the border of the element. */
+    border: 0.15rem solid #559cdf!important;
+}
+
+.codePaddingLeft {
+    /* This rule is used to specify the padding-left of the element. */
+    padding-left: 1rem;
+}
+
+ol.codeList,
+ul.codeList {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+/*
+    Image examples
+*/
+
+#imgExample img {
+    /* This rule is used to specify the width of the element. */
+    width: 15rem;
+    /* This rule is used to specify the height of the element. */
+    height: auto;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+
+/*
+ The following styles are for the interactive elements
+*/
+
+
+/*
+    Spoitfy
+*/
+
+.spotifyContainer {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the align-content of the element. */
+    align-content: space-around;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: row;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: space-around;
+    /* This rule is used to specify the flex-wrap of the element. */
+    flex-wrap: wrap;
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem 0 1rem 0;
+}
+
+.pcScreen {
+    /* This rule is used to specify the width of the element. */
+    width: 15rem;
+    /* This rule is used to specify the height of the element. */
+    height: 11rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+}
+
+.pcScreen>img {
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the width of the element. */
+    width: 14rem;
+    /* This rule is used to specify the height of the element. */
+    height: auto;
+    /* This rule is used to specify the background color of the element. */
+    background-color: #c0c0c0;
+    /* This rule is used to specify the border of the element. */
+    border: 0.3rem solid #c0c0c0;
+    /* This rule is used to specify the border-bottom of the element. */
+    border-bottom: 1rem solid #c0c0c0;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+.pcScreen>span:nth-child(2) {
+    /* This rule is used to specify the border-right of the element. */
+    border-right: 3rem solid transparent;
+    /* This rule is used to specify the border-left of the element. */
+    border-left: 3rem solid transparent;
+    /* This rule is used to specify the border-bottom of the element. */
+    border-bottom: 4rem solid #818181;
+    transform: translateY(-3rem);
+}
+
+.tabletScreen {
+    /* This rule is used to specify the width of the element. */
+    width: 5.5rem;
+}
+
+.tabletScreen>img {
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the width of the element. */
+    width: 5rem;
+    /* This rule is used to specify the height of the element. */
+    height: auto;
+    /* This rule is used to specify the background color of the element. */
+    background-color: #c0c0c0;
+    /* This rule is used to specify the border of the element. */
+    border: 0.3rem solid #c0c0c0;
+    /* This rule is used to specify the border-bottom of the element. */
+    border-bottom: 0.5rem solid #c0c0c0;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+.mobileScreen {
+    /* This rule is used to specify the width of the element. */
+    width: 3.5rem;
+}
+
+.mobileScreen>img {
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the width of the element. */
+    width: 3rem;
+    /* This rule is used to specify the height of the element. */
+    height: auto;
+    /* This rule is used to specify the background color of the element. */
+    background-color: #c0c0c0;
+    /* This rule is used to specify the border of the element. */
+    border: 0.3rem solid #c0c0c0;
+    /* This rule is used to specify the border-bottom of the element. */
+    border-bottom: 0.5rem solid #c0c0c0;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+.spoHover {
+    transition: transform 0.2s ease-out;
+}
+
+.spoHover:hover {
+    transform: scale(1.05);
+}
+
+
+/* Section 1, Feedback */
+
+.folderParent {
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem 0 1rem 0
+}
+
+.folderContainer {
+    /* This rule is used to specify the background color of the element. */
+    background-color: #ffffff00;
+    transition: all 0.1s ease-in-out;
+    /* This rule is used to specify the border of the element. */
+    border: #ffffff00 solid 0.1rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+.folderContainer:focus {
+    /* This rule is used to specify the background color of the element. */
+    background-color: #c4c4c49a;
+    /* This rule is used to specify the border of the element. */
+    border: #6b6b6b solid 0.1rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+.folderContainer:hover {
+    /* This rule is used to specify the background color of the element. */
+    background-color: #c4c4c49a;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+.folder {
+    /* This rule is used to specify the padding of the element. */
+    padding: 1.5rem 0 2.5rem 0;
+    /* This rule is used to specify the width of the element. */
+    width: 7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+}
+
+.folder>span:first-child {
+    /* This rule is used to specify the width of the element. */
+    width: 6rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #62c5ff;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.25rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+.folder>span:nth-child(2) {
+    /* This rule is used to specify the width of the element. */
+    width: 6rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #0971ad;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.25rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 9;
+    transform: translateY(-0.5rem);
+}
+
+.folder>span:nth-child(3) {
+    /* This rule is used to specify the width of the element. */
+    width: 2rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #0971ad;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.25rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 9;
+    transform: translate(-2rem, -0.8rem);
+}
+
+.folder>span:nth-child(4) {
+    transform: translateY(5rem);
+    /* This rule is used to specify the height of the element. */
+    height: 1rem;
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: bold;
+    /* This rule is used to specify the color of the text. */
+    color: #4b4b4b;
+}
+
+.folderFiles>span:nth-child(5) {
+    /* This rule is used to specify the width of the element. */
+    width: 5rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #e2e2e2;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.1rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 9;
+    transform: translateY(-0.4rem) rotate(2deg);
+}
+
+.folderFiles>span:nth-child(6) {
+    /* This rule is used to specify the width of the element. */
+    width: 5rem;
+    /* This rule is used to specify the height of the element. */
+    height: 4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #d1d1d1;
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.1rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 9;
+    transform: translateY(-0.3rem) rotate(-2deg);
+}
+
+
+/* Section 2, loading bar */
+
+.menuBarClass {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: flex-start;
+}
+
+.menuBarClass>div:first-child {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the height of the element. */
+    height: 1.4rem;
+    /* This rule is used to specify the background of the element. */
+    background: #cfcfcf;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: flex-end;
+}
+
+.menuContent {
+    /* This rule is used to specify the padding of the element. */
+    padding: 0 1rem 1rem 1rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the width of the element. */
+    width: 95%;
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: space-between;
+}
+
+.menuFlex {
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+}
+
+
+/*
+    the 3 buttons in the menu bar
+*/
+
+
+/* parent container */
+
+.menuBtns {
+    /* This rule is used to specify the position of the element. */
+    position: absolute;
+    /* This rule is used to specify the padding-right of the element. */
+    padding-right: 0.5rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the gap of the element. */
+    gap: 0.5rem;
+}
+
+
+/* Maximize */
+
+.menuBtns>span:first-child {
+    /* This rule is used to specify the width of the element. */
+    width: 0.7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 0.7rem;
+    /* This rule is used to specify the background of the element. */
+    background: #00b63d;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 5rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+
+/* Minimize */
+
+.menuBtns>span:nth-child(2) {
+    /* This rule is used to specify the width of the element. */
+    width: 0.7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 0.7rem;
+    /* This rule is used to specify the background of the element. */
+    background: #ff9900;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 5rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+
+/* close */
+
+.menuBtns>span:nth-child(3) {
+    /* This rule is used to specify the width of the element. */
+    width: 0.7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 0.7rem;
+    /* This rule is used to specify the background of the element. */
+    background: #ff3939;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 5rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+
+/* Menu title */
+
+.menuTitle {
+    /* This rule is used to specify the position of the element. */
+    position: relative;
+    /* This rule is used to specify the text alignment of the text. */
+    text-align: center;
+    /* This rule is used to specify the margin-left of the element. */
+    margin-left: auto;
+    /* This rule is used to specify the margin-right of the element. */
+    margin-right: auto;
+}
+
+
+/* Downloading files icon */
+
+.normMenu {
+    /* This rule is used to specify the width of the element. */
+    width: 7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 7rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+    /* This rule is used to specify the background of the element. */
+    background: #00b63d;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 1000%;
+}
+
+
+/* Limited diskspace icon */
+
+.warnMenu {
+    /* This rule is used to specify the width of the element. */
+    width: 7rem;
+    /* This rule is used to specify the height of the element. */
+    height: 7rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+    /* This rule is used to specify the background of the element. */
+    background: #ec9e28;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 5%;
+}
+
+
+/* Out of disk space icon */
+
+.errorMenu {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+    /* This rule is used to specify the border-left of the element. */
+    border-left: 3.5rem solid transparent;
+    /* This rule is used to specify the border-right of the element. */
+    border-right: 3.5rem solid transparent;
+    /* This rule is used to specify the border-bottom of the element. */
+    border-bottom: 7rem solid #ff4027;
+}
+
+
+/* Flex box that aligins the text within the box and the buttons */
+
+.menuButtonString {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the flex-wrap of the element. */
+    flex-wrap: wrap;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: flex-end;
+}
+
+
+/* This is the buttons parent */
+
+.menuButtonContainer {
+    /* This rule is used to specify the float of the element. */
+    float: right;
+    /* This rule is used to specify the gap of the element. */
+    gap: 0.7rem;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+}
+
+
+/* the continue/cancel button text */
+
+.menuButton>p {
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 500;
+    /* This rule is used to specify the padding of the element. */
+    padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+    /* This rule is used to specify the background color of the element. */
+    background-color: #dbdbdb9a;
+    /* This rule is used to specify the color of the text. */
+    color: #383838;
+    /* This rule is used to specify the border of the element. */
+    border: #7e7e7e solid 0.1rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the font size of the text. */
+    font-size: 0.8rem;
+}
+
+.cancelButton>p {
+    /* This rule is used to specify the color of the text. */
+    color: #c21e1e!important;
+    /* This rule is used to specify the border of the element. */
+    border: #c21e1e solid 0.1rem;
+}
+
+.menuContent>div {
+    /* This rule is used to specify the width of the element. */
+    width: 80%;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: flex-start;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+}
+
+.menuContent>div>h2 {
+    /* This rule is used to specify the color of the text. */
+    color: #292929;
+    /* This rule is used to specify the font size of the text. */
+    font-size: 1.2rem;
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+}
+
+.menuContent>div p {
+    /* This rule is used to specify the color of the text. */
+    color: #292929;
+    /* This rule is used to specify the font size of the text. */
+    font-size: 1rem;
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+}
+
+
+/* Loading bar background */
+
+.outerBar {
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the height of the element. */
+    height: 1.25rem;
+    /* This rule is used to specify the background of the element. */
+    background: #c7c2c2;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 10;
+}
+
+
+/* Loading bar */
+
+.innerBar {
+    /* This rule is used to specify the width of the element. */
+    width: 25%;
+    /* This rule is used to specify the background of the element. */
+    background: #00b63d;
+    /* This rule is used to specify the height of the element. */
+    height: 1.25rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+
+/* Shortcut box */
+
+.shortcutParent {
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem 0 1rem 0;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: row;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: space-evenly;
+}
+
+.shortcutBox {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the gap of the element. */
+    gap: 1rem;
+}
+
+.shortcutBox>p {
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 600;
+    /* This rule is used to specify the padding of the element. */
+    padding: 0.6rem;
+    /* This rule is used to specify the background color of the element. */
+    background-color: #c4c4c49a;
+    /* This rule is used to specify the color of the text. */
+    color: #313131;
+    /* This rule is used to specify the border of the element. */
+    border: #6b6b6b solid 0.1rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+    transition: all 0.1s ease-in-out;
+}
+
+.shortcutBoxActive>p {
+    /* This rule is used to specify the color of the text. */
+    color: #0f5769;
+    transform: scale(1.03);
+}
+
+#otpParent {
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: row;
+    /* This rule is used to specify the flex-wrap of the element. */
+    flex-wrap: wrap;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+}
+
+.tfaInputBox {
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+    caret-color: transparent;
+    /* This rule is used to specify the text decoration of the text such as underline. */
+    text-decoration: none;
+    /* This rule is used to specify the text alignment of the text. */
+    text-align: center;
+    /* This rule is used to specify the border style of the element. */
+    border-style: solid;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.7rem;
+    /* This rule is used to specify the border width of the element. */
+    border-width: 0.15rem;
+    /* This rule is used to specify the border color of the element. */
+    border-color: var(--box-normal-color);
+    /* This rule is used to specify the color of the text. */
+    color: var(--box-font-color);
+    /* This rule is used to specify the font size of the text. */
+    font-size: var(--box-font-size);
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: var(--box-font-weight);
+    /* This rule is used to specify the width of the element. */
+    width: var(--box-size);
+    /* This rule is used to specify the height of the element. */
+    height: var(--box-size);
+}
+
+.tfaInputBox:hover {
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.6rem;
+    /* This rule is used to specify the border width of the element. */
+    border-width: 0.18rem;
+    /* This rule is used to specify the border color of the element. */
+    border-color: var(--box-hover-color);
+    transform: scale(calc(1 + var(--box-scale-by)));
+}
+
+.tfaInputBox:focus {
+    /* This rule is used to specify the outline of the element. */
+    outline: none;
+    /* This rule is used to specify the border width of the element. */
+    border-width: 0.15rem;
+    transform: scale(1);
+    /* This rule is used to specify the border color of the element. */
+    border-color: var(--box-active-color);
+}
+
+.tfaInputBox:active {
+    transform: scale(calc(1 - var(--box-scale-by)));
+}
+
+.otpFeild {
+    /* This rule is used to specify the padding of the element. */
+    padding: 1rem 0 1rem 0;
+}
+
+.tfaInputNorm {
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the height of the element. */
+    height: 3rem;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+
+/*
+    About us section
+*/
+
+#aboutUs>div {
+    /* This rule is used to specify the padding of the element. */
+    padding: 0;
+    /* This rule is used to specify the display of the element. */
+    display: flex;
+    /* This rule is used to specify the flex-direction of the element. */
+    flex-direction: column;
+    /* This rule is used to specify the justify-content of the element. */
+    justify-content: center;
+    /* This rule is used to specify the align-items of the element. */
+    align-items: center;
+}
+
+#aboutUs h1 {
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 900;
+    /* This rule is used to specify the color of the text. */
+    color: var(--font-color);
+    /* This rule is used to specify the margin of the element. */
+    margin: 0;
+    /* This rule is used to specify the padding of the element. */
+    padding: 0;
+    /* This rule is used to specify the text alignment of the text. */
+    text-align: center;
+}
+
+#mainContent {
+    min-height: 65vh;
+}
+
+.aboutusSelector img {
+    /* This rule is used to specify the height of the element. */
+    height: auto;
+    /* This rule is used to specify the width of the element. */
+    width: 100%;
+    /* This rule is used to specify the border radius of the element. */
+    border-radius: 0.5rem;
+}
+
+
+/*
+    So,
+
+    This is the carousel, the workings of it are described in the main.js file.
+    I created this carousel with the use of keyframes, transform, and js.
+
+    There are keyframes for,
+
+    [1] When the images are first loaded in.
+    [2] When the images are moved to the left.
+    [3] When the images are moved to the right.
+    [4] When the images are moved to the center.
+    [5] When the images are loaded in from the stack.
+
+    The stack is an array it contains the images that are hidden as only 3 images are visible at a time.
+        [ img, img, img, img ] <-- The stack.
+    left img, center img, right img
+
+    as an image is pushed off one side, it's loaded into the appropriate side of the array.
+    eg you click the left image in the carousel, causing the image that's in the center, to be pushed to the right,
+    and the image that was in the right beforehand gets pushed into the right side of the array.
+
+                       V-- That's the img we just added to the stack.
+    [ img, img, img, img ] <-- The stack.
+
+    as we moved that left image to the center, we now have an empty spot on the left side of the carousel,
+    now we can load an image to fill in that empty spot by pulling it from the left side of the stack and then
+    removing it from the stack.
+
+        V-- That's the image we just loaded in from the stack.
+    [ img, img, img, img ] <-- The stack.
+
+    I won't go over the 150 lines, but ill go over every unique rule.
+
+    scale(1), this transform changes the scales of the element, pretty self-explanatory.
+
+    translateX() and translateY(), these two move the element in the x and y-axis accordingly.
+    eg they used to move the elements to the left and right, up and down.
+    you can set the values back to 0 and the element will return to its original position.
+
+            y
+            *
+            *
+            *
+    x********
+    
+    rotateY(deg) this rotates the element in the y axis, I tried explaining this but I don't know how to make it sound good.
+    literally, pick up any item, hold it up
+    and turn your wrist, thas your Y,
+
+    the z-index is like BOMDAS, it's an order of precedence, the higher the number, the higher the priority.
+    eg you could have this.
+    
+    <img style='z-index: 50; position:absolute; top:0; left:0' src='./imgs/aboutus/1.jpg'>
+    <img style='z-index: 100; position:absolute; top:0; left:0' src='./imgs/aboutus/2.jpg'>
+
+    if IMG1 overlapped (EG if both had their position's set to absolute) onto IMG2 you'd expect IMG1 to still be visible,
+    but since we have a higher z-index set for IMG2, The image that will still be visible is IMG2.
+*/
+
+#carousel {
+    /* This rule is used to specify the display of the element. */
+    display: grid;
+    transform: scale(0.9);
+    transition: all 2s ease;
+}
+
+
+/* Set opacity of the carousel to 0 */
+
+.carouselInvisable {
+    opacity: 0;
+}
+
+
+/* Set opacity of the carousel to 1 */
+
+.carouselVisable {
+    opacity: 1;
+}
+
+#carousel div {
+    /* This rule is used to specify the grid-row of the element. */
+    grid-row: 1;
+    /* This rule is used to specify the grid-column of the element. */
+    grid-column: 1;
+    transition: all 2000ms ease 7.47774ms;
+}
+
+.carouselSelected {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 110;
+    animation: start 2s forwards ease;
+}
+
+@keyframes start {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* LEFT */
+
+.scaleInFromLeft {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 100;
+    animation: scaleInFromLeft 2s forwards;
+}
+
+@keyframes scaleInFromLeft {
+    0% {
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg)
+    }
+    100% {
+        transform: scale(1.15) translateX(0);
+    }
+}
+
+.scaleOutToLeft {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 90;
+    transform: scale(1.15);
+    animation: scaleOutToLeft 2s forwards;
+}
+
+@keyframes scaleOutToLeft {
+    0% {
+        transform: scale(1.15) translateX(0);
+    }
+    100% {
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
+    }
+}
+
+.moveCenterFromLeft {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 80;
+    animation: moveCenterFromLeft 2s forwards;
+}
+
+@keyframes moveCenterFromLeft {
+    0% {
+        opacity: 1.0;
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
+    }
+    100% {
+        opacity: 0.0;
+        transform: scale(1) translateX(0rem);
+    }
+}
+
+.moveLeftFromCenter {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 90;
+    animation: moveLeftFromCenter 2s forwards;
+}
+
+@keyframes moveLeftFromCenter {
+    0% {
+        opacity: 0.0;
+        transform: scale(0.5) translateX(0rem);
+    }
+    100% {
+        opacity: 1.0;
+        transform: scale(1) translateX(var(--car-distance-neg)) rotateY(-180deg);
+    }
+}
+
+
+/* RIGHT */
+
+.scaleInFromRight {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 100;
+    animation: scaleInFromRight 2s forwards;
+}
+
+@keyframes scaleInFromRight {
+    0% {
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
+    }
+    100% {
+        transform: scale(1.15) translateX(0);
+    }
+}
+
+.scaleOutToRight {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 90;
+    transform: scale(1.15);
+    animation: scaleOutToRight 2s forwards;
+}
+
+@keyframes scaleOutToRight {
+    0% {
+        transform: scale(1.15) translateX(0);
+    }
+    100% {
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
+    }
+}
+
+.moveCenterFromRight {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 80;
+    animation: moveCenterFromRight 2s forwards;
+}
+
+@keyframes moveCenterFromRight {
+    0% {
+        opacity: 1.0;
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(-180deg);
+    }
+    100% {
+        opacity: 0.0;
+        transform: scale(1) translateX(0rem);
+    }
+}
+
+.moveRightFromCenter {
+    /* This rule is used to specify the z-index of the element. */
+    z-index: 90;
+    animation: moveRightFromCenter 2s forwards;
+}
+
+@keyframes moveRightFromCenter {
+    0% {
+        opacity: 0.0;
+        transform: scale(0.5) translateX(0rem);
+    }
+    100% {
+        opacity: 1.0;
+        transform: scale(1) translateX(var(--car-distance-pos)) rotateY(180deg);
+    }
+}
+
+
+/* FADE IN */
+
+.fadeIn {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+
+/* TEXT */
+
+.carouselText {
+    transition: all 2s ease;
+}
+
+span.carouselText {
+    /* This rule is used to specify the font weight of the text. */
+    font-weight: 800;
+    /* This rule is used to specify the font size of the text. */
+    font-size: large;
+    /* This rule is used to specify the color of the text. */
+    color: var(--font-color);
+}
+
+#carouselLeft .carouselText {
+    opacity: 0;
+}
+
+#carouselRight .carouselText {
+    opacity: 0;
+}
+
+#carouselCenter .carouselText {
+    opacity: 1;
+}
+
+#carouselCenter .carouselImg {
+    box-shadow: 0 0 1rem 0.5rem #00000030;
+}
+
+.carouselImg {
+    transition: all 0.5s ease;
+}
+
+.carouselImg:hover {
+    transform: scale(1.02);
+}
+
+.carouselImg:active {
+    transform: scale(0.98);
+}

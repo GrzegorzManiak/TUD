@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="htmlStopScroll">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--God, for some reason, removing minimum-scale breaks the site completly-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+    <!---Title of the web page-->
+    <title>Html | Group 17</title>
+
+    <!--The description of the site, Metadata, used for SEO-->
+    <meta name="description" content="Group 17 Project for VDUX">
+
+    <!--General CSS Used by all pages-->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!--
+        Navigation Bar
+    -->
+    <nav class='full-width flex-vertical-horizontal overHeader'>
+        <!-- I was going to make a logo, but got lazy -->
+        <div id='navLogo' class='logoColorMenuClosed'>
+            <p>
+                Group 17
+            </p>
+        </div>
+
+        <!-- This element will have all nav elements added to it -->
+        <!-- I done this to save me copy and pasteing, etc. -->
+        <ul id='navElements'>
+        </ul>
+
+        <!-- This is the hamburger menu that shows up once the page gets small enough -->
+        <!-- and the nav bar elements dont fit on the page any more -->
+        <div id='hamburgerMenu'>
+
+            <!-- This is the acutal button that shows up in the top right of the page -->
+            <div id='hamburgerBtn'>
+                <!-- This uses a checkbox with absoulute positioning -->
+                <!-- which saves on having to use javascript -->
+                <input type="checkbox" id='hamburgerMenuBtn'>
+                <!-- the span tag is usefull, as it has 0 predefined styles. -->
+                <!-- it dose nothing by it self. -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- This is the menu that slides out if the check box is clicked -->
+            <div id='hamburgerContent' class='gradient hamburgerContentInvisible'>
+                <ul id='hamburgerElements'>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--
+        End of Navigation Bar
+    -->
+
+    <!--
+        header content
+        -->
+    <div id='header' class='full-width flex-vertical-horizontal gradient'>
+        <h1>
+            Basic html.
+        </h1>
+    </div>
+    <!--
+        End of header
+    -->
+
+    <!--
+        Main content
+    -->
+    <div id="mainContent" class="full-width flex-column flex-horizontal">
+
+        <!-- Practicality section -->
+        <section id="practicality">
+            <div class="max-width flex-column">
+                <div class='flex-horizontal flex-column'>
+                    <section class='blog'>
+                        <h1>
+                            What is html?
+                        </h1>
+                        <p>
+                            HTML stands for Hyper Text Markup Language. HTML is the standard markup language for creating web pages. It is used to create web pages.
+                        </p>
+                        <p>
+                            HTML is only intended for creating web pages. It is not a general-purpose language.
+                        </p>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Doctype
+                        </h1>
+                        <p>
+                            The doctype is the first thing that is written in an HTML document. It defines the document type, it must allways be the first thing in the document, and it only appers once per page.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex padding'>
+                            <p>Example</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;!DOCTYPE</span> <span class='codeInline'>html</span><span class='codeTag'>&gt;</span>
+<span class='codeTag'>&lt;html&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Metadata
+                        </h1>
+                        <p>
+                            Metadata is information about the document, it is not visible to the user, but it can be used by the browser to make decisions about how to display the document, its also used by search engines to index the document.
+                        </p>
+                        <p>
+                            Metadata is stored in the head of the document, you can learn more about it <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head" target="_blank">here</a>.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex padding'>
+                            <p>Title</p>
+                            <div class='inputInteractive halfInteractive'>
+                                <input id='tabTitleExample' spellcheck="false" type="text" placeholder="Look! you can edit me, then look at the name of the tab!">
+                            </div>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;head&gt;</span>
+        <span class='codeInline'>&lt;title&gt;</span> Title of the page <span class='codeInline'>&lt;/title&gt;</span>
+    <span class='codeTag'>&lt;/head&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                            <p>Descripton</p>
+                            <div class='codeBlock'>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;head&gt;</span>
+        <span class='codeTag'>&lt;meta</span> <span class='codeClassSelector'>name</span>=<span class='codeString'>'description'</span> <span class='codeClassSelector'>content</span>=<span class='codeString'>'What even is this page?'</span><span class='codeTag'>&gt;</span><span class='codeTag'>&lt;/meta&gt;</span>
+    <span class='codeTag'>&lt;/head&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Headings
+                        </h1>
+                        <p>
+                            The HTML spec provides a set of 6 heading tags to create diferently sized headings, you should only use the h1 tag once per page, and preferably at the top of the page.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex padding' id='headingExample'>
+                            <div class='headingButtonParent'>
+                                <button>&lt;h1&gt;</button>
+                                <button>&lt;h2&gt;</button>
+                                <button>&lt;h3&gt;</button>
+                                <button>&lt;h4&gt;</button>
+                                <button>&lt;h5&gt;</button>
+                                <button>&lt;h6&gt;</button>
+                            </div>
+                            <div class='codeBlock'>
+                                <code class='text-center headingElementExample'>
+                                    
+                                </code>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Paragraphs
+                        </h1>
+                        <p>
+                            To add a paragraph to your page, you can use the p tag, it is the most basic element in HTML, its used to display text.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex padding'>
+                            <div class='codeBlock'>
+                                <p>
+                                    I am a paragraph! I contain text and thats about it.
+                                </p>
+                                <pre>
+<span class='codeTag'>&lt;html&gt;</span>
+    <span class='codeTag'>&lt;body&gt;</span>
+        <span class='codeTag'>&lt;p&gt;</span>I am a paragraph! I contain text and thats about it.<span class='codeTag'>&lt;/p&gt;</span>
+    <span class='codeTag'>&lt;/body&gt;</span>
+<span class='codeTag'>&lt;/html&gt;</span></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Lists
+                        </h1>
+                        <p>
+                            Lists are used to display a list of items, they can be ordered or unordered, the diferrence is that unordered lists are displayed with bullet points, while ordered lists are displayed with numbers.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex padding' id='listExample'>
+                            <div class='headingButtonParent'>
+                                <button>orderd list</button>
+                                <button>unorderd list</button>
+                            </div>
+                            <div class='codeBlock full-width'>
+                                <code class='headingElementExample'>
+                                    
+                                </code>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='blog'>
+                        <h1>
+                            Images
+                        </h1>
+                        <p>
+                            To add an image to your page you can use the img tag, you can also add a alt attribute to the image, this is used by search engines to index the page, it is aslo used to describe the image, incase the image dosent load, it aslo aids in accessibility.
+                        </p>
+                        <p>
+                            You can also reference an external file, by setting the src attribute to the url of the file, the img tag dose not only support images but also other file types, you can find a list of file types <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"
+                                target="_blank">here</a>.
+                        </p>
+                        <div class='interactiveSection codeBlockFlex padding' id='imgExample'>
+                            <div class='inputInteractive halfInteractive'>
+                                <input spellcheck="false" type="text" value="<img src='./imgs/aboutus/greg1.png' alt='a picture of a human'>">
+                                <input spellcheck="false" type="text" value="<img src='./imgs/blog/ui/giphy.webp' alt='a webp of a wow'>">
+                            </div>
+                            <div class='outputInteractive halfInteractive'>
+                                <img>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--
+        End of Main content
+    -->
+
+    <!--
+        Footer
+    -->
+    <footer class='full-width'>
+        <div>
+            <h3>Group 17</h3>
+            <div class='sdgfa'>
+                <h4>Usefull links:</h4>
+                <div class='flex-column'>
+                    <a href='https://www.w3schools.com/' target='_blank'>W3 Schools</a>
+                    <a href='https://developer.mozilla.org/en-US/docs' target='_blank'>MDN</a>
+                </div>
+            </div>
+            <a href='./aboutus.html' target='_blank'>Credits</a>
+        </div>
+    </footer>
+    <!--
+        End of Footer
+    -->
+
+    <!-- Load in the main script -->
+    <script src="./js/index.js"></script>
+
+    <script>
+        headingExample('headingExample', 'This is some text!');
+
+        listExample('listExample');
+
+        titleExample('tabTitleExample');
+
+        imgExample('imgExample');
+
+        // define the current page we are on
+        currentPageName = 'html';
+
+        // add logic to the hamburger menu
+        hamburger('hamburgerMenuBtn');
+
+        // load the elements into the nav bar
+        addElements('navElements', 'nav-current');
+
+        // load the elements into the hamburger menu
+        addElements('hamburgerElements', 'nav-current');
+		
+		// load in the nav Header fader
+        navPos();
+    </script>
+
+
+</body>
+
+</html>
