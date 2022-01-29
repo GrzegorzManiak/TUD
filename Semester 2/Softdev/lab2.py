@@ -61,10 +61,3 @@ def ex2():
     
     print("Days worked over 6 hours: " + str(hours_worked.count(6)))
     
-
-names_ = ["John", "Paul", "George", "Ringo", "Pete", "john"]    
-list_ = [ 345345, 353, 456456, 345345, 345, 345 ]
-
-for item in enumerate(list_):
-    print(item)
-    print(names_[item[0]])
