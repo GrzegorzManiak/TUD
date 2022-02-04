@@ -24,7 +24,7 @@ for sales_index in range(number_of_sales_men):
     print("")
     
     for sold_index in range(total_sold):
-        price_sold = int(input("--[{0}] Price of kitchen [{1}] sold? (positive whole number): ".format(sales_index + 1, sold_index + 1)))
+        price_sold = int(input("--[{0}] Price of kitchen [{1}] sold? (positive whole number): €".format(sales_index + 1, sold_index + 1)))
         temp_sold_for.append(price_sold)
         
     sold_for.append(temp_sold_for)
@@ -47,17 +47,17 @@ for sales_index in range(len(sales_names)):
     print("Kitchens sold: {0}".format(numbers_of_kitchens))
     
     for kitchens_index in range(numbers_of_kitchens):
-        print(" -Price of kitchen [{0}] sold: {1}".format(kitchens_index + 1, sold_for[sales_index][kitchens_index]))
+        print(" -Price of kitchen [{0}] sold: €{1}".format(kitchens_index + 1, sold_for[sales_index][kitchens_index]))
         
     print("")    
     
     total_sales_rep = total_sales[sales_index]
-    print("Total sales for {0} is {1}".format(sales_name, total_sales_rep))
+    print("Total sales for {0} is €{1}".format(sales_name, total_sales_rep))
 
     if total_sales_rep > 50000:
-        commission = total_sales_rep * 0.15
+        commission = (total_sales_rep - 50000) * 0.15
         
-        print("Commission for {0} is {1} Euro".format(sales_name, commission))
+        print("Commission for {0} is €{1}".format(sales_name, commission))
         total_commisions.append(commission)
         
     else:
@@ -71,11 +71,11 @@ for sales_index in range(len(sales_names)):
     sales_name = sales_names[sales_index]
     total_sold_for = total_sales[sales_index]
 
-    print("{0}              {1}".format(sales_name, total_sales_rep))
+    print("{0}              €{1}".format(sales_name, total_sales_rep))
 
 print("--------------------------")
 
-print("Total commisions: {0}".format(round(sum(total_commisions), 2)))
+print("Total commisions: €{0}".format(round(sum(total_commisions), 2)))
 
 highest_earner_index = total_sales.index(max(total_sales))
-print("Higest sales: {0} with a total of sales of {1}".format(sales_names[highest_earner_index], max(sold_for[highest_earner_index])))
+print("Higest sales: {0} with a total of sales of €{1}".format(sales_names[highest_earner_index], sum(sold_for[highest_earner_index])))
