@@ -1,13 +1,4 @@
-# Write a program that allows the user to enter the last names of four candidates in a local
-# election, the votes received by each candidate and their constituency.
-# The program should then calculate the respective percentage of votes received for each
-# candidate and output each candidate’s name, the votes received by that
-# candidate, the candidate’s constituency and the percentage of votes received.
-# Your program should also output the winner of the election and the person with the least
-# votes
-
-from enum import unique
-
+# X00189661 Grzegorz Maniak
 
 def ver1():
     TOTAL_CANDIDATES = 4
@@ -74,7 +65,6 @@ def ver1():
     
     print('Looser: {0}, with a total percentage of {1}%'.format(looser[1], looser[0]))
            
-
 def ver2():
     TOTAL_CANDIDATES = 4
     SPACEING = 15
