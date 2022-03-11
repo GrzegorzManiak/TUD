@@ -1,3 +1,5 @@
+# X00189661 Grzegorz Maniak
+
 def add(titles, copies, title, copies_num):
     titles.append(title)
     copies.append(copies_num)
