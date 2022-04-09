@@ -1,13 +1,4 @@
-# A kerosene home delivery company is implementing a system to track their 
-# delivery trucks on a daily basis. All data
-# members must be PRIVATE.
-# A KeroseneDeliveryTruck class should have the following data members:
-# . price_per_litre Float What the company charges per litre of kerosene.
-# . litres_in_truck Float The current amount of Kerosene in the Truck
-# . truck_capacity Float The overall Capacity of the Truck to hold kerosene
-# . min_delivery_qty Float The minimum delivery order amount of Kerosene
-# . deliveries_today Int The number of deliveries made by the truck today
-# . total_sales Float The total monetary value taken from deliveries today
+
 class KeroseneDeliveryTruck:
     def __init__(self, price_per_litre_in, min_delivery_qty_in, truck_capacity_in, litres_in_truck=None):
         if price_per_litre_in > 0:
