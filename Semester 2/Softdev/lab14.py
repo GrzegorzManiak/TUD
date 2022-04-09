@@ -1,5 +1,3 @@
-# X00189661 Grzegorz Maniak
-
 # Question 1
 
 class Student:
